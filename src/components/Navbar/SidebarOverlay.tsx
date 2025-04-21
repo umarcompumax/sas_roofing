@@ -16,8 +16,18 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   return (
-    <div className="fixed inset-0 z-[999] bg-black/70 flex justify-start">
-      <div className="w-[280px] sm:w-[300px] md:w-[360px] lg:w-[400px] xl:w-[420px] 2xl:w-[460px] bg-[#0b2c55] text-white overflow-y-auto p-4 sm:p-5 md:p-6 lg:p-8 relative">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 z-[999] bg-black/70 flex justify-start"
+      style={{
+        cursor:
+          "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 height=%2224%22 width=%2224%22><text x=%220%22 y=%2220%22 font-size=%2220%22>❌</text></svg>'), auto",
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="w-[280px] sm:w-[300px] md:w-[360px] lg:w-[400px] xl:w-[420px] 2xl:w-[460px] bg-[#0b2c55] text-white overflow-y-auto p-4 sm:p-5 md:p-6 lg:p-8 relative cursor-default"
+      >
         {/* Close Button */}
         <button
           onClick={onClose}

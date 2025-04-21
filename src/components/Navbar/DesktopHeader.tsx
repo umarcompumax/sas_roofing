@@ -26,12 +26,6 @@ export default function DesktopHeader({
 
       <nav className="flex justify-end gap-5 items-center px-6 bg-white shadow-md h-18">
         <NavLinks setSidebarOpen={setSidebarOpen} />
-        {/* <div className="hidden md:flex items-center">
-          <button className="h-full px-6 bg-red-500 text-white font-semibold flex items-center justify-center gap-2">
-            <HiChevronRight className="text-lg" />
-            <span>GET A QUOTE</span>
-          </button>
-        </div> */}
       </nav>
     </header>
   );

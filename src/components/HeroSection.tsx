@@ -69,7 +69,10 @@ export default function HeroSection() {
   if (!hasMounted || !imageLoaded) return null;
 
   return (
-    <div className="relative w-full h-[700px] overflow-hidden">
+    <div
+      id="hero-section"
+      className="relative w-full h-[700px] overflow-hidden"
+    >
       {/* Image Background */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
@@ -104,7 +107,10 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -40 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-[90px] 2xl:text-[100px] leading-tight font-extrabold">              {slides[current].title}
+              className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-[90px] 2xl:text-[100px] leading-tight font-extrabold"
+            >
+              {" "}
+              {slides[current].title}
             </motion.h1>
 
             <motion.p
