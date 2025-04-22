@@ -11,30 +11,63 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const testimonials = [
   {
+    name: "Karim Degonto",
+    location: "NEW YORK",
+    text: `We just had our roof redone with SAS. Mohammad came out to check out our
+    roof from some leaking we had during a bad storm . Mohamad was kind and
+    flexible with us.`,
+    rating: 5,
+    avatar: "/user.png",
+  },
+  {
+    name: "Master Showan",
+    location: "NEW YORK",
+    text: `Mohammad worked on my roof over a year ago. I purposely waited to write a
+    review because I have had different companies worked on my roof and
+    after a heavy rain, water leaked inside.`,
+    rating: 5,
+    avatar: "/user.png",
+  },
+  {
+    name: "Nicole Brier",
+    location: "QUEEN",
+    text: `We had SAS waterproof our basement after bricks started crumbling on the
+    inside from moisture. They were professional, prompt, worked quick and
+    clean and did a wonderful job. Well priced also. Highly recommend.`,
+    rating: 5,
+    avatar: "/user.png",
+  },
+  {
     name: "David Packer",
     location: "NEW YORK",
-    text: "This business is great. A really efficient and friendly crew arrived promptly and did a great job on repainting sand waterproofing some of my outside walls. The communication was excellent.",
+    text: `This business is great. A really efficient and friendly crew arrived
+    promptly and did a great job on repainting sand waterproofing some of my
+    outside walls. The communication was excellent.`,
     rating: 5,
     avatar: "/user.png",
   },
   {
-    name: "Jane Smith",
+    name: "T Brown",
     location: "BROOKLYN",
-    text: "Great experience from start to finish. Prompt, clean, professional team and excellent results on waterproofing and masonry.",
+    text: `It was an absolute pleasure to work with Mohammad. He responded quickly
+    to our request for estimate moved things around to meet with us even
+    though his schedule was extremely busy and gave us fair price.`,
     rating: 5,
     avatar: "/user.png",
   },
   {
-    name: "Michael Johnson",
+    name: "Sean McBRIDE",
     location: "QUEENS",
-    text: "SAS Roofing was fantastic! Super responsive, fair prices, and high-quality workmanship. Highly recommend.",
+    text: `SAS and Mohammad did outstanding work. They fixed a persistent leak in
+    our roof that we’d been having for 9 months. Mohammad was incredibly
+    responsive during the process and very reasonably priced.`,
     rating: 5,
     avatar: "/user.png",
   },
 ];
 
 export default function TestimonialSlider() {
-const swiperRef = useRef<SwiperType | null>(null);
+  const swiperRef = useRef<SwiperType | null>(null);
 
   const handleSlide = (direction: "next" | "prev") => {
     if (!swiperRef.current) return;

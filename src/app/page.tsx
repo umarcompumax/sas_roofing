@@ -10,6 +10,7 @@ import StickyNavbar from "@/components/StickyNavbar";
 import Footer from "@/components/Footer";
 import FooterTopCTA from "@/components/FooterTopCTA";
 import OurTestimonial from "@/components/OurTestimonial";
+import ServiceAndFaqSection from "@/components/ServiceAndFaqSection";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <OurProjects />
       <VideoSection />
       <OurTestimonial />
+      <ServiceAndFaqSection />
       <Blog />
       <FooterTopCTA />
       <Footer />
