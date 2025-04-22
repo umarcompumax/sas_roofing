@@ -9,6 +9,7 @@ import Blog from "@/components/Blog";
 import StickyNavbar from "@/components/StickyNavbar";
 import Footer from "@/components/Footer";
 import FooterTopCTA from "@/components/FooterTopCTA";
+import OurTestimonial from "@/components/OurTestimonial";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Features />
       <OurProjects />
       <VideoSection />
+      <OurTestimonial />
       <Blog />
       <FooterTopCTA />
       <Footer />

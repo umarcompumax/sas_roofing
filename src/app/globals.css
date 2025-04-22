@@ -26,4 +26,12 @@
   .red-left-shape-2 {
     clip-path: polygon(0 0, 100% 0, 68% 100%, 0% 100%);
   }
-  
+    .avatar-pattern::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('/pattern.png');
+      background-size: cover;
+      opacity: 0.1;
+      z-index: 0;
+    }

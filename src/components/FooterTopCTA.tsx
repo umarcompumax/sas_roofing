@@ -33,7 +33,7 @@ export default function FooterTopCTA() {
         {/* Buttons Section */}
         <div className="flex gap-3 flex-wrap justify-center items-center">
           {/* KNOW MORE button with outer border */}
-          <div className="p-[3px] border-2 border-[#003269]">
+          <div className="p-[5px] border-2 border-[#003269]">
             <button className="px-5 sm:px-6 py-3 text-red-600 font-semibold bg-white border-2 border-red-600 hover:bg-blue-700 hover:text-white transition">
               KNOW MORE
             </button>
