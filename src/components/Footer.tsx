@@ -6,14 +6,14 @@ export default function Footer() {
     <footer className="bg-[#043469] text-white text-sm sm:text-[15px]">
       {/* Section: Header */}
       <div className="px-4 sm:px-6 md:px-12 pt-12">
-        <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-100 mb-12">
+        <h2 className="text-left md:text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-100 mb-12">
           QUALITY ROOFING IN BROOKLYN, NEW YORK & QUEENS
         </h2>
       </div>
 
       {/* Section: Main Content Grid */}
       <div className="px-4 sm:px-6 md:px-12 pb-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-white">
+        <div className="w-full max-w-7xl mx-0 md:mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-white">
           {/* About Service */}
           <div>
             <h4 className="text-xl md:text-xl font-bold mb-2 relative inline-block">
@@ -55,10 +55,10 @@ export default function Footer() {
           </div>
 
           {/* Useful Links */}
-          <div className="text-center md:text-left">
+          <div className="text-left">
             <h4 className="text-lg md:text-xl font-bold mb-2 relative inline-block">
               Useful Links
-              <span className="block w-12 h-[2px] bg-red-500 mt-1 mx-auto md:mx-0" />
+              <span className="block w-12 h-[2px] bg-red-500 mt-1" />
             </h4>
             <ul className="mt-4 space-y-3">
               {[
