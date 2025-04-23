@@ -23,10 +23,10 @@ const VideoSection = () => {
       >
         {/* Left Section */}
         <div className="relative md:w-[60%] w-full h-[500px] md:h-auto">
-          <div className="absolute inset-0 bg-[#c72f1c] red-left-shape-2 z-20 border-2 border-yellow-600 translate-x-6 translate-y-16">
+          <div className="absolute inset-0 bg-[#c72f1c] red-left-shape-2 z-20 translate-x-6 translate-y-16">
             <div className="w-full h-full bg-[url('/thm-pattern-5.png')] bg-repeat left" />
           </div>
-          <div className="absolute inset-0 bg-[#e63a27] red-left-shape-2 z-20 border-2 border-yellow-600">
+          <div className="absolute inset-0 bg-[#e63a27] red-left-shape-2 z-20">
             <div className="w-full h-full bg-[url('/thm-pattern-5.png')] bg-repeat" />
           </div>
 
@@ -83,7 +83,7 @@ const VideoSection = () => {
               />
             </div>
 
-            <div className="absolute inset-0 bg-[#e63a27] red-left-shape-1 z-20 border-2 border-yellow-600 translate-y-20">
+            <div className="absolute inset-0 bg-[#e63a27] red-left-shape-1 z-20 translate-y-20">
               <div className="w-full h-full bg-[url('/thm-pattern-5.png')] bg-repeat" />
             </div>
           </div>
