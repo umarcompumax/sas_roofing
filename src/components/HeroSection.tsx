@@ -130,7 +130,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
               className="border-4 border-[#0a356f] p-1 inline-block"
             >
-              <Button className="bg-[#e53935] text-white text-xs sm:text-sm md:text-base lg:text-lg px-10 py-7 rounded-none shadow-none">
+              <Button className="Hero_hover-button text-xs sm:text-sm md:text-base lg:text-lg">
                 {slides[current].buttonText.toUpperCase()}
               </Button>
             </motion.div>

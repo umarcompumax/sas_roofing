@@ -20,8 +20,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
       onClick={onClose}
       className="fixed inset-0 z-[999] bg-black/70 flex justify-start"
       style={{
-        cursor:
-          "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 height=%2224%22 width=%2224%22><text x=%220%22 y=%2220%22 font-size=%2220%22>❌</text></svg>'), auto",
+        cursor: "url('/white_cursor.png') 0 0, auto",
       }}
     >
       <div
@@ -90,7 +89,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
             />
             <button
               type="submit"
-              className="bg-transparent border border-red-500 text-red-500 font-semibold text-xs sm:text-sm md:text-base py-2.5 sm:py-3 md:py-4 hover:bg-red-600 hover:text-white transition"
+              className="bg-transparent border border-red-500 text-red-500 font-semibold text-xs sm:text-sm md:text-base py-2.5 sm:py-3 md:py-4 hover:bg-red-600 hover:text-white transition More-hover-button"
             >
               SUBMIT NOW
             </button>

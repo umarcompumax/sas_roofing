@@ -29,7 +29,7 @@ export default function Footer() {
 
             {/* Button + Payment Logos */}
             <div className="mt-6">
-              <button className="bg-[#e53935] text-white px-6 py-4 font-semibold hover:bg-red-600 transition text-sm md:text-base">
+              <button className="bg-[#e53935] text-white px-6 py-4 font-semibold hover:bg-red-600 transition text-sm md:text-base More-hover-button">
                 MORE DETAILS
               </button>
               <div className="flex gap-3 flex-wrap mt-4 items-center">

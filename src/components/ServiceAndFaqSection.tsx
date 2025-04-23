@@ -61,7 +61,7 @@ export default function ServiceAndFaqSection() {
             />
             <button
               type="submit"
-              className="border border-[#e63a27] text-[#e63a27] py-3 px-3 rounded font-semibold hover:bg-[#e63a27] hover:text-white transition"
+              className="border border-[#e63a27] text-[#e63a27] py-3 px-3 rounded-none font-semibold hover:bg-[#e63a27] hover:text-white transition hover-button"
             >
               SUBMIT NOW
             </button>

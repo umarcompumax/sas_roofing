@@ -1,7 +1,15 @@
+"use client"
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { FaHeadphonesAlt } from "react-icons/fa";
 
 export default function FooterTopCTA() {
+   const [isClient, setIsClient] = useState(false);
+
+   // Ensure that hover effect is only applied on the client side (after hydration)
+   useEffect(() => {
+     setIsClient(true);
+   }, []);
   return (
     <div className="bg-[#00254c] text-white py-6 px-4 sm:py-8 sm:px-6 md:px-12">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-10 text-center lg:text-left">
@@ -34,13 +42,17 @@ export default function FooterTopCTA() {
         <div className="flex gap-3 flex-wrap justify-center items-center">
           {/* KNOW MORE button with outer border */}
           <div className="p-[5px] border-2 border-[#003269]">
-            <button className="px-5 sm:px-6 py-3 text-red-600 font-semibold bg-white border-2 border-red-600 hover:bg-blue-700 hover:text-white transition">
+            <button className="px-5 sm:px-6 py-3 text-red-600 font-semibold bg-white border-2 border-red-600 hover:bg-blue-700 hover:text-white transition hover-button">
               KNOW MORE
             </button>
           </div>
 
           {/* Call button */}
-          <button className="bg-[#e53935] text-white flex items-center gap-2 px-4 py-3 font-semibold hover:bg-red-600 transition">
+          <button
+            className={`${
+              isClient ? "hover:bg-red-600" : ""
+            } bg-[#e53935] text-white flex items-center gap-2 px-4 py-3 font-semibold transition call-hover-button`}
+          >
             <FaHeadphonesAlt />
             <span className="text-sm sm:text-base">(347) 221-6549</span>
           </button>
