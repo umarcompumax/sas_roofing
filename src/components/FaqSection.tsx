@@ -36,11 +36,13 @@ export default function FaqSection() {
 
   return (
     <div className="w-full max-w-xl bg-white text-center md:text-left">
-      <div className="flex flex-col md:flex-row md:items-center gap-2 mb-2 justify-center md:justify-start">
-        <div className="w-6 h-[1px] bg-red-600 mx-auto md:mx-0" />
-        <p className="text-base uppercase text-[#e63a27] font-semibold tracking-wide">
-          Common Questions & Answers
-        </p>
+      <div className="flex justify-center mb-2">
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-[1px] bg-red-600" />
+          <p className="text-base uppercase text-[#e63a27] font-semibold tracking-wide">
+            Common Questions & Answers
+          </p>
+        </div>
       </div>
       <h2 className="text-4xl lg:text-5xl font-bold text-[#003366] mb-8">
         Get Detailed Answers
@@ -88,7 +90,7 @@ export default function FaqSection() {
               </button>
 
               {isOpen && (
-                <div className="bg-white px-6 pb-6 text-gray-600 text-base lg:text-lg leading-relaxed">
+                <div className="bg-white px-6 pb-6 pt-4 text-gray-600 text-base lg:text-lg leading-relaxed">
                   {faq.answer}
                 </div>
               )}

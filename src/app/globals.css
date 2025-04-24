@@ -6,7 +6,7 @@
   position: absolute;
   top: 0;
   right: -25px; /* Adjusted for cleaner overlap */
-  width: 60px; /* Slightly wider triangle */
+  width: 60px; 
   height: 100%;
   background-color: #e5392c;
   transform: skewX(-20deg);
@@ -30,7 +30,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/pattern.png");
+  /* background-image: url("/pattern.png"); */
   background-size: cover;
   opacity: 0.1;
   z-index: 0;

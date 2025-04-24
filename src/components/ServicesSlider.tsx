@@ -124,7 +124,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
                         <h3 className="text-[#003366] text-[18px] md:text-[20px] font-bold tracking-wide">
                           {slide.title}
                         </h3>
-                        <p className="text-[10px] md:text-[15px] text-gray-600 mt-1 leading-snug line-clamp-3">
+                        <p className="text-[15px] md:text-[15px] text-gray-600 mt-1 leading-snug line-clamp-3">
                           {slide.description}
                         </p>
                       </div>

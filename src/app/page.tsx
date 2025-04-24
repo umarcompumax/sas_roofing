@@ -11,6 +11,8 @@ import Footer from "@/components/Footer";
 import FooterTopCTA from "@/components/FooterTopCTA";
 import OurTestimonial from "@/components/OurTestimonial";
 import ServiceAndFaqSection from "@/components/ServiceAndFaqSection";
+import ContactBar from "@/components/ContactBar";
+import Contact from "@/components/Contact";
 // import Header from "@/components/header";
 
 export default function Home() {
@@ -18,6 +20,7 @@ export default function Home() {
     <>
       <Navbar />
       {/* <Header /> */}
+      <ContactBar />
       <HeroSection />
       <StickyNavbar />
       <OurServicesPage />
@@ -28,6 +31,7 @@ export default function Home() {
       <OurTestimonial />
       <ServiceAndFaqSection />
       <Blog />
+      <Contact />
       <FooterTopCTA />
       <Footer />
     </>

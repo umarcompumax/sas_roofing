@@ -126,9 +126,6 @@ export default function TestimonialSlider() {
                       <span key={i}>★</span>
                     ))}
                   </div>
-
-                  {/* Optional: Background pattern */}
-                  <div className="absolute inset-0 opacity-10 bg-[url('/pattern.png')] bg-cover" />
                 </div>
 
                 {/* Testimonial Content */}

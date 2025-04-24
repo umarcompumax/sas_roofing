@@ -8,6 +8,7 @@ const OurProjects = () => {
         <section className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
+              <div className="w-6 h-[1px] bg-red-600" />
               <span className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-red-600 uppercase whitespace-nowrap">
                 Our Projects
               </span>

@@ -7,13 +7,13 @@ export default function AboutCompany() {
   return (
     <section className="flex flex-col xl:flex-row p-6 sm:p-8 xl:px-16 2xl:px-32 bg-white gap-10 w-5/6 xl:w-full mx-auto">
       {/* Image Block */}
-      <div className="relative w-full sm:w-[320px] md:w-[360px] lg:w-4/6 xl:max-w-[480px] border-2 border-red-600 rounded-md overflow-hidden flex-shrink-0 ml-0 h-[520px] lg:h-[520px] xl:h-auto">
+      <div className="relative w-full sm:w-[320px] md:w-[360px] lg:w-4/6 xl:max-w-[480px] border-2 border-red-600 rounded-md overflow-hidden flex-shrink-0 ml-0">
         <Image
           src="/aboutimg.jpg"
           alt="Roof house illustration"
           width={400}
-          height={800}
-          className="w-full h-full object-contain lg:object-cover"
+          height={400}
+          className="w-full h-auto object-contain"
         />
 
         {/* Experience Block */}
