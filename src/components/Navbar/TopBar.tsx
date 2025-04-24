@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  FaPhoneAlt,
-  FaEnvelope,
-  FaFacebookF,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaHome } from "react-icons/fa";
 
 export default function TopBar() {
   return (
@@ -14,27 +9,58 @@ export default function TopBar() {
         <div className="w-[373px] h-full bg-[#00254c] [clip-path:polygon(0_0,90%_0,100%_100%,0%_100%)]" />
         <div className="flex items-center text-white h-full">
           <div className="hidden xl:flex items-center pr-4">
-            <span className="flex items-center gap-2 pr-4">
-              <FaPhoneAlt className="text-red-500" /> (347) 221-6549
-            </span>
+            {/* Phone */}
+            <a
+              href="tel:+13472216549"
+              className="flex items-center gap-2 pr-4 hover:text-[#e63a27] transition-colors"
+            >
+              <FaPhoneAlt className="text-[#e63a27]" /> (347) 221-6549
+            </a>
+
             <span className="h-4 border-l border-white/30 mx-2" />
-            <span className="flex items-center gap-2 px-2">
-              <FaEnvelope className="text-red-500" /> sascon09@yahoo.com
-            </span>
+
+            {/* Email 1 */}
+            <a
+              href="mailto:sascon09@yahoo.com"
+              className="flex items-center gap-2 px-2 hover:text-[#e63a27] transition-colors"
+            >
+              <FaEnvelope className="text-[#e63a27]" /> sascon09@yahoo.com
+            </a>
+
             <span className="h-4 border-l border-white/30 mx-2" />
-            <span className="flex items-center gap-2 pl-2">
-              <FaEnvelope className="text-red-500" /> amzadh78@gmail.com
-            </span>
+
+            {/* Email 2 */}
+            <a
+              href="mailto:amzadh78@gmail.com"
+              className="flex items-center gap-2 pl-2 hover:text-[#e63a27] transition-colors"
+            >
+              <FaEnvelope className="text-[#e63a27]" /> amzadh78@gmail.com
+            </a>
           </div>
+
+          {/* Social Icons */}
           <div className="flex items-center pl-4 text-white">
             <span className="mr-3">Follow On:</span>
             <div className="flex items-center divide-x divide-white/30">
-              <span className="pr-2">
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/sasroofingwaterproofing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pr-2 hover:text-[#e63a27] transition-colors"
+              >
                 <FaFacebookF className="cursor-pointer" />
-              </span>
-              <span className="pl-2">
-                <FaLinkedin className="cursor-pointer" />
-              </span>
+              </a>
+
+              {/* Home (Houzz) */}
+              <a
+                href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pl-2 hover:text-[#e63a27] transition-colors"
+              >
+                <FaHome className="cursor-pointer" />
+              </a>
             </div>
           </div>
         </div>

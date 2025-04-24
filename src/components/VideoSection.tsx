@@ -1,9 +1,20 @@
 "use client";
+
 import React, { useState } from "react";
 import { GoVideo } from "react-icons/go";
 import { SiTicktick } from "react-icons/si";
 import { IoClose } from "react-icons/io5";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 const VideoSection = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +43,13 @@ const VideoSection = () => {
 
           {/* Text Content */}
           <div className="flex justify-center items-center">
-            <div className="relative z-30 text-white p-10 md:p-16 lg:max-w-[80%] xl:max-w-[60%]">
+            <motion.div
+              className="relative z-30 text-white p-10 md:p-16 lg:max-w-[80%] xl:max-w-[60%]"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
               <h5 className="text-sm uppercase font-semibold mb-2">
                 Video Proof
               </h5>
@@ -69,12 +86,18 @@ const VideoSection = () => {
                   onClick={() => setIsOpen(true)}
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
         {/* Right Section with Video Icon */}
-        <div className="relative md:w-[40%] w-full overflow-hidden">
+        <motion.div
+          className="relative md:w-[40%] w-full overflow-hidden"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="relative w-full h-full">
             <div className="absolute inset-0 flex items-center justify-center z-30">
               <GoVideo
@@ -87,7 +110,7 @@ const VideoSection = () => {
               <div className="w-full h-full bg-[url('/thm-pattern-5.png')] bg-repeat" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Video Modal using shadcn Dialog */}

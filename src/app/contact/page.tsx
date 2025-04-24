@@ -1,21 +1,23 @@
-import AboutCompany from "@/components/AboutCompany";
 import BackToTop from "@/components/BackToTop";
 import BreadCrum2 from "@/components/BreadCrum2";
-import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import FooterTopCTA from "@/components/FooterTopCTA";
 import Navbar from "@/components/Navbar/Navbar";
-import StickyNavbar from "@/components/StickyNavbar";
+import Contact from "@/components/Contact";
 import React from "react";
+import StickyNavbar from "@/components/StickyNavbar";
 
 const page = () => {
   return (
     <>
       <Navbar />
       <StickyNavbar />
-      <BreadCrum2 breadcrumbItems={[]} pageTitle={"About Us"} imageSrc={"/slider-1.jpg"} />
-      <AboutCompany />
-      <Features />
+      <BreadCrum2
+        breadcrumbItems={[]}
+        pageTitle={"Contact"}
+        imageSrc={"/slider-1.jpg"}
+      />
+      <Contact />
       <FooterTopCTA />
       <Footer />
       <BackToTop />

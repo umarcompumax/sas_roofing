@@ -70,6 +70,48 @@
   color: white;
   border: none;
 }
+
+/* Get Quote  */
+.get-hover-button {
+  position: relative;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: white;
+  background-color: #e5392c;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.get-hover-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #003269;
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0;
+}
+
+.get-hover-button:hover::before {
+  transform: scaleY(1);
+}
+
+.get-hover-button:hover {
+  background-color: transparent;
+  color: white;
+}
+
+
 /* More button */
 .More-hover-button {
   position: relative;

@@ -1,11 +1,11 @@
-import AboutCompany from "@/components/AboutCompany";
 import BackToTop from "@/components/BackToTop";
 import BreadCrum2 from "@/components/BreadCrum2";
-import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import FooterTopCTA from "@/components/FooterTopCTA";
 import Navbar from "@/components/Navbar/Navbar";
+import OurProjects from "@/components/OurProjects";
 import StickyNavbar from "@/components/StickyNavbar";
+import VideoSection from "@/components/VideoSection";
 import React from "react";
 
 const page = () => {
@@ -13,9 +13,13 @@ const page = () => {
     <>
       <Navbar />
       <StickyNavbar />
-      <BreadCrum2 breadcrumbItems={[]} pageTitle={"About Us"} imageSrc={"/slider-1.jpg"} />
-      <AboutCompany />
-      <Features />
+      <BreadCrum2
+        breadcrumbItems={[]}
+        pageTitle={"Gallery"}
+        imageSrc={"/breadcrumb-19.jpg"}
+      />
+      <OurProjects />
+      <VideoSection />
       <FooterTopCTA />
       <Footer />
       <BackToTop />

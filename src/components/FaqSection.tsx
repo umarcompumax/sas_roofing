@@ -1,11 +1,12 @@
 "use client";
+
 import React, { useState } from "react";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    question:
-      "What is waterproofing, and why is it important? What types of roofing services do you offer?",
+    question: "What is waterproofing, and why is it important?",
     answer:
       "Waterproofing is the process of making a structure water-resistant to prevent water infiltration. It is crucial to protect the integrity of buildings and prevent damage caused by water leaks.",
   },
@@ -32,18 +33,23 @@ const faqs = [
 ];
 
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
 
   return (
-    <div className="w-full max-w-xl bg-white text-center md:text-left">
-      <div className="flex justify-center mb-2">
+    <div className="w-full max-w-xl text-center md:text-left bg-white">
+      <div className="flex justify-center md:justify-start mb-2">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-[1px] bg-red-600" />
+          <div className="w-6 h-[1px] bg-[#e63a27]" />
           <p className="text-base uppercase text-[#e63a27] font-semibold tracking-wide">
             Common Questions & Answers
           </p>
         </div>
       </div>
+
       <h2 className="text-4xl lg:text-5xl font-bold text-[#003366] mb-8">
         Get Detailed Answers
       </h2>
@@ -55,10 +61,11 @@ export default function FaqSection() {
           return (
             <div
               key={index}
-              className="transition-all duration-300 overflow-hidden border border-gray-200 rounded-none shadow-md"
+              className="border border-gray-200 rounded-none shadow-md transition-all duration-300 overflow-hidden"
             >
               <button
-                onClick={() => setOpenIndex(index === openIndex ? -1 : index)}
+                onClick={() => toggleFAQ(index)}
+                aria-expanded={isOpen}
                 className={`w-full flex justify-between items-center text-left px-6 py-5 ${
                   isOpen ? "bg-[#262e39]" : "bg-white"
                 }`}
@@ -75,9 +82,8 @@ export default function FaqSection() {
                     {faq.question}
                   </span>
                 </span>
-
                 <span
-                  className={`w-8 h-8 p-0 shrink-0 rounded-full flex items-center justify-center ${
+                  className={`w-8 h-8 shrink-0 rounded-full flex items-center justify-center ${
                     isOpen ? "bg-[#e63a27]" : "bg-[#003366]"
                   } text-white`}
                 >
@@ -89,11 +95,21 @@ export default function FaqSection() {
                 </span>
               </button>
 
-              {isOpen && (
-                <div className="bg-white px-6 pb-6 pt-4 text-gray-600 text-base lg:text-lg leading-relaxed">
-                  {faq.answer}
-                </div>
-              )}
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="px-6 pb-6 pt-4 bg-white text-gray-600 text-base lg:text-lg leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           );
         })}

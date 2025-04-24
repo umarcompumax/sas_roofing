@@ -11,6 +11,8 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import Image from "next/image";
+import { motion } from "framer-motion"; // <--- Add this import
+import Link from "next/link";
 
 export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -23,9 +25,13 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
         cursor: "url('/white_cursor.png') 0 0, auto",
       }}
     >
-      <div
+      <motion.div
         onClick={(e) => e.stopPropagation()}
         className="w-[280px] sm:w-[300px] md:w-[360px] lg:w-[400px] xl:w-[420px] 2xl:w-[460px] bg-[#0b2c55] text-white overflow-y-auto p-4 sm:p-5 md:p-6 lg:p-8 relative cursor-default"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
         {/* Close Button */}
         <button
@@ -37,13 +43,15 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
 
         {/* Logo */}
         <div className="flex justify-center mb-6 mt-6">
-          <Image
-            src="/Logo.png"
-            alt="Logo"
-            width={240}
-            height={240}
-            className="w-[180px] sm:w-[200px] md:w-[240px] lg:w-[260px]"
-          />
+          <Link href="/">
+            <Image
+              src="/Logo.png"
+              alt="Logo"
+              width={240}
+              height={240}
+              className="w-[180px] sm:w-[200px] md:w-[240px] lg:w-[260px]"
+            />
+          </Link>
         </div>
 
         {/* About Us */}
@@ -87,12 +95,14 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
             />
-            <button
-              type="submit"
-              className="bg-transparent border border-red-500 text-red-500 font-semibold text-xs sm:text-sm md:text-base py-2.5 sm:py-3 md:py-4 hover:bg-red-600 hover:text-white transition More-hover-button"
-            >
-              SUBMIT NOW
-            </button>
+            <Link href="/">
+              <button
+                type="submit"
+                className="bg-transparent border border-red-500 text-red-500 font-semibold text-xs sm:text-sm md:text-base py-2.5 sm:py-3 md:py-4 hover:bg-red-600 hover:text-white transition More-hover-button"
+              >
+                SUBMIT NOW
+              </button>
+            </Link>
           </form>
         </div>
 
@@ -128,7 +138,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
           {/* Social Icons */}
           <div className="flex gap-4 mt-6">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/sasroofingwaterproofing"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-red-500 w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-600 transition"
@@ -136,14 +146,14 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
               <FaFacebookF />
             </a>
             <a
-              href="#"
+              href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
               className="bg-red-500 w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-600 transition"
             >
               <FaHome />
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

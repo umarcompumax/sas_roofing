@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const slides = [
   {
@@ -130,9 +131,11 @@ export default function HeroSection() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
               className="border-4 border-[#0a356f] p-1 inline-block"
             >
-              <Button className="Hero_hover-button text-xs sm:text-sm md:text-base lg:text-lg">
-                {slides[current].buttonText.toUpperCase()}
-              </Button>
+              <Link href="/about">
+                <Button className="Hero_hover-button text-xs sm:text-sm md:text-base lg:text-lg">
+                  {slides[current].buttonText.toUpperCase()}
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
         </AnimatePresence>
@@ -147,7 +150,7 @@ export default function HeroSection() {
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-red-500 rounded-full p-2 z-20"
+        className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-[#e63a27] rounded-full p-2 z-20"
       >
         <ArrowRight className="text-white" />
       </button>
@@ -158,7 +161,7 @@ export default function HeroSection() {
           <div
             key={i}
             className={`h-1 w-10 rounded-sm transition-all duration-300 ${
-              i === current ? "bg-red-500" : "bg-white"
+              i === current ? "bg-[#e63a27]" : "bg-white"
             }`}
           />
         ))}

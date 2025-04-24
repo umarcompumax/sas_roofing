@@ -19,15 +19,18 @@ export default function NavLinks({
         {/* Desktop nav links (xl+) */}
         <div className="hidden xl:flex gap-6 items-stretch">
           {[
-            "HOME",
-            "ABOUT US",
-            "SERVICES",
-            "PROJECTS",
-            "REVIEWS",
-            "CONTACT US",
+            { label: "HOME", path: "/" },
+            { label: "ABOUT US", path: "/about" },
+            { label: "SERVICES", path: "/services" },
+            { label: "PROJECTS", path: "/projects" },
+            { label: "REVIEWS", path: "/reviews" },
+            { label: "CONTACT US", path: "/contact" },
           ].map((item) => (
-            <li key={item} className="flex items-center px-2">
-              <Link href="/">{item}</Link>
+            <li
+              key={item.label}
+              className="flex items-center px-2 list-none hover:text-[#e63a27]"
+            >
+              <Link href={item.path}>{item.label}</Link>
             </li>
           ))}
         </div>
@@ -72,8 +75,8 @@ export default function NavLinks({
         {/* Quote button (all sizes) */}
         <li className="flex items-stretch">
           <Link
-            href="/contact"
-            className="bg-[#e5392c] hover:bg-[#cc2e24] transition-colors text-white font-semibold px-6 flex items-center"
+            href="/"
+            className="bg-[#e5392c] hover:bg-[#cc2e24] transition-colors text-white font-semibold px-6 flex items-center get-hover-button"
           >
             GET A QUOTE
           </Link>
@@ -122,13 +125,15 @@ export default function NavLinks({
           </button>
 
           <div className="flex justify-center p-6">
-            <Image
-              src="/Logo.png"
-              alt="Company Logo"
-              width={260}
-              height={130}
-              className="object-contain"
-            />
+            <Link href="/">
+              <Image
+                src="/Logo.png"
+                alt="Company Logo"
+                width={260}
+                height={130}
+                className="object-contain cursor-pointer"
+              />
+            </Link>
           </div>
 
           <ul className="flex flex-col mt-4">
@@ -157,16 +162,16 @@ export default function NavLinks({
 
           <div className="mt-auto flex justify-center gap-4 py-6">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/sasroofingwaterproofing"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center"
+              className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
             >
               <FaFacebookF className="text-white text-lg" />
             </a>
             <a
-              href="#"
-              className="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center"
+              href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
+              className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
             >
               <FaHome className="text-white text-lg" />
             </a>

@@ -30,13 +30,13 @@ export default function StickyNavbar() {
           <Image src="/logo.png" alt="Logo" width={210} height={140} />
         </Link>
 
-        <nav className="hidden md:flex gap-6 font-medium text-lg pr-8">
-          <Link href="/">Home</Link>
-          <Link href="/about">About Us</Link>
-          <Link href="/services">Services</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/reviews">Reviews</Link>
-          <Link href="/contact">Contact Us</Link>
+        <nav className="hidden md:flex gap-6 font-medium text-lg pr-8 ">
+          <Link className="hover:text-[#e63a27]" href="/">Home</Link>
+          <Link className="hover:text-[#e63a27]" href="/about">About Us</Link>
+          <Link className="hover:text-[#e63a27]" href="/services">Services</Link>
+          <Link className="hover:text-[#e63a27]" href="/projects">Projects</Link>
+          <Link className="hover:text-[#e63a27]" href="/reviews">Reviews</Link>
+          <Link className="hover:text-[#e63a27]" href="/contact">Contact Us</Link>
         </nav>
       </div>
     </div>

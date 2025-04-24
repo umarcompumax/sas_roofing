@@ -1,26 +1,36 @@
-// Only needed if NOT using new JSX transform:
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Footer() {
+  const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: "easeOut", delay },
+  });
+
   return (
     <footer className="bg-[#043469] text-white text-sm sm:text-[15px]">
-      {/* Section: Header */}
+      {/* Header */}
       <div className="px-4 sm:px-6 md:px-12 pt-12">
-        <h2 className="text-left md:text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-100 mb-12">
+        <motion.h2
+          className="text-left md:text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-100 mb-12"
+          {...fadeUp(0)}
+        >
           QUALITY ROOFING IN BROOKLYN, NEW YORK & QUEENS
-        </h2>
+        </motion.h2>
       </div>
 
-      {/* Section: Main Content Grid */}
+      {/* Main Grid */}
       <div className="px-4 sm:px-6 md:px-12 pb-12">
         <div className="w-full max-w-7xl mx-0 md:mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-white">
           {/* About Service */}
-          <div>
+          <motion.div {...fadeUp(0.1)}>
             <h4 className="text-xl md:text-xl font-bold mb-2 relative inline-block">
               About Service
-              <span className="block w-12 h-[2px] bg-red-500 mt-1" />
+              <span className="block w-12 h-[2px] bg-[#e63a27] mt-1" />
             </h4>
             <p className="text-white/90 mt-3 leading-relaxed text-sm sm:text-base">
               “SAS Roofing & Waterproofing is a family-owned and operated
@@ -29,11 +39,12 @@ export default function Footer() {
             <p className="font-bold mt-4">WE ARE AVAILABLE</p>
             <p className="text-white/80">Mon–Sat: 09.00 am to 6.30 pm</p>
 
-            {/* Button + Payment Logos */}
             <div className="mt-6">
-              <button className="bg-[#e53935] text-white px-6 py-4 font-semibold hover:bg-red-600 transition text-sm md:text-base More-hover-button">
-                MORE DETAILS
-              </button>
+              <Link href="/">
+                <button className="bg-[#e53935] text-white px-6 py-4 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base More-hover-button">
+                  MORE DETAILS
+                </button>
+              </Link>
               <div className="flex gap-3 flex-wrap mt-4 items-center">
                 {[
                   "visa_logo",
@@ -54,37 +65,37 @@ export default function Footer() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Useful Links */}
-          <div className="text-left">
+          <motion.div className="text-left" {...fadeUp(0.2)}>
             <h4 className="text-lg md:text-xl font-bold mb-2 relative inline-block">
               Useful Links
-              <span className="block w-12 h-[2px] bg-red-500 mt-1" />
+              <span className="block w-12 h-[2px] bg-[#e63a27] mt-1" />
             </h4>
             <ul className="mt-4 space-y-3">
               {[
-                "HOME",
-                "ABOUT US",
-                "PROJECTS",
-                "REVIEWS",
-                "SERVICES",
-                "CONTACT",
-              ].map((link) => (
-                <li key={link}>
-                  <Link href="/" className="hover:underline">
-                    {link}
+                { label: "HOME", path: "/" },
+                { label: "ABOUT US", path: "/about" },
+                { label: "PROJECTS", path: "/projects" },
+                { label: "REVIEWS", path: "/reviews" },
+                { label: "SERVICES", path: "/services" },
+                { label: "CONTACT", path: "/contact" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.path} className="hover:underline">
+                    {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Make Contact */}
-          <div>
+          <motion.div {...fadeUp(0.3)}>
             <h4 className="text-lg md:text-xl font-bold mb-2 relative inline-block">
               Make Contact
-              <span className="block w-12 h-[2px] bg-red-500 mt-1" />
+              <span className="block w-12 h-[2px] bg-[#e63a27] mt-1" />
             </h4>
             <div className="mt-4 space-y-2">
               <p className="font-bold">GENERAL QUIRIES</p>
@@ -100,44 +111,70 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Social Logos */}
             <div className="flex gap-2 flex-wrap mt-6 items-center">
               {[
-                "facebook_logo",
-                "houzz_logo",
-                "angi_logo",
-                "manta_logo",
-                "yellowpages_logo",
-                "yelp_logo",
-                "x_logo",
-                "bbb",
-                "google_my_business_logo",
-              ].map((img) => (
-                <Image
-                  key={img}
-                  src={`/${img}.png`}
-                  alt={img}
-                  width={35}
-                  height={35}
-                  className="object-contain h-[32px] w-auto"
-                />
+                {
+                  src: "facebook_logo",
+                  path: "https://www.facebook.com/sasroofingwaterproofing",
+                },
+                {
+                  src: "houzz_logo",
+                  path: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
+                },
+                {
+                  src: "angi_logo",
+                  path: "https://www.angi.com/companylist/us/ny/brooklyn/",
+                },
+                {
+                  src: "manta_logo",
+                  path: "https://www.manta.com/c/mx7pcrf/sas-roofing-waterproofing",
+                },
+                {
+                  src: "yellowpages_logo",
+                  path: "https://www.yellowpages.com/brooklyn-ny/mip/sas-roofing-waterproofing-465411323",
+                },
+                {
+                  src: "yelp_logo",
+                  path: "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
+                },
+                { src: "x_logo", path: "https://x.com/sasroofing91254" },
+                {
+                  src: "bbb",
+                  path: "https://www.bbb.org/us/ny/brooklyn/profile/roofing-contractors/sas-contracting-co-inc-0121-161078/#sealclick",
+                },
+                {
+                  src: "google_my_business_logo",
+                  path: "https://www.google.com/maps/place/SAS+Roofing+&+Waterproofing/@40.6359752,-73.9646363,17z/data=!3m1!4b1!4m8!3m7!1s0x89c25b2dd928663d:0x5527086c2d45f8d8!8m2!3d40.6359752!4d-73.9646363!9m1!1b1!16s/g/11bbw_w0v0?entry=ttu",
+                },
+              ].map((item) => (
+                <a
+                  key={item.src}
+                  href={item.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={`/${item.src}.png`}
+                    alt={item.src}
+                    width={35}
+                    height={35}
+                    className="object-contain h-[32px] w-auto"
+                  />
+                </a>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Section: Bottom Bar */}
+      {/* Bottom Bar */}
       <div className="bg-[#022f5c]">
         <div className="px-4 sm:px-6 md:px-12 py-4 flex flex-col md:flex-row items-center md:items-center justify-between text-white text-xs sm:text-sm md:text-[15px]">
-          {/* Left: Copyright */}
           <p className="text-center md:text-left mb-2 md:mb-0">
             Copyright © 2024{" "}
             <span className="text-[#e53935]">SAS Roofing & Waterproofing</span>{" "}
             All Rights Reserved.
           </p>
-
-          {/* Right: Footer Links */}
           <div className="flex gap-x-6 flex-wrap justify-center md:justify-end">
             <Link href="#" className="hover:underline">
               Terms of Service

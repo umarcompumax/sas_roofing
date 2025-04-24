@@ -129,7 +129,7 @@ export default function TestimonialSlider() {
                 </div>
 
                 {/* Testimonial Content */}
-                <div className="w-[65%] p-6 flex flex-col justify-start">
+                <div className="w-[65%] p-6 flex flex-col justify-start items-start text-left">
                   {/* Quote, Name, Location */}
                   <div className="flex items-start gap-3 mb-2">
                     <Image
@@ -143,7 +143,7 @@ export default function TestimonialSlider() {
                       <h3 className="font-bold text-[#003366] text-[20px] leading-tight">
                         {testimonial.name}
                       </h3>
-                      <p className="text-[#df4432] text-[14px] uppercase font-semibold tracking-wide">
+                      <p className="text-[#e63a27] text-[14px] uppercase font-semibold tracking-wide">
                         {testimonial.location}
                       </p>
                     </div>

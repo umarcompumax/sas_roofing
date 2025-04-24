@@ -1,10 +1,11 @@
-import AboutCompany from "@/components/AboutCompany";
 import BackToTop from "@/components/BackToTop";
 import BreadCrum2 from "@/components/BreadCrum2";
-import Features from "@/components/Features";
+import CustomerReviews from "@/components/CustomerReviews";
 import Footer from "@/components/Footer";
 import FooterTopCTA from "@/components/FooterTopCTA";
 import Navbar from "@/components/Navbar/Navbar";
+import OurTestimonial from "@/components/OurTestimonial";
+import ServiceAndFaqSection from "@/components/ServiceAndFaqSection";
 import StickyNavbar from "@/components/StickyNavbar";
 import React from "react";
 
@@ -13,9 +14,14 @@ const page = () => {
     <>
       <Navbar />
       <StickyNavbar />
-      <BreadCrum2 breadcrumbItems={[]} pageTitle={"About Us"} imageSrc={"/slider-1.jpg"} />
-      <AboutCompany />
-      <Features />
+      <BreadCrum2
+        breadcrumbItems={[]}
+        pageTitle={"Reviews"}
+        imageSrc={"/breadcrumb-19.jpg"}
+      />
+      <OurTestimonial />
+      <ServiceAndFaqSection />
+      <CustomerReviews />
       <FooterTopCTA />
       <Footer />
       <BackToTop />

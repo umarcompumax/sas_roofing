@@ -10,6 +10,7 @@ import type { Swiper as SwiperType } from "swiper";
 import type { RefObject } from "react";
 import Image from "next/image";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi"; // <-- added
+import Link from "next/link";
 
 interface Props {
   swiperRef?: RefObject<SwiperType | null>;
@@ -132,6 +133,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
                         className="w-[30%] bg-gray-100 border border-gray-300 flex items-center justify-center"
                         style={{ height: "50%" }}
                       >
+                        <Link href="/services">
                         <Image
                           src={slide.icon}
                           alt={`${slide.title} Icon`}
@@ -139,6 +141,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
                           height={50}
                           className="object-contain"
                         />
+                        </Link>
                       </div>
                     </div>
                   </div>

@@ -31,13 +31,15 @@ export default function MobileHeader({
             </div>
           </button>
         </div>
-        <Image
-          src="/Logo.png"
-          alt="Logo"
-          width={200}
-          height={160}
-          className="absolute top-[50%] left-[5%] -translate-y-1/2 z-10 object-contain max-w-[40vw]"
-        />
+        <Link href="/">
+          <Image
+            src="/Logo.png"
+            alt="Logo"
+            width={200}
+            height={160}
+            className="absolute top-[50%] left-[5%] -translate-y-1/2 z-10 object-contain max-w-[40vw]"
+          />
+        </Link>
       </div>
       {/* Mobile Slide-In Sidebar */}
       <div className="fixed inset-0 z-50 flex justify-end pointer-events-none">
@@ -60,13 +62,15 @@ export default function MobileHeader({
           </button>
 
           <div className="flex justify-center p-6">
-            <Image
-              src="/Logo.png"
-              alt="Company Logo"
-              width={260}
-              height={130}
-              className="object-contain"
-            />
+            <Link href="/">
+              <Image
+                src="/Logo.png"
+                alt="Company Logo"
+                width={260}
+                height={130}
+                className="object-contain cursor-pointer"
+              />
+            </Link>
           </div>
           <ul className="flex flex-col mt-4">
             {[
@@ -94,16 +98,16 @@ export default function MobileHeader({
 
           <div className="mt-auto flex justify-center gap-4 py-6">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/sasroofingwaterproofing"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center"
+              className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
             >
               <FaFacebookF className="text-white text-lg" />
             </a>
             <a
-              href="#"
-              className="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center"
+              href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
+              className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
             >
               <FaHome className="text-white text-lg" />
             </a>

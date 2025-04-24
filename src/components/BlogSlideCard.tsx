@@ -46,7 +46,7 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
       <div className="bg-white px-4 py-3 flex justify-between items-center text-sm z-20 border-t border-gray-200">
         <a
           href="#"
-          target="_blank"
+          // target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1 font-bold text-[#003366] text-[13px] sm:text-[15px]"
         >
@@ -55,9 +55,9 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
         </a>
         <div className="flex items-center gap-4 text-gray-500">
           {/* Heart Count */}
-          <div className="group flex items-center gap-1 cursor-pointer hover:text-red-500 transition-colors duration-200">
-            <FiHeart className="w-4 h-4 group-hover:text-red-500" />
-            <span className="group-hover:text-red-500">10</span>
+          <div className="group flex items-center gap-1 cursor-pointer hover:text-[#e63a27] transition-colors duration-200">
+            <FiHeart className="w-4 h-4 group-hover:text-[#e63a27]" />
+            <span className="group-hover:text-[#e63a27]">10</span>
           </div>
           <FiShare2 className="w-4 h-4 cursor-pointer hover:text-[#ef4423] transition-colors duration-200" />
         </div>
