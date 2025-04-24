@@ -5,15 +5,15 @@ import { FaCertificate, FaLightbulb, FaHome } from "react-icons/fa";
 
 export default function AboutCompany() {
   return (
-    <section className="flex flex-col xl:flex-row p-6 sm:p-8 xl:px-16 2xl:px-32 bg-white gap-10 w-5/6 xl:w-full mx-auto">
+    <section className="flex flex-col xl:flex-row p-6 sm:p-8 xl:px-16 2xl:px-32 bg-white gap-10 w-5/6 max-w-screen-2xl mx-auto">
       {/* Image Block */}
-      <div className="relative w-full sm:w-[320px] md:w-[360px] lg:w-4/6 xl:max-w-[480px] border-2 border-red-600 rounded-md overflow-hidden flex-shrink-0 ml-0">
+      <div className="relative w-full sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] xl:max-w-[480px] border-2 border-red-600 rounded-md overflow-hidden flex-shrink-0">
         <Image
           src="/aboutimg.jpg"
           alt="Roof house illustration"
           width={400}
           height={400}
-          className="w-full h-auto object-contain"
+          className="w-full h-full object-cover"
         />
 
         {/* Experience Block */}

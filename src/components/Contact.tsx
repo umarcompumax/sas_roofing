@@ -1,8 +1,11 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const Contact = () => {
-  const cardStyle =
-    "bg-white p-6 pt-10 text-sm w-full md:w-1/4 flex flex-col gap-2 relative border border-gray-100 hover:bg-[#1c1c27]";
+  const cardStyle = `
+  group bg-white p-6 pt-10 text-sm w-full md:w-1/4
+  flex flex-col gap-2 relative border border-gray-100
+  hover:bg-black
+`;
 
   const cardShadowStyle = {
     boxShadow: "0 0 15px 5px rgba(0, 0, 0, 0.1)",
@@ -26,13 +29,13 @@ const Contact = () => {
         <div className={iconTab}>
           <MapPin className="text-white w-6 h-6" />
         </div>
-        <h3 className="text-blue-900 font-semibold mt-2 text-lg lg:text-2xl hover:text-white">
+        <h3 className="text-blue-900 font-semibold mt-2 text-lg lg:text-2xl group-hover:text-white">
           Visit a Office
         </h3>
-        <p className="italic text-gray-600 text-md lg:text-lg">
+        <p className="italic text-gray-600 text-md lg:text-lg group-hover:text-gray-300">
           You are most welcome to visit office.
         </p>
-        <p className="mt-1 text-gray-500 font-medium text-md lg:text-lg">
+        <p className="mt-1 text-gray-500 font-medium text-md lg:text-lg group-hover:text-gray-300">
           552 Rugby Rd
           <br />
           Brooklyn NY 11230
@@ -43,13 +46,13 @@ const Contact = () => {
         <div className={iconTab}>
           <Phone className="text-white w-6 h-6" />
         </div>
-        <h3 className="text-blue-900 font-semibold mt-2 text-lg lg:text-2xl hover:text-white">
+        <h3 className="text-blue-900 font-semibold mt-2 text-lg lg:text-2xl group-hover:text-white">
           Make a Call
         </h3>
-        <p className="italic text-gray-600 text-md lg:text-lg">
+        <p className="italic text-gray-600 text-md lg:text-lg group-hover:text-gray-300">
           Keeping you always better connected.
         </p>
-        <p className="mt-1 text-gray-500 font-medium text-md lg:text-lg">
+        <p className="mt-1 text-gray-500 font-medium text-md lg:text-lg group-hover:text-gray-300">
           OFFICE: (347) 394-9384
           <br />
           CELL: (347) 221-6549
@@ -60,13 +63,13 @@ const Contact = () => {
         <div className={iconTab}>
           <Mail className="text-white w-6 h-6" />
         </div>
-        <h3 className="text-blue-900 font-semibold mt-2 text-lg lg:text-2xl hover:text-white">
+        <h3 className="text-blue-900 font-semibold mt-2 text-lg lg:text-2xl group-hover:text-white">
           Send Email
         </h3>
-        <p className="italic text-gray-600 text-md lg:text-lg">
+        <p className="italic text-gray-600 text-md lg:text-lg group-hover:text-gray-300">
           Drop us a mail we will answer you asap.
         </p>
-        <p className="mt-1 text-gray-500 font-medium text-md lg:text-lg">
+        <p className="mt-1 text-gray-500 font-medium text-md lg:text-lg group-hover:text-gray-300">
           SUPPORT: sascon09@yahoo.com
           <br />
           SUPPORT: amzadh78@gmail.com

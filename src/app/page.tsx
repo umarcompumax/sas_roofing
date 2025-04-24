@@ -13,6 +13,7 @@ import OurTestimonial from "@/components/OurTestimonial";
 import ServiceAndFaqSection from "@/components/ServiceAndFaqSection";
 import ContactBar from "@/components/ContactBar";
 import Contact from "@/components/Contact";
+import CustomerReviews from "@/components/CustomerReviews";
 // import Header from "@/components/header";
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
       <ServiceAndFaqSection />
       <Blog />
       <Contact />
+      <CustomerReviews />
       <FooterTopCTA />
       <Footer />
     </>
