@@ -30,7 +30,7 @@ const Contact = () => {
   };
 
   const iconTab = `
-    absolute top-[-16] w-12 h-12 bg-red-600 
+    absolute top-[-16] w-12 h-12 bg-[#e63a27] 
     flex items-center justify-center
     before:content-[''] before:absolute before:top-0 before:right-0
     before:w-0 before:h-0
