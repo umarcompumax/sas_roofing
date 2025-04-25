@@ -6,7 +6,7 @@
   position: absolute;
   top: 0;
   right: -25px; /* Adjusted for cleaner overlap */
-  width: 60px; 
+  width: 60px;
   height: 100%;
   background-color: #e5392c;
   transform: skewX(-20deg);
@@ -34,6 +34,19 @@
   background-size: cover;
   opacity: 0.1;
   z-index: 0;
+}
+
+.hover-button {
+  position: relative;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #e5392c;
+  background-color: #ffffff;
+  border: 1px solid #e5392c;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+  transition: color 0.4s ease, border 0.4s ease;
 }
 
 .hover-button {
@@ -86,8 +99,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-              color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .get-hover-button::before {
@@ -111,7 +124,6 @@
   color: white;
 }
 
-
 /* More button */
 .More-hover-button {
   position: relative;
@@ -122,7 +134,7 @@
   cursor: pointer;
   overflow: hidden;
   z-index: 0;
-  transition: color 0.4s ease,background-color 0.4s ease;
+  transition: color 0.4s ease, background-color 0.4s ease;
 }
 
 .More-hover-button::before {
@@ -221,7 +233,11 @@
 
 .feature-card {
   background-color: #003269; /* Dark blue */
-  background-image: linear-gradient(to bottom, #012750 100%, #013164 0%); /* Light blue to dark blue gradient */
+  background-image: linear-gradient(
+    to bottom,
+    #012750 100%,
+    #013164 0%
+  ); /* Light blue to dark blue gradient */
   background-size: 100% 0%; /* Start with no light blue */
   background-repeat: no-repeat;
   background-position: top;
