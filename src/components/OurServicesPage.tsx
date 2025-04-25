@@ -20,15 +20,14 @@ export default function OurServicesPage() {
   };
 
   return (
-    <main className="px-4 sm:px-6 lg:px-12 py-10">
+    <main className="px-4 sm:px-6 lg:px-12 py-10 min-h-screen">
       <div className="max-w-5xl mx-auto space-y-12">
-        {/* Header Section */}
         <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
-          className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+          className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 min-h-[80px]"
         >
           <div>
             <div className="flex items-center gap-2 mb-1">
@@ -59,6 +58,7 @@ export default function OurServicesPage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
+          className="min-h-[300px]"
         >
           <ServicesSlider swiperRef={swiperRef} />
         </motion.div>

@@ -5,8 +5,8 @@ import Image from "next/image";
 const images = [
   "/gallery1.jpg",
   "/gallery2.jpg",
-  "/gallery3.jpg", // wide
-  "/gallery4.jpg", // wide
+  "/gallery3.jpg",
+  "/gallery4.jpg",
   "/gallery5.jpg",
   "/gallery6.jpg",
 ];
@@ -14,14 +14,14 @@ const images = [
 export default function GallerySection() {
   return (
     <section className="py-10 px-4 sm:px-6 lg:px-12 w-full">
-      {/* XL and up – full width (100%) layout */}
+      {/* Desktop Layout */}
       <div className="hidden xl:flex flex-col items-center gap-8 w-full">
-        {/* Row 1 */}
+        {/* Top Row */}
         <div className="flex justify-center gap-6 w-full">
           {[0, 1].map((i) => (
             <div
               key={i}
-              className="w-[370px] h-[370px] shadow-md overflow-hidden"
+              className="w-[370px] h-[370px] shadow-md overflow-hidden relative group"
             >
               <Image
                 src={images[i]}
@@ -30,9 +30,15 @@ export default function GallerySection() {
                 height={370}
                 className="object-cover w-full h-full"
               />
+              {/* Hover effect div */}
+              <div className="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
+                <span className="font-semibold text-2xl lg:text-2xl">
+                  Commercial
+                </span>
+              </div>
             </div>
           ))}
-          <div className="w-[700px] h-[370px] shadow-md overflow-hidden">
+          <div className="w-[700px] h-[370px] shadow-md overflow-hidden relative group">
             <Image
               src={images[2]}
               alt="Gallery image 3"
@@ -40,12 +46,18 @@ export default function GallerySection() {
               height={370}
               className="object-cover w-full h-full"
             />
+            {/* Hover effect div */}
+            <div className="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
+              <span className="font-semibold text-2xl lg:text-2xl">
+                Commercial
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* Row 2 */}
+        {/* Bottom Row */}
         <div className="flex justify-center gap-6 w-full">
-          <div className="w-[700px] h-[370px] shadow-md overflow-hidden">
+          <div className="w-[700px] h-[370px] shadow-md overflow-hidden relative group">
             <Image
               src={images[3]}
               alt="Gallery image 4"
@@ -53,11 +65,17 @@ export default function GallerySection() {
               height={370}
               className="object-cover w-full h-full"
             />
+            {/* Hover effect div */}
+            <div className="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
+              <span className="font-semibold text-2xl lg:text-2xl">
+                Commercial
+              </span>
+            </div>
           </div>
           {[4, 5].map((i) => (
             <div
               key={i}
-              className="w-[370px] h-[370px] shadow-md overflow-hidden"
+              className="w-[370px] h-[370px] shadow-md overflow-hidden relative group"
             >
               <Image
                 src={images[i]}
@@ -66,43 +84,45 @@ export default function GallerySection() {
                 height={370}
                 className="object-cover w-full h-full"
               />
+              {/* Hover effect div */}
+              <div className="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
+                <span className="font-semibold text-2xl lg:text-2xl">
+                  Commercial
+                </span>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Below xl screens */}
+      {/* Mobile Layout */}
       <div className="flex xl:hidden flex-wrap justify-center gap-6">
         {images.map((img, idx) => {
           const isWide = idx === 2 || idx === 3;
 
-          // Define size per screen
-          const smWidth = isWide ? 620 : 620;
-          const smHeight = isWide ? 300 : 620;
-
-          const mdWidth = isWide ? 648 : 648;
-          const mdHeight = isWide ? 306.7 : 648;
-
-          const lgWidth = isWide ? 437 : 437;
-          const lgHeight = isWide ? 300 : 437;
-
           return (
             <div
               key={idx}
-              className={`w-full 
-                sm:w-[${smWidth}px] sm:h-[${smHeight}px]
-                md:w-[${mdWidth}px] md:h-[${mdHeight}px]
-                lg:w-[${lgWidth}px] lg:h-[${lgHeight}px]
+              className={`w-full
+                sm:w-[620px] sm:h-[${isWide ? "300px" : "620px"}]
+                md:w-[648px] md:h-[${isWide ? "306.7px" : "648px"}]
+                lg:w-[437px] lg:h-[${isWide ? "300px" : "437px"}]
                 lg:basis-[calc(50%-12px)]
-                shadow-md overflow-hidden`}
+                shadow-md overflow-hidden relative group`}
             >
               <Image
                 src={img}
                 alt={`Gallery image ${idx + 1}`}
-                width={lgWidth}
-                height={lgHeight}
+                width={isWide ? 648 : 437}
+                height={isWide ? 306 : 437}
                 className="object-cover w-full h-full"
               />
+              {/* Hover effect div */}
+              <div className="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
+                <span className="font-semibold text-2xl lg:text-2xl">
+                  Commercial
+                </span>
+              </div>
             </div>
           );
         })}

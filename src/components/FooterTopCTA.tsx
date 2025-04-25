@@ -34,7 +34,7 @@ export default function FooterTopCTA() {
               width={130}
               height={130}
               className="w-auto h-auto"
-              priority
+              loading="lazy"
             />
           </Link>
         </motion.div>

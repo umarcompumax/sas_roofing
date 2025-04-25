@@ -18,15 +18,16 @@ export default function MobileHeader({
           <button
             onClick={() => setIsOpen(true)}
             aria-label="Open menu"
-            className="md:hidden"
+            className="md:hidden w-12 h-12 flex items-center justify-center"
           >
-            <div className="border-2 border-white p-2">
+            <div className="border-2 border-white p-2 w-10 h-10 flex items-center justify-center">
               <Image
                 src="/menu4.png"
                 alt="Menu"
                 width={28}
                 height={28}
                 className="object-contain"
+                priority
               />
             </div>
           </button>
@@ -36,8 +37,9 @@ export default function MobileHeader({
             src="/Logo.png"
             alt="Logo"
             width={200}
-            height={160}
+            height={100}
             className="absolute top-[50%] left-[5%] -translate-y-1/2 z-10 object-contain max-w-[40vw]"
+            priority
           />
         </Link>
       </div>
@@ -69,6 +71,7 @@ export default function MobileHeader({
                 width={260}
                 height={130}
                 className="object-contain cursor-pointer"
+                style={{ height: "auto" }}
               />
             </Link>
           </div>

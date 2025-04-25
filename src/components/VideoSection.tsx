@@ -6,6 +6,7 @@ import { SiTicktick } from "react-icons/si";
 import { IoClose } from "react-icons/io5";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -23,15 +24,14 @@ const VideoSection = () => {
 
   return (
     <>
-      <section
-        className="relative w-full flex flex-col md:flex-row overflow-hidden bg-[#f0482f] lg:bg-white"
-        style={{
-          backgroundImage: "url('/VideoSectionBg.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "550px",
-        }}
-      >
+      <section className="relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-white">
+        <Image
+          src="/VideoSectionBg.webp"
+          alt="Video background"
+          fill
+          className="object-cover z-0"
+          priority
+        />
         {/* Left Section */}
         <div className="relative md:w-[60%] w-full h-[500px] md:h-auto">
           <div className="absolute inset-0 bg-[#c72f1c] red-left-shape-2 z-20 translate-x-6 translate-y-16">
@@ -107,7 +107,9 @@ const VideoSection = () => {
             </div>
 
             <div className="absolute inset-0 bg-[#e63a27] red-left-shape-1 z-20 translate-y-20">
-              <div className="w-full h-full bg-[url('/thm-pattern-5.png')] bg-repeat" />
+              <div
+                className="w-full h-full bg-[url('/thm-pattern-5.webp')] bg-repeat"
+              />
             </div>
           </div>
         </motion.div>

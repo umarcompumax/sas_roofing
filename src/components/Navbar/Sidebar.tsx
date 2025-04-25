@@ -23,7 +23,7 @@ export default function Sidebar({
   if (!isClient) return null; // Prevent server-side rendering issues
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end pointer-events-none">
+    <div className="fixed inset-0 z-50 flex justify-end">
       {/* Overlay Background */}
       <div
         className={`w-[60%] bg-black/30 backdrop-blur-sm transition-opacity duration-300 ease-in-out ${
