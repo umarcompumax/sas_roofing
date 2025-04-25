@@ -1,6 +1,6 @@
 "use client";
-
 import Image from "next/image";
+import { motion } from "framer-motion"; // ⬅️ Import motion
 
 const images = [
   "/gallery1.jpg",
@@ -11,6 +11,12 @@ const images = [
   "/gallery6.jpg",
 ];
 
+const fadeUp = {
+  initial: { opacity: 0, y: 40 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" },
+};
+
 export default function GallerySection() {
   return (
     <section className="py-10 px-4 sm:px-6 lg:px-12 w-full">
@@ -19,9 +25,13 @@ export default function GallerySection() {
         {/* Top Row */}
         <div className="flex justify-center gap-6 w-full">
           {[0, 1].map((i) => (
-            <div
+            <motion.div
               key={i}
               className="w-[370px] h-[370px] shadow-md overflow-hidden relative group"
+              initial={fadeUp.initial}
+              whileInView={fadeUp.animate}
+              transition={fadeUp.transition}
+              viewport={{ once: true }}
             >
               <Image
                 src={images[i]}
@@ -30,15 +40,20 @@ export default function GallerySection() {
                 height={370}
                 className="object-cover w-full h-full"
               />
-              {/* Hover effect div */}
               <div className="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
                 <span className="font-semibold text-2xl lg:text-2xl">
                   Commercial
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
-          <div className="w-[700px] h-[370px] shadow-md overflow-hidden relative group">
+          <motion.div
+            className="w-[700px] h-[370px] shadow-md overflow-hidden relative group"
+            initial={fadeUp.initial}
+            whileInView={fadeUp.animate}
+            transition={fadeUp.transition}
+            viewport={{ once: true }}
+          >
             <Image
               src={images[2]}
               alt="Gallery image 3"
@@ -46,18 +61,23 @@ export default function GallerySection() {
               height={370}
               className="object-cover w-full h-full"
             />
-            {/* Hover effect div */}
             <div className="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
               <span className="font-semibold text-2xl lg:text-2xl">
                 Commercial
               </span>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Bottom Row */}
         <div className="flex justify-center gap-6 w-full">
-          <div className="w-[700px] h-[370px] shadow-md overflow-hidden relative group">
+          <motion.div
+            className="w-[700px] h-[370px] shadow-md overflow-hidden relative group"
+            initial={fadeUp.initial}
+            whileInView={fadeUp.animate}
+            transition={fadeUp.transition}
+            viewport={{ once: true }}
+          >
             <Image
               src={images[3]}
               alt="Gallery image 4"
@@ -65,17 +85,20 @@ export default function GallerySection() {
               height={370}
               className="object-cover w-full h-full"
             />
-            {/* Hover effect div */}
             <div className="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
               <span className="font-semibold text-2xl lg:text-2xl">
                 Commercial
               </span>
             </div>
-          </div>
+          </motion.div>
           {[4, 5].map((i) => (
-            <div
+            <motion.div
               key={i}
               className="w-[370px] h-[370px] shadow-md overflow-hidden relative group"
+              initial={fadeUp.initial}
+              whileInView={fadeUp.animate}
+              transition={fadeUp.transition}
+              viewport={{ once: true }}
             >
               <Image
                 src={images[i]}
@@ -84,13 +107,12 @@ export default function GallerySection() {
                 height={370}
                 className="object-cover w-full h-full"
               />
-              {/* Hover effect div */}
               <div className="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
                 <span className="font-semibold text-2xl lg:text-2xl">
                   Commercial
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -99,16 +121,18 @@ export default function GallerySection() {
       <div className="flex xl:hidden flex-wrap justify-center gap-6">
         {images.map((img, idx) => {
           const isWide = idx === 2 || idx === 3;
-
           return (
-            <div
+            <motion.div
               key={idx}
-              className={`w-full
-                sm:w-[620px] sm:h-[${isWide ? "300px" : "620px"}]
-                md:w-[648px] md:h-[${isWide ? "306.7px" : "648px"}]
-                lg:w-[437px] lg:h-[${isWide ? "300px" : "437px"}]
-                lg:basis-[calc(50%-12px)]
-                shadow-md overflow-hidden relative group`}
+              className={`w-full sm:w-[620px] md:w-[648px] lg:w-[437px] lg:basis-[calc(50%-12px)] shadow-md overflow-hidden relative group ${
+                isWide
+                  ? "sm:h-[300px] md:h-[306.7px] lg:h-[300px]"
+                  : "sm:h-[620px] md:h-[648px] lg:h-[437px]"
+              }`}
+              initial={fadeUp.initial}
+              whileInView={fadeUp.animate}
+              transition={fadeUp.transition}
+              viewport={{ once: true }}
             >
               <Image
                 src={img}
@@ -117,13 +141,12 @@ export default function GallerySection() {
                 height={isWide ? 306 : 437}
                 className="object-cover w-full h-full"
               />
-              {/* Hover effect div */}
               <div className="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
                 <span className="font-semibold text-2xl lg:text-2xl">
                   Commercial
                 </span>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>
