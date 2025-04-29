@@ -107,12 +107,14 @@ export default function BlogSlider({ swiperRef }: Props) {
       <div className="flex justify-center gap-4 pt-6">
         <button
           onClick={() => handleManualSlide("prev")}
+          aria-label="Previous blog post" // <-- Accessibility label
           className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-[#ef4423] hover:text-white transition"
         >
           <FiChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={() => handleManualSlide("next")}
+          aria-label="Next blog post" // <-- Accessibility label
           className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-[#ef4423] hover:text-white transition"
         >
           <FiChevronRight className="w-5 h-5" />

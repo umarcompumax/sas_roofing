@@ -76,11 +76,14 @@ export default function ServiceAndFaqSection() {
               required
             />
             <label htmlFor="service" className="sr-only">
-              Service
+              Service You Need
             </label>
             <select
+              id="service"
+              name="service"
               defaultValue=""
               className="p-3 text-[#003366] font-semibold border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-[#e63a27] appearance-none"
+              required
             >
               <option value="" disabled>
                 Service You Need

@@ -155,7 +155,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
 
           {/* Social Icons */}
           <div className="flex gap-4 mt-6">
-            <a
+            <Link
               href="https://www.facebook.com/sasroofingwaterproofing"
               target="_blank"
               rel="noopener noreferrer"
@@ -163,8 +163,8 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
               className="bg-[#e63a27] w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e63a27] transition"
             >
               <FaFacebookF />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
               target="_blank"
               rel="noopener noreferrer"
@@ -172,7 +172,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
               className="bg-[#e63a27] w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e63a27] transition"
             >
               <FaHome />
-            </a>
+            </Link>
           </div>
         </div>
       </motion.div>

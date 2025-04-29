@@ -11,32 +11,32 @@ export default function TopBar() {
         <div className="flex items-center text-white h-full">
           <div className="hidden xl:flex items-center pr-4">
             {/* Phone */}
-            <a
+            <Link
               href="tel:+13472216549"
               className="flex items-center gap-2 pr-4 hover:text-[#e63a27] transition-colors"
             >
               <FaPhoneAlt className="text-[#e63a27]" /> (347) 221-6549
-            </a>
+            </Link>
 
             <span className="h-4 border-l border-white/30 mx-2" />
 
             {/* Email 1 */}
-            <a
+            <Link
               href="mailto:sascon09@yahoo.com"
               className="flex items-center gap-2 px-2 hover:text-[#e63a27] transition-colors"
             >
               <FaEnvelope className="text-[#e63a27]" /> sascon09@yahoo.com
-            </a>
+            </Link>
 
             <span className="h-4 border-l border-white/30 mx-2" />
 
             {/* Email 2 */}
-            <a
+            <Link
               href="mailto:amzadh78@gmail.com"
               className="flex items-center gap-2 pl-2 hover:text-[#e63a27] transition-colors"
             >
               <FaEnvelope className="text-[#e63a27]" /> amzadh78@gmail.com
-            </a>
+            </Link>
           </div>
 
           {/* Social Icons */}

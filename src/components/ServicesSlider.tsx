@@ -134,13 +134,13 @@ export default function ServicesSlider({ swiperRef }: Props) {
                         style={{ height: "50%" }}
                       >
                         <Link href="/services">
-                        <Image
-                          src={slide.icon}
-                          alt={`${slide.title} Icon`}
-                          width={50}
-                          height={50}
-                          className="object-contain"
-                        />
+                          <Image
+                            src={slide.icon}
+                            alt={`${slide.title} Icon`}
+                            width={50}
+                            height={50}
+                            className="object-contain"
+                          />
                         </Link>
                       </div>
                     </div>
@@ -156,12 +156,14 @@ export default function ServicesSlider({ swiperRef }: Props) {
         <button
           onClick={() => handleManualSlide("prev")}
           className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-gray-100 transition"
+          aria-label="Previous slide"
         >
           <FiChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={() => handleManualSlide("next")}
           className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-gray-100 transition"
+          aria-label="Next slide"
         >
           <FiChevronRight className="w-5 h-5" />
         </button>
