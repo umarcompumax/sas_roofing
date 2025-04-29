@@ -73,7 +73,7 @@ export default function MobileHeader() {
             <button
               onClick={() => setIsOpen(false)}
               aria-label="Close menu"
-              className="absolute top-4 right-4 text-white text-3xl z-10"
+              className="absolute top-3 right-3 text-white text-base bg-[#e63a27] rounded-full w-8 h-8 flex items-center justify-center z-10"
             >
               ✕
             </button>
