@@ -20,7 +20,7 @@ export default function OurServicesPage() {
   };
 
   return (
-    <main className="px-4 sm:px-6 lg:px-12 py-10 h-[58vh] md:h-[55vh] xl:h-[65vh] 2xl:h-[73vh]">
+    <main className="px-4 sm:px-6 lg:px-12 py-10 h-[87vh] md:h-[80vh] lg:h-[70vh] xl:h-[95vh] 2xl:h-[73vh]">
       <div className="max-w-5xl mx-auto space-y-12">
         <motion.section
           initial="hidden"
