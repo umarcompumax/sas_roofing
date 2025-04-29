@@ -14,7 +14,7 @@ export default function Blog() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <section className="py-24 px-4 sm:px-6 bg-[#f9f9f9]">
+    <section className="pb-24 pt-5 px-4 sm:px-6 bg-[#f9f9f9]">
       <motion.div
         className="max-w-screen-xl mx-auto flex flex-col items-center text-center space-y-10"
         initial={{ opacity: 0, y: 50 }}

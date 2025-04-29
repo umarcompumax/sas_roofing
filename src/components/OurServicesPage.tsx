@@ -20,16 +20,16 @@ export default function OurServicesPage() {
   };
 
   return (
-    <main className="px-4 sm:px-6 lg:px-12 py-10 h-[87vh] md:h-[80vh] lg:h-[70vh] xl:h-[95vh] 2xl:h-[73vh]">
-      <div className="max-w-5xl mx-auto space-y-12">
+    <main className="px-4 sm:px-6 lg:px-12 pt-5 mb-10 sm:mb-20 lg:mb-30">
+      <div className="max-w-5xl mx-auto space-y-12 py-10">
         <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
-          className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 min-h-[80px]"
+          className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-4 min-h-[80px]"
         >
-          <div>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div className="flex items-center gap-2 mb-1">
               <div className="w-6 h-[1px] bg-[#e63a27]" />
               <span className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap">
@@ -41,10 +41,10 @@ export default function OurServicesPage() {
             </h1>
           </div>
 
-          <div className="h-[60px] flex items-center">
+          <div className="flex justify-center md:justify-start w-full md:w-auto">
             <Link
               href="/services"
-              className="group border-4 border-[#003366] p-2 inline-block self-start md:self-auto"
+              className="group border-4 border-[#003366] p-2 inline-block"
             >
               <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button">
                 All Services

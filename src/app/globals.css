@@ -49,19 +49,6 @@
   transition: color 0.4s ease, border 0.4s ease;
 }
 
-.hover-button {
-  position: relative;
-  padding: 12px 24px;
-  font-size: 16px;
-  color: #e5392c;
-  background-color: #ffffff;
-  border: 1px solid #e5392c;
-  cursor: pointer;
-  overflow: hidden;
-  z-index: 0;
-  transition: color 0.4s ease, border 0.4s ease;
-}
-
 .hover-button::before {
   content: "";
   position: absolute;

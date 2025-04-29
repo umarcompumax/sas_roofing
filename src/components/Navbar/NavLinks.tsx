@@ -122,7 +122,7 @@ export default function NavLinks({
         <div
           role="dialog"
           aria-modal="true"
-          className={`w-[40%] h-full bg-black text-white relative flex flex-col transition-transform duration-300 ease-in-out transform ${
+          className={`w-[40%] h-full bg-[#003269] text-white relative flex flex-col transition-transform duration-300 ease-in-out transform ${
             isOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full"
           }`}
         >

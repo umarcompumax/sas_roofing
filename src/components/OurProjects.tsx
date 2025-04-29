@@ -28,13 +28,13 @@ const OurProjects = () => {
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Header Section */}
         <motion.section
-          className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+          className="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-center text-center md:text-left gap-6 px-2"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <div>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div className="flex items-center gap-2 mb-1">
               <div className="w-6 h-[1px] bg-[#e63a27]" />
               <span className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap">

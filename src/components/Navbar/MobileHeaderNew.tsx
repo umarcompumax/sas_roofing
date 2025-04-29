@@ -68,7 +68,7 @@ export default function MobileHeader() {
           />
 
           {/* Sidebar */}
-          <div className="relative w-[40%] h-full bg-black text-white flex flex-col overflow-y-auto">
+          <div className="relative w-[40%] h-full bg-[#003269] text-white flex flex-col overflow-y-auto">
             {/* Close Button */}
             <button
               onClick={() => setIsOpen(false)}
@@ -119,7 +119,7 @@ export default function MobileHeader() {
             </ul>
 
             {/* Social Icons */}
-            <div className="mt-auto flex justify-center gap-4 py-6">
+            <div className="mt-auto flex justify-center gap-4 py-6 mb-15">
               <Link
                 href="https://www.facebook.com/sasroofingwaterproofing"
                 target="_blank"

@@ -55,7 +55,7 @@ export default function FooterTopCTA() {
         >
           {/* KNOW MORE button */}
           <Link href="/about">
-            <button className="px-5 sm:px-6 py-3 text-[#e63a27] font-semibold bg-white border-2 border-[#e63a27] hover:bg-blue-700 hover:text-white transition">
+            <button className="px-5 sm:px-6 py-3 text-[#e63a27] font-semibold bg-white border-2 border-[#e63a27] hover:bg-[#00254c] hover:text-white transition hover-button">
               KNOW MORE
             </button>
           </Link>
@@ -63,7 +63,7 @@ export default function FooterTopCTA() {
           {/* Call button */}
           <a
             href="tel:+13472216549"
-            className="bg-[#e53935] text-white flex items-center gap-2 px-4 py-3 font-semibold transition hover:bg-[#e63a27] rounded cursor-pointer"
+            className="bg-[#e53935] text-white flex items-center gap-2 px-4 py-3 font-semibold transition hover:bg-[#e63a27] rounded-none cursor-pointer call-hover-button"
           >
             <FaHeadphonesAlt />
             <span className="text-sm sm:text-base">(347) 221-6549</span>

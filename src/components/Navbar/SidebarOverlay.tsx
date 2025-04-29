@@ -46,7 +46,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
           type="button"
           onClick={onClose}
           aria-label="Close sidebar"
-          className="absolute top-4 right-4 text-white text-2xl"
+          className="absolute top-4 right-4 text-white text-2xl cursor-pointer"
         >
           <IoMdClose />
         </button>

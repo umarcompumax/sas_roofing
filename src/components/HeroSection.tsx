@@ -82,7 +82,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl space-y-6"
           >
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-[90px] 2xl:text-[100px] font-extrabold leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-[90px] 2xl:text-[100px] font-extrabold leading-tight pt-10">
               {slide.title}
             </h1>
             <p className="text-base sm:text-lg md:text-xl font-light tracking-wide">
@@ -103,14 +103,14 @@ export default function HeroSection() {
       <button
         onClick={prevSlide}
         aria-label="Previous Slide"
-        className="absolute left-5 top-1/2 -translate-y-1/2 bg-black/40 rounded-full p-2 z-20"
+        className="absolute left-5 top-1/2 -translate-y-1/2 bg-black/40 rounded-full p-2 z-20 cursor-pointer"
       >
         <ArrowLeft className="text-white" />
       </button>
       <button
         onClick={nextSlide}
         aria-label="Next Slide"
-        className="absolute right-5 top-1/2 -translate-y-1/2 bg-[#e63a27] rounded-full p-2 z-20"
+        className="absolute right-5 top-1/2 -translate-y-1/2 bg-[#e63a27] rounded-full p-2 z-20 cursor-pointer"
       >
         <ArrowRight className="text-white" />
       </button>

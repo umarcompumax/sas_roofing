@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-
 export default function Footer() {
   const fadeUp = (delay = 0) => ({
     initial: { opacity: 0, y: 30 },
@@ -17,7 +16,7 @@ export default function Footer() {
       {/* Header */}
       <div className="px-4 sm:px-6 md:px-12 pt-12">
         <motion.h2
-          className="text-left md:text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-100 mb-12"
+          className="text-center md:text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-100 mb-12 max-w-4xl mx-auto"
           {...fadeUp(0)}
         >
           QUALITY ROOFING IN BROOKLYN, NEW YORK & QUEENS
@@ -26,7 +25,7 @@ export default function Footer() {
 
       {/* Main Grid */}
       <div className="px-4 sm:px-6 md:px-12 pb-12">
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
           {/* About Service */}
           <motion.div {...fadeUp(0.1)}>
             <h4 className="text-xl font-bold mb-2 relative inline-block">
@@ -43,7 +42,7 @@ export default function Footer() {
             <div className="mt-6">
               <Link
                 href="/"
-                className="inline-block bg-[#e53935] text-white px-6 py-4 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base"
+                className="inline-block bg-[#e53935] text-white px-6 py-3 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base rounded-md"
               >
                 MORE DETAILS
               </Link>
@@ -117,7 +116,7 @@ export default function Footer() {
             </div>
 
             {/* Social Icons */}
-            <div className="flex gap-2 flex-wrap mt-6 items-center">
+            <div className="flex gap-3 flex-wrap mt-6 items-center">
               {[
                 {
                   src: "facebook_logo",
@@ -189,8 +188,8 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="bg-[#022f5c]">
-        <div className="px-4 sm:px-6 md:px-12 py-4 flex flex-col md:flex-row items-center justify-between text-xs sm:text-sm md:text-[15px]">
-          <p className="text-center md:text-left mb-2 md:mb-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-4 flex flex-col md:flex-row items-center justify-between text-xs sm:text-sm md:text-[15px] gap-2">
+          <p className="text-center md:text-left">
             Copyright © 2024{" "}
             <span className="text-[#e53935]">SAS Roofing & Waterproofing</span>{" "}
             All Rights Reserved.

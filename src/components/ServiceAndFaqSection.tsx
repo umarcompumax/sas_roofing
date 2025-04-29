@@ -20,7 +20,7 @@ export default function ServiceAndFaqSection() {
   };
 
   return (
-    <section className="relative w-full pb-24 bg-white overflow-hidden">
+    <section className="relative w-full pb-24 bg-white overflow-hidden border-t border-black/40">
       {/* Dual Background Layer - Only on large screens */}
       <div className="absolute inset-0 min-h-[90%] hidden lg:flex z-0">
         <div className="w-[30%] bg-[#e63a27]" />
