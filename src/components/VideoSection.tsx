@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GoVideo } from "react-icons/go";
 import { SiTicktick } from "react-icons/si";
 import { IoClose } from "react-icons/io5";
@@ -19,6 +19,12 @@ const fadeUp = {
 
 const VideoSection = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true); // Ensures iframe renders only on client
+  }, []);
+
   const videoUrl =
     "https://www.youtube.com/embed/Z4gunD5Wbi8?autoplay=1&rel=0&modestbranding=1";
 
@@ -29,9 +35,11 @@ const VideoSection = () => {
           src="/VideoSectionBg.webp"
           alt="Video background"
           fill
-          className="object-cover z-0"
           priority
+          sizes="100vw"
+          className="object-cover z-0"
         />
+
         {/* Left Section */}
         <div className="relative md:w-[60%] w-full h-[500px] md:h-auto">
           <div className="absolute inset-0 bg-[#c72f1c] red-left-shape-2 z-20 translate-x-6 translate-y-16">
@@ -107,9 +115,7 @@ const VideoSection = () => {
             </div>
 
             <div className="absolute inset-0 bg-[#e63a27] red-left-shape-1 z-20 translate-y-20">
-              <div
-                className="w-full h-full bg-[url('/thm-pattern-5.webp')] bg-repeat"
-              />
+              <div className="w-full h-full bg-[url('/thm-pattern-5.webp')] bg-repeat" />
             </div>
           </div>
         </motion.div>
@@ -119,13 +125,15 @@ const VideoSection = () => {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="max-w-3xl w-full p-0 rounded-lg border-none bg-transparent shadow-none">
           <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-            <iframe
-              src={videoUrl}
-              title="Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full border-none rounded-lg"
-            />
+            {mounted && (
+              <iframe
+                src={videoUrl}
+                title="Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full border-none rounded-lg"
+              />
+            )}
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-2 right-2 text-white text-3xl bg-black bg-opacity-60 rounded-full p-1"

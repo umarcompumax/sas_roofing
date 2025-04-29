@@ -1,17 +1,10 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { FaHeadphonesAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function FooterTopCTA() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   // Reusable animation props
   const fadeUp = (delay = 0) => ({
     initial: { opacity: 0, y: 30 },
@@ -30,7 +23,7 @@ export default function FooterTopCTA() {
           <Link href="/">
             <Image
               src="/Logo.png"
-              alt="SAS Logo"
+              alt="SAS Roofing Logo"
               width={130}
               height={130}
               className="w-auto h-auto"
@@ -48,10 +41,10 @@ export default function FooterTopCTA() {
         {/* Text Section */}
         <motion.div className="max-w-md px-2" {...fadeUp(0.2)}>
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1">
-            Roof Problem&apos;s can&apos;t wait ?
+            Roof Problems can’t wait?
           </h3>
           <p className="text-sm sm:text-base text-white/80 leading-snug">
-            Protect Your Home From Leaks and Roof repairs, Contact us.
+            Protect your home from leaks and roof repairs — contact us today.
           </p>
         </motion.div>
 
@@ -61,20 +54,16 @@ export default function FooterTopCTA() {
           {...fadeUp(0.3)}
         >
           {/* KNOW MORE button */}
-          <div className="p-[5px] border-2 border-[#003269]">
-            <Link href="about">
-              <button className="px-5 sm:px-6 py-3 text-[#e63a27] font-semibold bg-white border-2 border-[#e63a27] hover:bg-blue-700 hover:text-white transition hover-button">
-                KNOW MORE
-              </button>
-            </Link>
-          </div>
+          <Link href="/about">
+            <button className="px-5 sm:px-6 py-3 text-[#e63a27] font-semibold bg-white border-2 border-[#e63a27] hover:bg-blue-700 hover:text-white transition">
+              KNOW MORE
+            </button>
+          </Link>
 
           {/* Call button */}
           <a
             href="tel:+13472216549"
-            className={`${
-              isClient ? "hover:bg-[#e63a27]" : ""
-            } bg-[#e53935] text-white flex items-center gap-2 px-4 py-3 font-semibold transition call-hover-button rounded cursor-pointer`}
+            className="bg-[#e53935] text-white flex items-center gap-2 px-4 py-3 font-semibold transition hover:bg-[#e63a27] rounded cursor-pointer"
           >
             <FaHeadphonesAlt />
             <span className="text-sm sm:text-base">(347) 221-6549</span>

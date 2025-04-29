@@ -6,12 +6,14 @@ import Navbar from "@/components/Navbar/Navbar";
 import Contact from "@/components/Contact";
 import React from "react";
 import StickyNavbar from "@/components/StickyNavbar";
+import ContactBar from "@/components/ContactBar";
 
 const page = () => {
   return (
     <>
       <Navbar />
       <StickyNavbar />
+      <ContactBar />
       <BreadCrum2
         breadcrumbItems={[]}
         pageTitle={"Contact"}

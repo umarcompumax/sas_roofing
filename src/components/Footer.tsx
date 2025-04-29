@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+
 export default function Footer() {
   const fadeUp = (delay = 0) => ({
     initial: { opacity: 0, y: 30 },
@@ -25,14 +26,14 @@ export default function Footer() {
 
       {/* Main Grid */}
       <div className="px-4 sm:px-6 md:px-12 pb-12">
-        <div className="w-full max-w-7xl mx-0 md:mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-white">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* About Service */}
           <motion.div {...fadeUp(0.1)}>
-            <h4 className="text-xl md:text-xl font-bold mb-2 relative inline-block">
+            <h4 className="text-xl font-bold mb-2 relative inline-block">
               About Service
               <span className="block w-12 h-[2px] bg-[#e63a27] mt-1" />
             </h4>
-            <p className="text-white/90 mt-3 leading-relaxed text-sm sm:text-base">
+            <p className="text-white/90 mt-3 leading-relaxed">
               “SAS Roofing & Waterproofing is a family-owned and operated
               business serving the greater Brooklyn, New York area since 2000.“
             </p>
@@ -40,27 +41,31 @@ export default function Footer() {
             <p className="text-white/80">Mon–Sat: 09.00 am to 6.30 pm</p>
 
             <div className="mt-6">
-              <Link href="/">
-                <button className="bg-[#e53935] text-white px-6 py-4 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base More-hover-button">
-                  MORE DETAILS
-                </button>
+              <Link
+                href="/"
+                className="inline-block bg-[#e53935] text-white px-6 py-4 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base"
+              >
+                MORE DETAILS
               </Link>
+
+              {/* Payment Icons */}
               <div className="flex gap-3 flex-wrap mt-4 items-center">
                 {[
-                  "visa_logo",
-                  "mastercard_logo",
-                  "amex_logo",
-                  "discover_logo",
-                  "cash_logo",
-                  "check_logo",
-                ].map((img) => (
+                  { src: "visa_logo", label: "Visa" },
+                  { src: "mastercard_logo", label: "MasterCard" },
+                  { src: "amex_logo", label: "American Express" },
+                  { src: "discover_logo", label: "Discover" },
+                  { src: "cash_logo", label: "Cash" },
+                  { src: "check_logo", label: "Check" },
+                ].map(({ src, label }) => (
                   <Image
-                    key={img}
-                    src={`/${img}.png`}
-                    alt={img}
+                    key={src}
+                    src={`/${src}.png`}
+                    alt={`${label} accepted`}
                     width={50}
                     height={32}
                     className="object-contain h-[32px] w-auto"
+                    loading="lazy"
                   />
                 ))}
               </div>
@@ -68,8 +73,8 @@ export default function Footer() {
           </motion.div>
 
           {/* Useful Links */}
-          <motion.div className="text-left" {...fadeUp(0.2)}>
-            <h4 className="text-lg md:text-xl font-bold mb-2 relative inline-block">
+          <motion.div {...fadeUp(0.2)}>
+            <h4 className="text-xl font-bold mb-2 relative inline-block">
               Useful Links
               <span className="block w-12 h-[2px] bg-[#e63a27] mt-1" />
             </h4>
@@ -93,14 +98,14 @@ export default function Footer() {
 
           {/* Make Contact */}
           <motion.div {...fadeUp(0.3)}>
-            <h4 className="text-lg md:text-xl font-bold mb-2 relative inline-block">
+            <h4 className="text-xl font-bold mb-2 relative inline-block">
               Make Contact
               <span className="block w-12 h-[2px] bg-[#e63a27] mt-1" />
             </h4>
             <div className="mt-4 space-y-2">
-              <p className="font-bold">GENERAL QUIRIES</p>
-              <p>office: (347) 221–6549</p>
-              <p>cell: (347) 394–9384</p>
+              <p className="font-bold">GENERAL INQUIRIES</p>
+              <p>Office: (347) 221–6549</p>
+              <p>Cell: (347) 394–9384</p>
               <p>Email: sascon09@yahoo.com</p>
               <p>Email: amzadh78@gmail.com</p>
               <p className="font-bold mt-4">OFFICE LOCATION</p>
@@ -111,54 +116,69 @@ export default function Footer() {
               </p>
             </div>
 
+            {/* Social Icons */}
             <div className="flex gap-2 flex-wrap mt-6 items-center">
               {[
                 {
                   src: "facebook_logo",
                   path: "https://www.facebook.com/sasroofingwaterproofing",
+                  label: "Facebook",
                 },
                 {
                   src: "houzz_logo",
                   path: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
+                  label: "Houzz",
                 },
                 {
                   src: "angi_logo",
                   path: "https://www.angi.com/companylist/us/ny/brooklyn/",
+                  label: "Angi",
                 },
                 {
                   src: "manta_logo",
                   path: "https://www.manta.com/c/mx7pcrf/sas-roofing-waterproofing",
+                  label: "Manta",
                 },
                 {
                   src: "yellowpages_logo",
                   path: "https://www.yellowpages.com/brooklyn-ny/mip/sas-roofing-waterproofing-465411323",
+                  label: "Yellow Pages",
                 },
                 {
                   src: "yelp_logo",
                   path: "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
+                  label: "Yelp",
                 },
-                { src: "x_logo", path: "https://x.com/sasroofing91254" },
+                {
+                  src: "x_logo",
+                  path: "https://x.com/sasroofing91254",
+                  label: "X (Twitter)",
+                },
                 {
                   src: "bbb",
                   path: "https://www.bbb.org/us/ny/brooklyn/profile/roofing-contractors/sas-contracting-co-inc-0121-161078/#sealclick",
+                  label: "BBB",
                 },
                 {
                   src: "google_my_business_logo",
-                  path: "https://www.google.com/maps/place/SAS+Roofing+&+Waterproofing/@40.6359752,-73.9646363,17z/data=!3m1!4b1!4m8!3m7!1s0x89c25b2dd928663d:0x5527086c2d45f8d8!8m2!3d40.6359752!4d-73.9646363!9m1!1b1!16s/g/11bbw_w0v0?entry=ttu",
+                  path: "https://www.google.com/maps/place/SAS+Roofing+&+Waterproofing",
+                  label: "Google Maps",
                 },
-              ].map((item) => (
+              ].map(({ src, path, label }) => (
                 <a
-                  key={item.src}
-                  href={item.path}
+                  key={src}
+                  href={path}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={label}
                 >
                   <Image
-                    src={`/${item.src}.png`}
-                    alt={item.src}
+                    src={`/${src}.png`}
+                    alt={label}
                     width={35}
                     height={35}
                     className="object-contain h-[32px] w-auto"
+                    loading="lazy"
                   />
                 </a>
               ))}
@@ -169,7 +189,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="bg-[#022f5c]">
-        <div className="px-4 sm:px-6 md:px-12 py-4 flex flex-col md:flex-row items-center md:items-center justify-between text-white text-xs sm:text-sm md:text-[15px]">
+        <div className="px-4 sm:px-6 md:px-12 py-4 flex flex-col md:flex-row items-center justify-between text-xs sm:text-sm md:text-[15px]">
           <p className="text-center md:text-left mb-2 md:mb-0">
             Copyright © 2024{" "}
             <span className="text-[#e53935]">SAS Roofing & Waterproofing</span>{" "}

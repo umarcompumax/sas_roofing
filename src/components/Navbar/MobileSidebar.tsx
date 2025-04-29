@@ -12,7 +12,14 @@ export default function MobileSidebar({
   setIsOpen: (val: boolean) => void;
 }) {
   return (
-    <div className="fixed inset-0 z-50 flex justify-end pointer-events-none">
+    <div
+      className={`fixed inset-0 z-50 flex justify-end ${
+        isOpen ? "" : "pointer-events-none"
+      }`}
+      aria-hidden={!isOpen}
+      role="dialog"
+      aria-modal="true"
+    >
       {/* Overlay */}
       <div
         className={`w-[60%] bg-black/30 backdrop-blur-sm transition-opacity duration-300 ease-in-out ${
@@ -26,14 +33,18 @@ export default function MobileSidebar({
         className={`w-[40%] h-full bg-black text-white relative flex flex-col transition-transform duration-300 ease-in-out transform ${
           isOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full"
         }`}
+        tabIndex={-1}
       >
+        {/* Close Button */}
         <button
           className="absolute top-3 right-3 text-white text-2xl"
           onClick={() => setIsOpen(false)}
+          aria-label="Close sidebar"
         >
           ✕
         </button>
 
+        {/* Logo */}
         <div className="flex justify-center p-6">
           <Image
             src="/Logo.png"
@@ -44,6 +55,7 @@ export default function MobileSidebar({
           />
         </div>
 
+        {/* Navigation Links */}
         <ul className="flex flex-col mt-4">
           {[
             { name: "HOME", href: "/" },
@@ -68,21 +80,24 @@ export default function MobileSidebar({
           ))}
         </ul>
 
+        {/* Social Icons */}
         <div className="mt-auto flex justify-center gap-4 py-6">
-          <a
+          <Link
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center"
+            aria-label="Visit Facebook"
           >
             <FaFacebookF className="text-white text-lg" />
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
             className="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center"
+            aria-label="Home"
           >
             <FaHome className="text-white text-lg" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -15,18 +15,17 @@ export default function AboutCompany() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="relative w-full sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] xl:max-w-[480px] border-2 border-red-600 rounded-md overflow-hidden flex-shrink-0"
+        className="relative w-full sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] xl:max-w-[480px] border-2 border-red-600 rounded-md overflow-hidden flex-shrink-0 aspect-[4/3]"
       >
         <Image
           src="/aboutimg.jpg"
           alt="Roof house illustration"
-          width={400}
-          height={400}
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
 
         {/* Experience Block */}
-        <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-blue-900 shadow-md flex items-center gap-2">
+        <aside className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-blue-900 shadow-md flex items-center gap-2">
           <span className="text-4xl sm:text-5xl font-extrabold text-blue-900">
             12
           </span>
@@ -38,11 +37,11 @@ export default function AboutCompany() {
               of Experience
             </div>
           </div>
-        </div>
+        </aside>
       </motion.div>
 
       {/* Text Content with Animation */}
-      <motion.div
+      <motion.article
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
@@ -63,15 +62,18 @@ export default function AboutCompany() {
 
           <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-blue-800 mb-6">
             <div className="flex items-center gap-1">
-              <FaCertificate className="text-red-500" />
+              <FaCertificate className="text-red-500" aria-label="Certified" />
               <span className="font-bold uppercase">Certified</span>
             </div>
             <div className="flex items-center gap-1">
-              <FaLightbulb className="text-yellow-400" />
+              <FaLightbulb
+                className="text-yellow-400"
+                aria-label="Innovative Work"
+              />
               <span className="font-bold uppercase">Innovative Work</span>
             </div>
             <div className="flex items-center gap-1">
-              <FaHome className="text-red-500" />
+              <FaHome className="text-red-500" aria-label="Experienced" />
               <span className="font-bold uppercase">Experienced</span>
             </div>
           </div>
@@ -86,15 +88,16 @@ export default function AboutCompany() {
           </p>
         </div>
 
-        {/* Read More Button */}
+        {/* Read More Link */}
         <div className="inline-block border-4 border-[#003366] px-2 py-2 self-start">
-          <Link href="/about">
-            <button className="border-2 border-red-600 text-red-600 px-6 py-3 font-bold uppercase tracking-wide hover:bg-red-600 hover:text-white transition text-sm lg:text-base hover-button">
-              Read More
-            </button>
+          <Link
+            href="/about"
+            className="border-2 border-red-600 text-red-600 px-6 py-3 font-bold uppercase tracking-wide hover:bg-red-600 hover:text-white transition text-sm lg:text-base hover-button inline-block"
+          >
+            Read More
           </Link>
         </div>
-      </motion.div>
+      </motion.article>
     </section>
   );
 }

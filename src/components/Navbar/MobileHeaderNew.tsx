@@ -2,11 +2,30 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaFacebookF, FaHome } from "react-icons/fa";
 
 export default function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // Prevent hydration mismatch
+  if (!hasMounted) return null;
 
   return (
     <>
@@ -26,7 +45,7 @@ export default function MobileHeader() {
         <button
           onClick={() => setIsOpen(true)}
           aria-label="Open menu"
-          className="bg-[#e5392c] w-12 h-12 flex items-center justify-center md:hidden rounded-md"
+          className="bg-[#e5392c] w-12 h-12 flex items-center justify-center rounded-md"
         >
           <Image
             src="/menu4.webp"
@@ -39,20 +58,22 @@ export default function MobileHeader() {
         </button>
       </div>
 
-      {/* Mobile Slide-In Sidebar */}
+      {/* Sidebar & Overlay */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex justify-end">
           {/* Overlay */}
           <div
-            className="w-[60%] bg-black/30 backdrop-blur-sm transition-opacity duration-300 ease-in-out"
+            className="w-[60%] bg-black/30 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           />
 
           {/* Sidebar */}
-          <div className="w-[40%] h-full bg-black text-white flex flex-col overflow-y-auto transition-transform duration-300 ease-in-out translate-x-0">
+          <div className="relative w-[40%] h-full bg-black text-white flex flex-col overflow-y-auto">
+            {/* Close Button */}
             <button
-              className="absolute top-3 right-3 text-white text-2xl"
               onClick={() => setIsOpen(false)}
+              aria-label="Close menu"
+              className="absolute top-4 right-4 text-white text-3xl z-10"
             >
               ✕
             </button>
@@ -60,7 +81,7 @@ export default function MobileHeader() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex justify-center p-6 relative w-[130px] h-[65px] mx-auto"
+              className="flex justify-center p-6 relative w-[130px] h-[65px] mx-auto mt-10"
             >
               <Image
                 src="/Logo.webp"

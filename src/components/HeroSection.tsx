@@ -3,8 +3,9 @@
 import { useEffect, useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 const slides = [
   {
@@ -31,141 +32,100 @@ const slides = [
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
-  const [hasMounted, setHasMounted] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  const preloadImage = (src: string, callback: () => void) => {
-    const img = new Image();
-    img.src = src;
-    img.onload = () => {
-      setImageLoaded(true);
-      callback();
-    };
-  };
 
   const nextSlide = useCallback(() => {
-    const next = (current + 1) % slides.length;
-    preloadImage(slides[next].image, () => {
-      setCurrent(next);
-    });
-  }, [current]);
+    setCurrent((prev) => (prev + 1) % slides.length);
+  }, []);
 
   const prevSlide = () => {
-    const prev = (current - 1 + slides.length) % slides.length;
-    preloadImage(slides[prev].image, () => {
-      setCurrent(prev);
-    });
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   };
-
-  useEffect(() => {
-    setHasMounted(true);
-    preloadImage(slides[current].image, () => {});
-  }, [current]);
 
   useEffect(() => {
     const interval = setInterval(() => nextSlide(), 6000);
     return () => clearInterval(interval);
   }, [nextSlide]);
 
-  if (!hasMounted || !imageLoaded) return null;
+  const slide = slides[current];
 
   return (
-    <div
-      id="hero-section"
-      className="relative w-full h-[700px] overflow-hidden"
-    >
-      {/* Image Background */}
-      <div className="absolute inset-0">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={slides[current].image}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.05 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url('${slides[current].image}')` }}
+    <section className="relative w-full h-[700px] overflow-hidden">
+      {/* Background Image with animation */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={slide.image}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.05 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={slide.image}
+            alt={slide.title}
+            fill
+            priority
+            className="object-cover"
           />
-        </AnimatePresence>
-      </div>
+          <div className="absolute inset-0 bg-black/30" />
+        </motion.div>
+      </AnimatePresence>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30 z-0" />
-
-      {/* Slide Content */}
-      <div className="relative z-10 flex flex-col justify-center h-full px-10 md:pl-32 text-white text-left">
+      {/* Slide Content with animation */}
+      <div className="relative z-10 h-full flex flex-col justify-center px-10 md:pl-32 text-white">
         <AnimatePresence mode="wait">
           <motion.div
-            key={slides[current].title}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl space-y-6 absolute"
+            key={slide.title}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -40 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="max-w-3xl space-y-6"
           >
-            <motion.h1
-              initial={{ opacity: 0, y: -40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -40 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-[90px] 2xl:text-[100px] leading-tight font-extrabold"
-            >
-              {" "}
-              {slides[current].title}
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 40 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-              className="text-white text-base sm:text-lg md:text-xl font-light tracking-wide"
-            >
-              {slides[current].description}
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 40 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-              className="border-4 border-[#0a356f] p-1 inline-block"
-            >
-              <Link href="/about">
-                <Button className="Hero_hover-button text-xs sm:text-sm md:text-base lg:text-lg">
-                  {slides[current].buttonText.toUpperCase()}
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-[90px] 2xl:text-[100px] font-extrabold leading-tight">
+              {slide.title}
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl font-light tracking-wide">
+              {slide.description}
+            </p>
+            <Link href="/about">
+              <div className="inline-block border-4 border-[#0a356f] p-1">
+                <Button className="Hero_hover-button text-sm sm:text-base lg:text-lg">
+                  {slide.buttonText.toUpperCase()}
                 </Button>
-              </Link>
-            </motion.div>
+              </div>
+            </Link>
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Arrows */}
+      {/* Controls */}
       <button
         onClick={prevSlide}
-        className="absolute left-5 top-1/2 transform -translate-y-1/2 bg-black/40 rounded-full p-2 z-20"
+        aria-label="Previous Slide"
+        className="absolute left-5 top-1/2 -translate-y-1/2 bg-black/40 rounded-full p-2 z-20"
       >
         <ArrowLeft className="text-white" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-[#e63a27] rounded-full p-2 z-20"
+        aria-label="Next Slide"
+        className="absolute right-5 top-1/2 -translate-y-1/2 bg-[#e63a27] rounded-full p-2 z-20"
       >
         <ArrowRight className="text-white" />
       </button>
 
-      {/* Indicator */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
+      {/* Indicator Dots */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
         {slides.map((_, i) => (
           <div
             key={i}
-            className={`h-1 w-10 rounded-sm transition-all duration-300 ${
-              i === current ? "bg-[#e63a27]" : "bg-white"
+            className={`h-2 w-2 rounded-full ${
+              i === current ? "bg-[#e63a27]" : "bg-white/70"
             }`}
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,5 +1,6 @@
 import BackToTop from "@/components/BackToTop";
 import BreadCrum2 from "@/components/BreadCrum2";
+import ContactBar from "@/components/ContactBar";
 import Footer from "@/components/Footer";
 import FooterTopCTA from "@/components/FooterTopCTA";
 import Navbar from "@/components/Navbar/Navbar";
@@ -13,6 +14,7 @@ const page = () => {
     <>
       <Navbar />
       <StickyNavbar />
+      <ContactBar />
       <BreadCrum2
         breadcrumbItems={[]}
         pageTitle={"Gallery"}

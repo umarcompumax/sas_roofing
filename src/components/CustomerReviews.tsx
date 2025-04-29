@@ -56,28 +56,35 @@ export default function CustomerReviews() {
         <div className="mt-1 h-1 w-12 mx-auto bg-[#003366]" />
       </div>
 
-      <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
+      <ul className="flex flex-wrap justify-center gap-6 sm:gap-8">
         {reviewLogos.map((logo, index) => (
-          <motion.a
-            key={index}
-            href={logo.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border rounded-md p-3 shadow-sm hover:shadow-md transition bg-white w-[100px] h-[100px] flex items-center justify-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
-          >
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={60}
-              height={60}
-              className="object-contain w-[60px] h-[60px] sm:w-[72px] sm:h-[72px]"
-            />
-          </motion.a>
+          <li key={index}>
+            <motion.a
+              href={logo.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit our reviews on ${logo.alt}`}
+              className="border rounded-md p-3 shadow-sm hover:shadow-md transition bg-white w-[100px] h-[100px] flex items-center justify-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+                delay: index * 0.1,
+              }}
+            >
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={60}
+                height={60}
+                loading="lazy"
+                className="object-contain w-[60px] h-[60px] sm:w-[72px] sm:h-[72px]"
+              />
+            </motion.a>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

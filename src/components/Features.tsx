@@ -76,10 +76,11 @@ const Features = () => {
               </div>
 
               {/* Bottom Red Shape */}
-              <Link href="/reviews">
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-20 bg-[#e63a27] clip-bottom-shape flex items-center justify-center text-white text-sm font-semibold">
-                  <FaArrowRight className="mr-2" /> DETAILS
-                </div>
+              <Link
+                href="/reviews"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-20 bg-[#e63a27] clip-bottom-shape flex items-center justify-center text-white text-sm font-semibold"
+              >
+                <FaArrowRight className="mr-2" /> DETAILS
               </Link>
             </motion.div>
           ))}

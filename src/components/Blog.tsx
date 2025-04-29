@@ -1,19 +1,17 @@
 "use client";
 
-import BlogSlider from "@/components/BlogSlider";
-import { useRef, useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+import { useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { motion } from "framer-motion";
 
+// Dynamically import BlogSlider client-side only
+const BlogSlider = dynamic(() => import("@/components/BlogSlider"), {
+  ssr: false,
+});
+
 export default function Blog() {
   const swiperRef = useRef<SwiperType | null>(null);
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) return null;
 
   return (
     <section className="py-24 px-4 sm:px-6 bg-[#f9f9f9]">

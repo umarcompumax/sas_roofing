@@ -12,7 +12,6 @@ import type { RefObject } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import BlogSlideCard from "./BlogSlideCard";
 
-
 interface Props {
   swiperRef?: RefObject<SwiperType | null>;
 }
@@ -46,6 +45,11 @@ export default function BlogSlider({ swiperRef }: Props) {
     if (swiperRef) {
       swiperRef.current = swiperInstanceRef.current;
     }
+
+    // Cleanup timeout on unmount
+    return () => {
+      if (autoplayTimeout.current) clearTimeout(autoplayTimeout.current);
+    };
   }, [swiperRef]);
 
   const handleManualSlide = (direction: "prev" | "next") => {
@@ -91,13 +95,11 @@ export default function BlogSlider({ swiperRef }: Props) {
           }}
           className="!overflow-visible pb-6"
         >
-          {Array(12)
-            .fill(null)
-            .map((_, i) => (
-              <SwiperSlide key={i}>
-                <BlogSlideCard slide={slides[i % slides.length]} />
-              </SwiperSlide>
-            ))}
+          {[...Array(12)].map((_, i) => (
+            <SwiperSlide key={i}>
+              <BlogSlideCard slide={slides[i % slides.length]} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
 
@@ -119,4 +121,3 @@ export default function BlogSlider({ swiperRef }: Props) {
     </div>
   );
 }
-    

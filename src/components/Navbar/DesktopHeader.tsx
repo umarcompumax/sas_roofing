@@ -21,6 +21,7 @@ export default function DesktopHeader({
             width={290}
             height={290}
             className="object-contain cursor-pointer"
+            priority
           />
         </Link>
       </div>

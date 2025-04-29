@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaHome } from "react-icons/fa";
 
 export default function TopBar() {
@@ -43,24 +44,26 @@ export default function TopBar() {
             <span className="mr-3">Follow On:</span>
             <div className="flex items-center divide-x divide-white/30">
               {/* Facebook */}
-              <a
+              <Link
                 href="https://www.facebook.com/sasroofingwaterproofing"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit our Facebook page"
                 className="pr-2 hover:text-[#e63a27] transition-colors"
               >
                 <FaFacebookF className="cursor-pointer" />
-              </a>
+              </Link>
 
               {/* Home (Houzz) */}
-              <a
+              <Link
                 href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit Houzz page"
                 className="pl-2 hover:text-[#e63a27] transition-colors"
               >
                 <FaHome className="cursor-pointer" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

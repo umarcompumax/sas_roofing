@@ -14,6 +14,7 @@ import ContactBar from "@/components/ContactBar";
 import BackToTop from "@/components/BackToTop";
 import AboutCompanyHome from "@/components/AboutCompanyHome";
 
+
 export default function Home() {
   return (
     <>

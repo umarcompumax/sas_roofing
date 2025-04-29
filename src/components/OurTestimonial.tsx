@@ -1,8 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import TestimonialSlider from "./TestimonialSlider";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+
+// Dynamically import slider with no SSR
+const TestimonialSlider = dynamic(() => import("./TestimonialSlider"), {
+  ssr: false,
+});
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -14,16 +18,8 @@ const fadeUp = {
 };
 
 export default function OurTestimonial() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) return null;
-
   return (
-    <section className="py-12 px-4 sm:px-6">
+    <section className="pt-12 pb-4 px-4 sm:px-6">
       <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center text-center">
         {/* Animated Heading */}
         <motion.div
@@ -44,7 +40,7 @@ export default function OurTestimonial() {
           </h2>
         </motion.div>
 
-        {/* Slider */}
+        {/* Dynamically loaded Slider */}
         <TestimonialSlider />
       </div>
     </section>

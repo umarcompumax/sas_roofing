@@ -57,16 +57,18 @@ export default function FaqSection() {
       <div className="space-y-4 text-base">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
+          const contentId = `faq-${index}-content`;
 
           return (
             <div
               key={index}
-              className="border border-gray-200 rounded-none shadow-md transition-all duration-300 overflow-hidden"
+              className="border border-gray-200 shadow-md transition-all duration-300 overflow-hidden"
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 aria-expanded={isOpen}
-                className={`w-full flex justify-between items-center text-left px-6 py-5 ${
+                aria-controls={contentId}
+                className={`w-full flex justify-between items-center text-left px-6 py-5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e63a27] ${
                   isOpen ? "bg-[#262e39]" : "bg-white"
                 }`}
               >
@@ -95,9 +97,11 @@ export default function FaqSection() {
                 </span>
               </button>
 
-              <AnimatePresence>
+              <AnimatePresence initial={false}>
                 {isOpen && (
                   <motion.div
+                    id={contentId}
+                    role="region"
                     key="content"
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}

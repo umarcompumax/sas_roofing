@@ -11,15 +11,23 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import Image from "next/image";
-import { motion } from "framer-motion"; // <--- Add this import
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission (e.g., send to API or show success message)
+    console.log("Form submitted:", form);
+  };
+
   return (
     <div
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
       className="fixed inset-0 z-[999] bg-black/70 flex justify-start"
       style={{
         cursor: "url('/white_cursor.png') 0 0, auto",
@@ -35,7 +43,9 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
       >
         {/* Close Button */}
         <button
+          type="button"
           onClick={onClose}
+          aria-label="Close sidebar"
           className="absolute top-4 right-4 text-white text-2xl"
         >
           <IoMdClose />
@@ -46,7 +56,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
           <Link href="/">
             <Image
               src="/Logo.png"
-              alt="Logo"
+              alt="SAS Roofing Logo"
               width={240}
               height={240}
               className="w-[180px] sm:w-[200px] md:w-[240px] lg:w-[260px]"
@@ -73,36 +83,44 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
             GET A FREE QUOTE
           </h2>
           <div className="w-8 h-[2px] bg-red-500 mb-4" />
-          <form className="flex flex-col gap-3">
+          <form
+            className="flex flex-col gap-3"
+            onSubmit={handleSubmit}
+            aria-label="Free quote form"
+          >
             <input
               type="text"
               placeholder="Name"
+              aria-label="Name"
               className="p-2 sm:p-3 md:p-3.5 lg:p-4 text-xs sm:text-sm md:text-base text-black outline-none bg-white"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
+              required
             />
             <input
               type="email"
               placeholder="Email"
+              aria-label="Email"
               className="p-2 sm:p-3 md:p-3.5 lg:p-4 text-xs sm:text-sm md:text-base text-black outline-none bg-white"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
+              required
             />
             <textarea
               placeholder="Message..."
+              aria-label="Message"
               className="p-2 sm:p-3 md:p-3.5 lg:p-4 text-xs sm:text-sm md:text-base text-black outline-none bg-white"
               rows={4}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
+              required
             />
-            <Link href="/">
-              <button
-                type="submit"
-                className="bg-transparent border border-red-500 text-red-500 font-semibold text-xs sm:text-sm md:text-base py-2.5 sm:py-3 md:py-4 hover:bg-red-600 hover:text-white transition More-hover-button"
-              >
-                SUBMIT NOW
-              </button>
-            </Link>
+            <button
+              type="submit"
+              className="bg-transparent border border-red-500 text-red-500 font-semibold text-xs sm:text-sm md:text-base py-2.5 sm:py-3 md:py-4 hover:bg-red-600 hover:text-white transition More-hover-button"
+            >
+              SUBMIT NOW
+            </button>
           </form>
         </div>
 
@@ -141,12 +159,16 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
               href="https://www.facebook.com/sasroofingwaterproofing"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit us on Facebook"
               className="bg-red-500 w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-600 transition"
             >
               <FaFacebookF />
             </a>
             <a
               href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit us on Houzz"
               className="bg-red-500 w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-600 transition"
             >
               <FaHome />

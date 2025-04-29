@@ -10,7 +10,7 @@ interface BreadcrumbItem {
 interface BreadCrumProps {
   breadcrumbItems: BreadcrumbItem[];
   pageTitle: string;
-  imageSrc: string; // Add imageSrc prop here
+  imageSrc: string;
 }
 
 const BreadCrum2: React.FC<BreadCrumProps> = ({
@@ -21,34 +21,39 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
   return (
     <div className="relative h-60 md:h-85 w-full">
       <Image
-        src={imageSrc} // Use dynamic image source
+        src={imageSrc}
         alt="Breadcrumb Background"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="top"
+        fill
+        loading="lazy"
+        className="object-cover object-top brightness-60"
         quality={100}
-        className="brightness-60"
+        priority={false}
       />
+
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center">
-        <div className="text-lg mb-2 absolute bottom-0 md:left-50 md:right-0 flex justify-center items-center md:justify-normal md:items-normal">
+        <nav
+          aria-label="breadcrumb"
+          role="navigation"
+          className="mb-2 flex flex-wrap justify-center text-sm"
+        >
           {breadcrumbItems.map((item, index) => (
-            <span key={item.href}>
+            <span key={item.href} className="flex items-center">
               <Link
                 href={item.href}
                 className={`${
                   index === breadcrumbItems.length - 1
-                    ? "text-white font-medium"
-                    : "text-white"
+                    ? "text-white font-semibold"
+                    : "text-white hover:underline"
                 }`}
               >
                 {item.label}
               </Link>
               {index < breadcrumbItems.length - 1 && (
-                <span className="text-white mx-1">›</span>
+                <span className="mx-2 text-white">›</span>
               )}
             </span>
           ))}
-        </div>
+        </nav>
 
         <h1 className="text-4xl lg:text-6xl font-bold">{pageTitle}</h1>
       </div>

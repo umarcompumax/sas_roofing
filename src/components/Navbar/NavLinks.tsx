@@ -5,6 +5,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaFacebookF, FaHome } from "react-icons/fa";
 
+const navItems = [
+  { label: "HOME", path: "/" },
+  { label: "ABOUT US", path: "/about" },
+  { label: "SERVICES", path: "/services" },
+  { label: "PROJECTS", path: "/projects" },
+  { label: "REVIEWS", path: "/reviews" },
+  { label: "CONTACT US", path: "/contact" },
+];
+
 export default function NavLinks({
   setSidebarOpen,
 }: {
@@ -17,23 +26,17 @@ export default function NavLinks({
       {/* Main Nav */}
       <ul className="flex gap-4 text-sm font-semibold text-[#0b2c55] items-stretch h-full w-full justify-end">
         {/* Desktop nav links (xl+) */}
-        <div className="hidden xl:flex gap-6 items-stretch">
-          {[
-            { label: "HOME", path: "/" },
-            { label: "ABOUT US", path: "/about" },
-            { label: "SERVICES", path: "/services" },
-            { label: "PROJECTS", path: "/projects" },
-            { label: "REVIEWS", path: "/reviews" },
-            { label: "CONTACT US", path: "/contact" },
-          ].map((item) => (
-            <li
+        <li className="hidden xl:flex gap-6 items-stretch list-none">
+          {navItems.map((item) => (
+            <Link
               key={item.label}
-              className="flex items-center px-2 list-none hover:text-[#e63a27]"
+              href={item.path}
+              className="flex items-center px-2 hover:text-[#e63a27]"
             >
-              <Link href={item.path}>{item.label}</Link>
-            </li>
+              {item.label}
+            </Link>
           ))}
-        </div>
+        </li>
 
         {/* Hamburger menu for xs-lg only */}
         <li className="flex items-center xl:hidden">
@@ -46,7 +49,8 @@ export default function NavLinks({
             <div className="border-2 border-white p-2">
               <Image
                 src="/menu4.png"
-                alt="Menu"
+                alt=""
+                role="presentation"
                 width={28}
                 height={28}
                 className="object-contain"
@@ -63,7 +67,8 @@ export default function NavLinks({
             <div className="border-2 border-[#e63a27] p-2">
               <Image
                 src="/menu3.png"
-                alt="Menu"
+                alt=""
+                role="presentation"
                 width={28}
                 height={28}
                 className="object-contain"
@@ -90,13 +95,15 @@ export default function NavLinks({
           >
             <Image
               src="/menu.png"
-              alt="Menu"
+              alt=""
+              role="presentation"
               fill
               className="object-contain opacity-100 hover:opacity-0 transition-opacity duration-200"
             />
             <Image
               src="/menu-hover.png"
-              alt="Menu Hover"
+              alt=""
+              role="presentation"
               fill
               className="object-contain opacity-0 hover:opacity-100 transition-opacity duration-200 absolute top-0 left-0"
             />
@@ -113,6 +120,8 @@ export default function NavLinks({
           onClick={() => setIsOpen(false)}
         />
         <div
+          role="dialog"
+          aria-modal="true"
           className={`w-[40%] h-full bg-black text-white relative flex flex-col transition-transform duration-300 ease-in-out transform ${
             isOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full"
           }`}
@@ -137,24 +146,17 @@ export default function NavLinks({
           </div>
 
           <ul className="flex flex-col mt-4">
-            {[
-              { name: "HOME", href: "/" },
-              { name: "ABOUT US", href: "/about" },
-              { name: "SERVICES", href: "/services" },
-              { name: "PROJECTS", href: "/projects" },
-              { name: "REVIEWS", href: "/reviews" },
-              { name: "CONTACT US", href: "/contact" },
-            ].map((item) => (
+            {navItems.map((item) => (
               <li
-                key={item.name}
+                key={item.label}
                 className="border-t border-white/20 last:border-b"
               >
                 <Link
-                  href={item.href}
+                  href={item.path}
                   className="block px-6 py-4 hover:bg-white hover:text-black transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
-                  {item.name}
+                  {item.label}
                 </Link>
               </li>
             ))}
@@ -171,6 +173,8 @@ export default function NavLinks({
             </a>
             <a
               href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
             >
               <FaHome className="text-white text-lg" />

@@ -2,8 +2,13 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import GallerySection from "./GallerySection";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+// 🔁 Dynamically import GallerySection to prevent SSR hydration mismatch
+const GallerySection = dynamic(() => import("./GallerySection"), {
+  ssr: false,
+});
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -53,15 +58,8 @@ const OurProjects = () => {
         </motion.section>
       </div>
 
-      {/* Optional: Add animation to GallerySection wrapper if needed */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <GallerySection />
-      </motion.div>
+      {/* Gallery Section - loaded only on client to avoid hydration mismatch */}
+      <GallerySection />
     </main>
   );
 };
