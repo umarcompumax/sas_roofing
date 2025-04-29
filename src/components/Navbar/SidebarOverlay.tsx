@@ -69,7 +69,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
           <h2 className="text-sm sm:text-base md:text-lg font-bold mb-1">
             ABOUT US
           </h2>
-          <div className="w-8 h-[2px] bg-red-500 mb-3" />
+          <div className="w-8 h-[2px] bg-[#e63a27] mb-3" />
           <p className="text-xs sm:text-sm md:text-base leading-relaxed sm:leading-normal tracking-wide">
             With more than four decades of proven success in quality Rufers
             services, Shelder Roofing and Retro-Fit group is a family-owned
@@ -82,7 +82,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
           <h2 className="text-sm sm:text-base md:text-lg font-bold mb-1">
             GET A FREE QUOTE
           </h2>
-          <div className="w-8 h-[2px] bg-red-500 mb-4" />
+          <div className="w-8 h-[2px] bg-[#e63a27] mb-4" />
           <form
             className="flex flex-col gap-3"
             onSubmit={handleSubmit}
@@ -117,7 +117,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
             />
             <button
               type="submit"
-              className="bg-transparent border border-red-500 text-red-500 font-semibold text-xs sm:text-sm md:text-base py-2.5 sm:py-3 md:py-4 hover:bg-red-600 hover:text-white transition More-hover-button"
+              className="bg-transparent border border-[#e63a27] text-[#e63a27] font-semibold text-xs sm:text-sm md:text-base py-2.5 sm:py-3 md:py-4 hover:bg-[#e63a27] hover:text-white transition More-hover-button"
             >
               SUBMIT NOW
             </button>
@@ -129,10 +129,10 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
           <h2 className="text-sm sm:text-base md:text-lg font-bold mb-1">
             CONTACT INFO
           </h2>
-          <div className="w-8 h-[2px] bg-red-500 mb-4" />
+          <div className="w-8 h-[2px] bg-[#e63a27] mb-4" />
           <ul className="text-xs sm:text-sm md:text-base space-y-3">
             <li className="flex items-start gap-3">
-              <FaMapMarkerAlt className="mt-1 text-red-500 shrink-0" />
+              <FaMapMarkerAlt className="mt-1 text-[#e63a27] shrink-0" />
               <span>
                 552 Rugby Rd, Brooklyn
                 <br />
@@ -140,15 +140,15 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
               </span>
             </li>
             <li className="flex items-center gap-3">
-              <FaPhoneAlt className="text-red-500" />
+              <FaPhoneAlt className="text-[#e63a27]" />
               Office: (347) 221-6549
             </li>
             <li className="flex items-center gap-3">
-              <FaMobileAlt className="text-red-500" />
+              <FaMobileAlt className="text-[#e63a27]" />
               Cell: (347) 394-9384
             </li>
             <li className="flex items-center gap-3">
-              <FaEnvelope className="text-red-500" />
+              <FaEnvelope className="text-[#e63a27]" />
               amzadh78@gmail.com
             </li>
           </ul>
@@ -160,7 +160,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit us on Facebook"
-              className="bg-red-500 w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-600 transition"
+              className="bg-[#e63a27] w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e63a27] transition"
             >
               <FaFacebookF />
             </a>
@@ -169,7 +169,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit us on Houzz"
-              className="bg-red-500 w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-600 transition"
+              className="bg-[#e63a27] w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e63a27] transition"
             >
               <FaHome />
             </a>
