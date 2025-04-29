@@ -104,22 +104,25 @@ export default function BlogSlider({ swiperRef }: Props) {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="flex justify-center gap-4 pt-6">
+      <nav
+        className="flex justify-center gap-4 pt-6"
+        aria-label="Blog carousel navigation"
+      >
         <button
           onClick={() => handleManualSlide("prev")}
-          aria-label="Previous blog post" // <-- Accessibility label
-          className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-[#ef4423] hover:text-white transition"
+          aria-label="Previous blog post"
+          className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-[#ef4423] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#ef4423] transition"
         >
-          <FiChevronLeft className="w-5 h-5" />
+          <FiChevronLeft className="w-5 h-5" aria-hidden="true" />
         </button>
         <button
           onClick={() => handleManualSlide("next")}
-          aria-label="Next blog post" // <-- Accessibility label
-          className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-[#ef4423] hover:text-white transition"
+          aria-label="Next blog post"
+          className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-[#ef4423] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#ef4423] transition"
         >
-          <FiChevronRight className="w-5 h-5" />
+          <FiChevronRight className="w-5 h-5" aria-hidden="true" />
         </button>
-      </div>
+      </nav>
     </div>
   );
 }

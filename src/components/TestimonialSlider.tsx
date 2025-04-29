@@ -160,20 +160,25 @@ export default function TestimonialSlider() {
         </Swiper>
 
         {/* Navigation Controls */}
-        <div className="flex justify-center gap-4 pt-6">
+        <nav
+          className="flex justify-center gap-4 pt-6"
+          aria-label="Testimonial slider navigation"
+        >
           <button
             onClick={() => handleSlide("prev")}
-            className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-gray-100 transition"
+            aria-label="Previous testimonial"
+            className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003366] transition"
           >
-            <FiChevronLeft className="w-5 h-5" />
+            <FiChevronLeft className="w-5 h-5" aria-hidden="true" />
           </button>
           <button
             onClick={() => handleSlide("next")}
-            className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-gray-100 transition"
+            aria-label="Next testimonial"
+            className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003366] transition"
           >
-            <FiChevronRight className="w-5 h-5" />
+            <FiChevronRight className="w-5 h-5" aria-hidden="true" />
           </button>
-        </div>
+        </nav>
       </div>
     </div>
   );
