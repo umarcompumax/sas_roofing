@@ -49,8 +49,7 @@ export default function HeroSection() {
   const slide = slides[current];
 
   return (
-    <section className="relative w-full h-[700px] overflow-hidden">
-      {/* Background Image with animation */}
+    <section className="relative w-full min-h-[700px] overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={slide.image}
@@ -60,19 +59,20 @@ export default function HeroSection() {
           transition={{ duration: 1 }}
           className="absolute inset-0"
         >
-          <Image
-            src={slide.image}
-            alt={slide.title}
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="relative w-full h-full">
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
         </motion.div>
       </AnimatePresence>
 
-      {/* Slide Content with animation */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-10 md:pl-32 text-white">
+      <div className="relative z-10 h-full flex flex-col justify-center items-start px-6 md:px-20 text-white">
         <AnimatePresence mode="wait">
           <motion.div
             key={slide.title}
@@ -115,7 +115,7 @@ export default function HeroSection() {
         <ArrowRight className="text-white" />
       </button>
 
-      {/* Indicator Dots */}
+      {/* Dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
         {slides.map((_, i) => (
           <div

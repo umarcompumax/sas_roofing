@@ -117,7 +117,7 @@ export default function AboutCompany() {
           href="/about"
           className="inline-block border-4 border-[#003366] p-2 self-start group"
         >
-          <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide text-sm lg:text-base transition group-hover:bg-[#e63a27] group-hover:text-white">
+          <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide text-sm lg:text-base transition group-hover:bg-[#e63a27] group-hover:text-white hover-button">
             Read More
           </span>
         </Link>
