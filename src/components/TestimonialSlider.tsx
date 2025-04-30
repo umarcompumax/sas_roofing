@@ -69,90 +69,66 @@ const testimonials = [
 export default function TestimonialSlider() {
   const swiperRef = useRef<SwiperType | null>(null);
 
-  const handleSlide = (direction: "next" | "prev") => {
-    if (!swiperRef.current) return;
-    if (direction === "next") swiperRef.current.slideNext();
-    else swiperRef.current.slidePrev();
-  };
+  const handleSlide = (dir: "next" | "prev") =>
+    swiperRef.current?.[dir === "next" ? "slideNext" : "slidePrev"]();
 
   return (
     <div className="w-full px-4 sm:px-6 lg:px-12 py-10">
       <div className="max-w-6xl mx-auto">
         <Swiper
-          loop={true}
+          loop
           autoplay={{ delay: 4000, disableOnInteraction: false }}
           modules={[Autoplay]}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           breakpoints={{
-            0: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 1.2,
-              spaceBetween: 30,
-            },
-            1024: {
-              slidesPerView: 2,
-              spaceBetween: 32,
-            },
+            0: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 1.2, spaceBetween: 30 },
+            1024: { slidesPerView: 2, spaceBetween: 32 },
           }}
         >
-          {testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <div className="flex bg-white shadow-md overflow-hidden rounded-sm h-[280px]">
-                {/* Avatar + Stars Section with 60% red, 40% white background */}
+          {testimonials.map(({ name, location, text, rating, avatar }, i) => (
+            <SwiperSlide key={i}>
+              <div className="flex h-[230px] bg-white shadow-md rounded-sm overflow-hidden">
                 <div
-                  className="w-[50%] flex flex-col items-center justify-center py-6 px-2 relative"
+                  className="w-[50%] flex flex-col items-center justify-center p-4"
                   style={{
                     background:
                       "linear-gradient(to top, #df4432 60%, #f5f5f5 40%)",
                   }}
                 >
-                  {/* Avatar */}
-                  <div className="bg-white rounded-full pb-2 px-2 shadow-md z-10">
-                    <Image
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      width={120}
-                      height={120}
-                      className="rounded-full"
-                    />
-                  </div>
-
-                  {/* Stars */}
-                  <div className="flex gap-1 text-white mt-4 text-[16px] z-10">
-                    {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <span key={i}>★</span>
+                  <Image
+                    src={avatar}
+                    alt={name}
+                    width={100}
+                    height={100}
+                    className="rounded-full bg-white p-1 shadow-md"
+                  />
+                  <div className="flex gap-1 text-white mt-3 text-base">
+                    {Array.from({ length: rating }, (_, j) => (
+                      <span key={j}>★</span>
                     ))}
                   </div>
                 </div>
 
-                {/* Testimonial Content */}
-                <div className="w-[65%] p-6 flex flex-col justify-start items-start text-left">
-                  {/* Quote, Name, Location */}
+                <div className="w-[65%] p-6 text-left">
                   <div className="flex items-start gap-3 mb-2">
                     <Image
                       src="/quote.png"
                       alt="Quote"
-                      width={50}
-                      height={50}
+                      width={40}
+                      height={40}
                       className="mt-1"
                     />
                     <div>
-                      <h3 className="font-bold text-[#003366] text-[20px] leading-tight">
-                        {testimonial.name}
+                      <h3 className="font-bold text-[#003366] text-lg leading-tight">
+                        {name}
                       </h3>
-                      <p className="text-[#e63a27] text-[14px] uppercase font-semibold tracking-wide">
-                        {testimonial.location}
+                      <p className="text-[#e63a27] text-sm uppercase font-semibold">
+                        {location}
                       </p>
                     </div>
                   </div>
-
-                  {/* Testimonial Text */}
-                  <p className="text-[16px] text-gray-700 leading-snug">
-                    {testimonial.text}
-                  </p>
+                  <p className="text-sm text-gray-700 leading-snug">{text}</p>
                 </div>
               </div>
             </SwiperSlide>
@@ -160,25 +136,22 @@ export default function TestimonialSlider() {
         </Swiper>
 
         {/* Navigation Controls */}
-        <nav
-          className="flex justify-center gap-4 pt-6"
-          aria-label="Testimonial slider navigation"
-        >
-          <button
-            onClick={() => handleSlide("prev")}
-            aria-label="Previous testimonial"
-            className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003366] transition"
-          >
-            <FiChevronLeft className="w-5 h-5" aria-hidden="true" />
-          </button>
-          <button
-            onClick={() => handleSlide("next")}
-            aria-label="Next testimonial"
-            className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003366] transition"
-          >
-            <FiChevronRight className="w-5 h-5" aria-hidden="true" />
-          </button>
-        </nav>
+        <div className="flex justify-center gap-4 pt-6">
+          {["prev", "next"].map((dir) => (
+            <button
+              key={dir}
+              onClick={() => handleSlide(dir as "next" | "prev")}
+              aria-label={`${dir === "next" ? "Next" : "Previous"} testimonial`}
+              className="w-10 h-10 flex items-center justify-center border-2 border-[#003366] text-[#003366] rounded-full hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003366] transition"
+            >
+              {dir === "prev" ? (
+                <FiChevronLeft className="w-5 h-5" />
+              ) : (
+                <FiChevronRight className="w-5 h-5" />
+              )}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

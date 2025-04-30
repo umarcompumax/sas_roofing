@@ -11,10 +11,19 @@ export default function MobileSidebar({
   isOpen: boolean;
   setIsOpen: (val: boolean) => void;
 }) {
+  const navItems = [
+    { name: "HOME", href: "/" },
+    { name: "ABOUT US", href: "/about" },
+    { name: "SERVICES", href: "/services" },
+    { name: "PROJECTS", href: "/projects" },
+    { name: "REVIEWS", href: "/reviews" },
+    { name: "CONTACT US", href: "/contact" },
+  ];
+
   return (
     <div
       className={`fixed inset-0 z-50 flex justify-end ${
-        isOpen ? "" : "pointer-events-none"
+        !isOpen && "pointer-events-none"
       }`}
       aria-hidden={!isOpen}
       role="dialog"
@@ -29,15 +38,15 @@ export default function MobileSidebar({
       />
 
       {/* Sidebar */}
-      <div
-        className={`w-[40%] h-full bg-black text-white relative flex flex-col transition-transform duration-300 ease-in-out transform ${
+      <aside
+        className={`w-[40%] h-full bg-black text-white relative flex flex-col transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full"
         }`}
         tabIndex={-1}
       >
         {/* Close Button */}
         <button
-          className="absolute top-3 right-3 text-white text-2xl"
+          className="absolute top-3 right-3 text-2xl"
           onClick={() => setIsOpen(false)}
           aria-label="Close sidebar"
         >
@@ -45,7 +54,7 @@ export default function MobileSidebar({
         </button>
 
         {/* Logo */}
-        <div className="flex justify-center p-6">
+        <div className="p-6 flex justify-center">
           <Image
             src="/Logo.png"
             alt="Company Logo"
@@ -55,30 +64,21 @@ export default function MobileSidebar({
           />
         </div>
 
-        {/* Navigation Links */}
-        <ul className="flex flex-col mt-4">
-          {[
-            { name: "HOME", href: "/" },
-            { name: "ABOUT US", href: "/about" },
-            { name: "SERVICES", href: "/services" },
-            { name: "PROJECTS", href: "/projects" },
-            { name: "REVIEWS", href: "/reviews" },
-            { name: "CONTACT US", href: "/contact" },
-          ].map((item) => (
-            <li
-              key={item.name}
-              className="border-t border-white/20 last:border-b"
+        {/* Navigation */}
+        <nav className="mt-4">
+          {navItems.map(({ name, href }, idx) => (
+            <Link
+              key={name}
+              href={href}
+              onClick={() => setIsOpen(false)}
+              className={`block px-6 py-4 border-t border-white/20 hover:bg-white hover:text-black transition-colors ${
+                idx === navItems.length - 1 ? "border-b" : ""
+              }`}
             >
-              <Link
-                href={item.href}
-                className="block px-6 py-4 hover:bg-white hover:text-black transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            </li>
+              {name}
+            </Link>
           ))}
-        </ul>
+        </nav>
 
         {/* Social Icons */}
         <div className="mt-auto flex justify-center gap-4 py-6">
@@ -86,20 +86,22 @@ export default function MobileSidebar({
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
             aria-label="Visit Facebook"
+            className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
           >
             <FaFacebookF className="text-white text-lg" />
           </Link>
           <Link
             href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
-            className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Home"
+            className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
           >
             <FaHome className="text-white text-lg" />
           </Link>
         </div>
-      </div>
+      </aside>
     </div>
   );
 }

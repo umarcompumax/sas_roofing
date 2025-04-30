@@ -71,6 +71,43 @@
   border: none;
 }
 
+/* Form submit button */
+.form-hover-button {
+  position: relative;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #e5392c;
+  background-color: #0b2c55;
+  border: 1px solid #e5392c;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+  transition: color 0.4s ease, border 0.4s ease;
+}
+
+.form-hover-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #003269;
+  border-radius: 90% 90% 0 0 / 90% 90% 0 0;
+  transition: height 0.4s ease;
+  z-index: -1;
+}
+
+.form-hover-button:hover::before {
+  height: 150%;
+}
+
+.form-hover-button:hover {
+  color: white;
+  border: none;
+}
+
+
 /* Get Quote  */
 .get-hover-button {
   position: relative;

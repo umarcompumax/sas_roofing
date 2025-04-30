@@ -1,12 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { FaCertificate, FaLightbulb, FaHome } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function AboutCompany() {
+  const [showMore, setShowMore] = useState(false);
+
   const features = [
     { icon: <FaCertificate className="text-[#e63a27]" />, label: "Certified" },
     {
@@ -17,8 +19,8 @@ export default function AboutCompany() {
   ];
 
   return (
-    <section className="flex flex-col xl:flex-row p-6 sm:p-8 xl:px-16 2xl:px-32 bg-white gap-10 w-5/6 max-w-screen-2xl mx-auto">
-      {/* Image Block with Animation */}
+    <section className="flex flex-col xl:flex-row p-6 sm:p-8 xl:px-16 2xl:px-32 bg-white gap-10 w-5/6 max-w-screen-2xl mx-auto lg:pt-20 ">
+      {/* Image Block */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -34,23 +36,18 @@ export default function AboutCompany() {
           className="w-full h-full object-cover"
         />
 
-        {/* Experience Block */}
         <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-blue-900 shadow-md flex items-center gap-2">
           <span className="text-4xl sm:text-5xl font-extrabold text-blue-900">
             12
           </span>
-          <div className="leading-tight text-left">
-            <div className="text-sm sm:text-base font-bold uppercase tracking-wide">
-              Years
-            </div>
-            <div className="text-sm sm:text-base font-bold uppercase tracking-wide">
-              of Experience
-            </div>
+          <div className="leading-tight text-left text-sm sm:text-base font-bold uppercase tracking-wide">
+            <div>Years</div>
+            <div>of Experience</div>
           </div>
         </div>
       </motion.div>
 
-      {/* Text Content with Animation */}
+      {/* Text Content */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +56,6 @@ export default function AboutCompany() {
         className="w-full max-w-5xl mx-auto xl:mx-0 flex flex-col justify-between"
       >
         <div>
-          {/* Heading Section */}
           <div className="flex items-center gap-3 mb-2">
             <div className="w-6 h-[1px] bg-[#e63a27]" />
             <h4 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider">
@@ -71,7 +67,6 @@ export default function AboutCompany() {
             Roofing Is Our Heritage & Quality Is Our Tradition
           </h1>
 
-          {/* Features Row */}
           <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-blue-800 mb-6">
             {features.map(({ icon, label }) => (
               <div
@@ -84,32 +79,41 @@ export default function AboutCompany() {
             ))}
           </div>
 
-          {/* Paragraphs */}
-          <div className="text-gray-600 space-y-6 text-sm sm:text-base lg:text-lg mb-8">
-            <p>
-              For over twelve years, SAS Roofing & Waterproofing has proudly
-              served Brooklyn, Manhattan, and Queens with top-tier roofing,
-              waterproofing, and masonry solutions. Every roof we install, every
-              leak we seal, and every brick we lay reflects our unwavering
-              commitment to quality and craftsmanship.
-            </p>
-            <p>
-              As a trusted roofing contractor in Brooklyn, we specialize in
-              everything from residential roof repairs to complete commercial
-              roof installations. Our expert team also delivers professional
-              waterproofing services to protect buildings and extend structural
-              integrity.
-            </p>
-            <p>
-              Our skilled masonry team handles everything from brick restoration
-              to sidewalk repair with care.
-            </p>
-            <p>
-              Choose SAS Roofing & Waterproofing—where dedication meets
-              experience, and every project is built on a foundation of trust
-              and excellence.
-            </p>
-          </div>
+          <p className="text-gray-600 text-sm sm:text-base lg:text-lg mb-4">
+            For over twelve years, SAS Roofing & Waterproofing has proudly
+            served Brooklyn, Manhattan, and Queens with top-tier roofing,
+            waterproofing, and masonry solutions. Every roof we install, every
+            leak we seal, and every brick we lay reflects our unwavering
+            commitment to quality and craftsmanship.
+          </p>
+
+          {showMore && (
+            <div className="text-gray-600 text-sm sm:text-base lg:text-lg space-y-4 mb-4">
+              <p>
+                As a trusted roofing contractor in Brooklyn, we specialize in
+                everything from residential roof repairs to complete commercial
+                roof installations. Our expert team also delivers professional
+                waterproofing services to protect buildings and extend
+                structural integrity.
+              </p>
+              <p>
+                Our skilled masonry team handles everything from brick
+                restoration to sidewalk repair with care.
+              </p>
+              <p>
+                Choose SAS Roofing & Waterproofing—where dedication meets
+                experience, and every project is built on a foundation of trust
+                and excellence.
+              </p>
+            </div>
+          )}
+
+          <button
+            onClick={() => setShowMore((prev) => !prev)}
+            className="text-[#e63a27] font-semibold text-sm underline mb-6"
+          >
+            {showMore ? "Read Less" : "Read More"}
+          </button>
         </div>
 
         {/* Read More Link */}

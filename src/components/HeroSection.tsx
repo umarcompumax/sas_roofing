@@ -33,13 +33,12 @@ const slides = [
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
 
-  const nextSlide = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  }, []);
-
-  const prevSlide = () => {
+  const nextSlide = useCallback(
+    () => setCurrent((prev) => (prev + 1) % slides.length),
+    []
+  );
+  const prevSlide = () =>
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  };
 
   useEffect(() => {
     const interval = setInterval(() => nextSlide(), 6000);
@@ -49,7 +48,10 @@ export default function HeroSection() {
   const slide = slides[current];
 
   return (
-    <section className="relative w-full min-h-[700px] overflow-hidden">
+    <section
+      id="hero-section"
+      className="relative w-full min-h-[700px] overflow-hidden"
+    >
       <AnimatePresence mode="wait">
         <motion.div
           key={slide.image}
@@ -59,58 +61,54 @@ export default function HeroSection() {
           transition={{ duration: 1 }}
           className="absolute inset-0"
         >
-          <div className="relative w-full h-full">
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              fill
-              priority
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-black/30" />
-          </div>
+          <Image
+            src={slide.image}
+            alt={slide.title}
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/30" />
         </motion.div>
       </AnimatePresence>
 
       <div className="relative z-10 h-full flex flex-col justify-center items-start px-6 md:px-20 text-white">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={slide.title}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -40 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl space-y-6"
-          >
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-[90px] 2xl:text-[100px] font-extrabold leading-tight pt-10">
-              {slide.title}
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl font-light tracking-wide">
-              {slide.description}
-            </p>
-            <Link href="/about">
-              <div className="inline-block border-4 border-[#0a356f] p-1">
-                <Button className="Hero_hover-button text-sm sm:text-base lg:text-lg">
-                  {slide.buttonText.toUpperCase()}
-                </Button>
-              </div>
-            </Link>
-          </motion.div>
-        </AnimatePresence>
+        <motion.div
+          key={slide.title}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -40 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="max-w-3xl space-y-6 pt-10"
+        >
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-[90px] 2xl:text-[100px] font-extrabold leading-tight">
+            {slide.title}
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl font-light tracking-wide">
+            {slide.description}
+          </p>
+          <Link href="/about">
+            <div className="inline-block border-4 border-[#0a356f] p-1">
+              <Button className="Hero_hover-button text-sm sm:text-base lg:text-lg">
+                {slide.buttonText.toUpperCase()}
+              </Button>
+            </div>
+          </Link>
+        </motion.div>
       </div>
 
       {/* Controls */}
       <button
         onClick={prevSlide}
         aria-label="Previous Slide"
-        className="absolute left-5 top-1/2 -translate-y-1/2 bg-black/40 rounded-full p-2 z-20 cursor-pointer"
+        className="absolute left-5 top-1/2 -translate-y-1/2 bg-black/40 rounded-full p-2 z-20"
       >
         <ArrowLeft className="text-white" />
       </button>
       <button
         onClick={nextSlide}
         aria-label="Next Slide"
-        className="absolute right-5 top-1/2 -translate-y-1/2 bg-[#e63a27] rounded-full p-2 z-20 cursor-pointer"
+        className="absolute right-5 top-1/2 -translate-y-1/2 bg-[#e63a27] rounded-full p-2 z-20"
       >
         <ArrowRight className="text-white" />
       </button>

@@ -19,7 +19,6 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission (e.g., send to API or show success message)
     console.log("Form submitted:", form);
   };
 
@@ -28,14 +27,11 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-[999] bg-black/70 flex justify-start"
-      style={{
-        cursor: "url('/white_cursor.png') 0 0, auto",
-      }}
+      className="fixed inset-0 z-[999] bg-black/70 flex justify-start cursor-[url('/white_cursor.png')_0_0,auto]"
     >
-      <motion.div
+      <motion.aside
         onClick={(e) => e.stopPropagation()}
-        className="w-[280px] sm:w-[300px] md:w-[360px] lg:w-[400px] xl:w-[420px] 2xl:w-[460px] bg-[#0b2c55] text-white overflow-y-auto p-4 sm:p-5 md:p-6 lg:p-8 relative cursor-default"
+        className="w-[280px] sm:w-[300px] md:w-[360px] lg:w-[400px] xl:w-[420px] 2xl:w-[460px] bg-[#0b2c55] text-white overflow-y-auto p-4 sm:p-6 lg:p-8 relative"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
@@ -43,16 +39,15 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
       >
         {/* Close Button */}
         <button
-          type="button"
           onClick={onClose}
           aria-label="Close sidebar"
-          className="absolute top-4 right-4 text-white text-2xl cursor-pointer"
+          className="absolute top-4 right-4 text-white text-2xl"
         >
           <IoMdClose />
         </button>
 
         {/* Logo */}
-        <div className="flex justify-center mb-6 mt-6">
+        <div className="flex justify-center my-6">
           <Link href="/">
             <Image
               src="/Logo.png"
@@ -64,118 +59,102 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
           </Link>
         </div>
 
-        {/* About Us */}
-        <div className="mb-6">
-          <h2 className="text-sm sm:text-base md:text-lg font-bold mb-1">
-            ABOUT US
-          </h2>
+        {/* About Section */}
+        <section className="mb-6">
+          <h2 className="text-base md:text-lg font-bold mb-1">ABOUT US</h2>
           <div className="w-8 h-[2px] bg-[#e63a27] mb-3" />
-          <p className="text-xs sm:text-sm md:text-base leading-relaxed sm:leading-normal tracking-wide">
-            With more than four decades of proven success in quality Rufers
-            services, Shelder Roofing and Retro-Fit group is a family-owned
-            &amp; operated business serving.
+          <p className="text-sm md:text-base leading-relaxed tracking-wide">
+            With over four decades of proven success in quality roofing
+            services, Shelder Roofing and Retro-Fit Group is a family-owned and
+            operated business.
           </p>
-        </div>
+        </section>
 
-        {/* Get A Free Quote */}
-        <div className="mb-6">
-          <h2 className="text-sm sm:text-base md:text-lg font-bold mb-1">
+        {/* Free Quote Form */}
+        <section className="mb-6">
+          <h2 className="text-base md:text-lg font-bold mb-1">
             GET A FREE QUOTE
           </h2>
           <div className="w-8 h-[2px] bg-[#e63a27] mb-4" />
-          <form
-            className="flex flex-col gap-3"
-            onSubmit={handleSubmit}
-            aria-label="Free quote form"
-          >
-            <input
-              type="text"
-              placeholder="Name"
-              aria-label="Name"
-              className="p-2 sm:p-3 md:p-3.5 lg:p-4 text-xs sm:text-sm md:text-base text-black outline-none bg-white"
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              required
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              aria-label="Email"
-              className="p-2 sm:p-3 md:p-3.5 lg:p-4 text-xs sm:text-sm md:text-base text-black outline-none bg-white"
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              required
-            />
+          <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
+            {["name", "email"].map((field) => (
+              <input
+                key={field}
+                type={field === "email" ? "email" : "text"}
+                placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+                value={form[field as keyof typeof form]}
+                onChange={(e) => setForm({ ...form, [field]: e.target.value })}
+                required
+                className="p-3 text-sm md:text-base text-black bg-white outline-none"
+              />
+            ))}
             <textarea
-              placeholder="Message..."
-              aria-label="Message"
-              className="p-2 sm:p-3 md:p-3.5 lg:p-4 text-xs sm:text-sm md:text-base text-black outline-none bg-white"
               rows={4}
+              placeholder="Message..."
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               required
+              className="p-3 text-sm md:text-base text-black bg-white outline-none"
             />
             <button
               type="submit"
-              className="bg-transparent border border-[#e63a27] text-[#e63a27] font-semibold text-xs sm:text-sm md:text-base py-2.5 sm:py-3 md:py-4 hover:bg-[#e63a27] hover:text-white transition More-hover-button"
+              className="border border-[#e63a27] text-[#e63a27] font-semibold text-sm md:text-base py-3 hover:bg-[#e63a27] hover:text-white transition form-hover-button"
             >
               SUBMIT NOW
             </button>
           </form>
-        </div>
+        </section>
 
-        {/* Contact Info */}
-        <div>
-          <h2 className="text-sm sm:text-base md:text-lg font-bold mb-1">
-            CONTACT INFO
-          </h2>
+        {/* Contact Info & Social */}
+        <section>
+          <h2 className="text-base md:text-lg font-bold mb-1">CONTACT INFO</h2>
           <div className="w-8 h-[2px] bg-[#e63a27] mb-4" />
-          <ul className="text-xs sm:text-sm md:text-base space-y-3">
-            <li className="flex items-start gap-3">
-              <FaMapMarkerAlt className="mt-1 text-[#e63a27] shrink-0" />
-              <span>
-                552 Rugby Rd, Brooklyn
-                <br />
-                New York 11230.
-              </span>
+          <ul className="text-sm md:text-base space-y-3">
+            <li className="flex gap-3 items-start">
+              <FaMapMarkerAlt className="text-[#e63a27] mt-1 shrink-0" />
+              <span>552 Rugby Rd, Brooklyn, NY 11230</span>
             </li>
-            <li className="flex items-center gap-3">
+            <li className="flex gap-3 items-center">
               <FaPhoneAlt className="text-[#e63a27]" />
-              Office: (347) 221-6549
+              <span>Office: (347) 221-6549</span>
             </li>
-            <li className="flex items-center gap-3">
+            <li className="flex gap-3 items-center">
               <FaMobileAlt className="text-[#e63a27]" />
-              Cell: (347) 394-9384
+              <span>Cell: (347) 394-9384</span>
             </li>
-            <li className="flex items-center gap-3">
+            <li className="flex gap-3 items-center">
               <FaEnvelope className="text-[#e63a27]" />
-              amzadh78@gmail.com
+              <span>amzadh78@gmail.com</span>
             </li>
           </ul>
 
-          {/* Social Icons */}
           <div className="flex gap-4 mt-6">
-            <Link
-              href="https://www.facebook.com/sasroofingwaterproofing"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit us on Facebook"
-              className="bg-[#e63a27] w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e63a27] transition"
-            >
-              <FaFacebookF />
-            </Link>
-            <Link
-              href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit us on Houzz"
-              className="bg-[#e63a27] w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e63a27] transition"
-            >
-              <FaHome />
-            </Link>
+            {[
+              {
+                href: "https://www.facebook.com/sasroofingwaterproofing",
+                icon: <FaFacebookF />,
+                label: "Facebook",
+              },
+              {
+                href: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
+                icon: <FaHome />,
+                label: "Houzz",
+              },
+            ].map(({ href, icon, label }) => (
+              <Link
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit us on ${label}`}
+                className="bg-[#e63a27] w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e63a27] transition"
+              >
+                {icon}
+              </Link>
+            ))}
           </div>
-        </div>
-      </motion.div>
+        </section>
+      </motion.aside>
     </div>
   );
 }

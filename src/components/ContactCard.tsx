@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { ReactNode, CSSProperties } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -14,14 +15,28 @@ const fadeUp = {
   }),
 };
 
-const ContactCard = ({
+interface ContactItem {
+  icon: ReactNode;
+  title: string;
+  desc: string;
+  content: string;
+}
+
+interface ContactCardProps {
+  item: ContactItem;
+  index: number;
+  cardStyle: string;
+  cardShadowStyle: CSSProperties;
+  iconTab: string;
+}
+
+const ContactCard: React.FC<ContactCardProps> = ({
   item,
   index,
   cardStyle,
   cardShadowStyle,
   iconTab,
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-}: any) => {
+}) => {
   return (
     <motion.div
       className={cardStyle}
@@ -33,15 +48,20 @@ const ContactCard = ({
       variants={fadeUp}
     >
       <div className={iconTab}>{item.icon}</div>
-      <h3 className="text-[#003269] font-semibold mt-2 text-lg lg:text-2xl xl:text-xl group-hover:text-white">
-        {item.title}
-      </h3>
-      <p className="italic text-gray-600 text-md lg:text-lg xl:text-base group-hover:text-gray-300">
-        {item.desc}
-      </p>
-      <p className="mt-1 text-gray-500 font-medium text-md lg:text-lg xl:text-base group-hover:text-gray-300">
-        {item.content}
-      </p>
+
+      <div className="mt-2 space-y-1">
+        <h3 className="text-[#003269] font-semibold text-xl group-hover:text-white">
+          {item.title}
+        </h3>
+
+        <p className="italic text-gray-600 group-hover:text-gray-300">
+          {item.desc}
+        </p>
+
+        <p className="text-gray-500 font-medium whitespace-pre-line group-hover:text-gray-300">
+          {item.content}
+        </p>
+      </div>
     </motion.div>
   );
 };

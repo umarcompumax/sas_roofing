@@ -19,7 +19,7 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
   imageSrc,
 }) => {
   return (
-    <div className="relative h-60 md:h-85 w-full">
+    <div className="relative h-60 md:h-85 w-full text-white text-center">
       <Image
         src={imageSrc}
         alt="Breadcrumb Background"
@@ -30,28 +30,25 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
         priority={false}
       />
 
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center">
+      <div className="absolute inset-0 flex flex-col justify-center items-center">
         <nav
           aria-label="breadcrumb"
-          role="navigation"
-          className="mb-2 flex flex-wrap justify-center text-sm"
+          className="mb-2 flex flex-wrap justify-center text-sm gap-2"
         >
           {breadcrumbItems.map((item, index) => (
-            <span key={item.href} className="flex items-center">
+            <React.Fragment key={item.href}>
               <Link
                 href={item.href}
-                className={`${
+                className={
                   index === breadcrumbItems.length - 1
-                    ? "text-white font-semibold"
-                    : "text-white hover:underline"
-                }`}
+                    ? "font-semibold"
+                    : "hover:underline"
+                }
               >
                 {item.label}
               </Link>
-              {index < breadcrumbItems.length - 1 && (
-                <span className="mx-2 text-white">›</span>
-              )}
-            </span>
+              {index < breadcrumbItems.length - 1 && <span>›</span>}
+            </React.Fragment>
           ))}
         </nav>
 

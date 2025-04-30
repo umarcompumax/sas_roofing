@@ -6,6 +6,23 @@ import Link from "next/link";
 import { FaFacebookF, FaHome } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
+const navLinks = [
+  { name: "HOME", href: "/" },
+  { name: "ABOUT US", href: "/about" },
+  { name: "SERVICES", href: "/services" },
+  { name: "PROJECTS", href: "/projects" },
+  { name: "REVIEWS", href: "/reviews" },
+  { name: "CONTACT US", href: "/contact" },
+];
+
+const socialLinks = [
+  {
+    icon: <FaFacebookF className="text-white text-lg" />,
+    href: "https://facebook.com",
+  },
+  { icon: <FaHome className="text-white text-lg" />, href: "/" },
+];
+
 export default function Sidebar({
   isOpen,
   setIsOpen,
@@ -13,22 +30,10 @@ export default function Sidebar({
   isOpen: boolean;
   setIsOpen: (val: boolean) => void;
 }) {
-  const [isClient, setIsClient] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) return null;
-
-  const links = [
-    { name: "HOME", href: "/" },
-    { name: "ABOUT US", href: "/about" },
-    { name: "SERVICES", href: "/services" },
-    { name: "PROJECTS", href: "/projects" },
-    { name: "REVIEWS", href: "/reviews" },
-    { name: "CONTACT US", href: "/contact" },
-  ];
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
 
   return (
     <AnimatePresence>
@@ -45,68 +50,61 @@ export default function Sidebar({
           />
 
           {/* Sidebar */}
-          <motion.div
+          <motion.aside
             className="w-[40%] max-w-sm h-full bg-black text-white relative flex flex-col"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            {/* Close Button */}
+            {/* Close */}
             <button
-              className="absolute top-3 right-3 text-white text-2xl"
+              aria-label="Close menu"
               onClick={() => setIsOpen(false)}
+              className="absolute top-3 right-3 text-white text-2xl"
             >
               ✕
             </button>
 
             {/* Logo */}
-            <div className="flex justify-center p-6">
+            <div className="mx-auto mt-10 w-[130px] h-[65px] relative">
               <Image
                 src="/Logo.png"
                 alt="Company Logo"
-                width={260}
-                height={130}
+                fill
                 className="object-contain"
               />
             </div>
 
-            {/* Menu */}
-            <ul className="flex flex-col mt-4">
-              {links.map(({ name, href }) => (
-                <li
+            {/* Navigation */}
+            <nav className="mt-4 flex flex-col">
+              {navLinks.map(({ name, href }) => (
+                <Link
                   key={name}
-                  className="border-t border-white/20 last:border-b"
+                  href={href}
+                  onClick={() => setIsOpen(false)}
+                  className="px-6 py-4 border-t border-white/20 last:border-b hover:bg-white hover:text-black transition-colors"
                 >
-                  <Link
-                    href={href}
-                    className="block px-6 py-4 hover:bg-white hover:text-black transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {name}
-                  </Link>
-                </li>
+                  {name}
+                </Link>
               ))}
-            </ul>
+            </nav>
 
             {/* Social Icons */}
             <div className="mt-auto flex justify-center gap-4 py-6">
-              <Link
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center"
-              >
-                <FaFacebookF className="text-white text-lg" />
-              </Link>
-              <Link
-                href="/"
-                className="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center"
-              >
-                <FaHome className="text-white text-lg" />
-              </Link>
+              {socialLinks.map(({ href, icon }, i) => (
+                <Link
+                  key={i}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center"
+                >
+                  {icon}
+                </Link>
+              ))}
             </div>
-          </motion.div>
+          </motion.aside>
         </div>
       )}
     </AnimatePresence>

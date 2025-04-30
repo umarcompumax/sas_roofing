@@ -2,37 +2,40 @@
 
 import React, { useState, useEffect } from "react";
 import { GoArrowUp } from "react-icons/go";
+import { AnimatePresence, motion } from "framer-motion";
 
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const checkScroll = () => {
-    setIsVisible(window.scrollY > 300);
-  };
+  useEffect(() => {
+    const checkScroll = () => {
+      setIsVisible(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", checkScroll);
+    return () => window.removeEventListener("scroll", checkScroll);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", checkScroll);
-    return () => {
-      window.removeEventListener("scroll", checkScroll);
-    };
-  }, []);
-
   return (
-    <button
-      onClick={scrollToTop}
-      className={`hidden xl:block fixed bottom-4 right-4 p-4 bg-white hover:bg-[#003269] z-50 text-white shadow-lg transform transition-all ${
-        isVisible
-          ? "opacity-100 scale-100"
-          : "opacity-0 scale-75 pointer-events-none"
-      }`}
-      aria-label="Back to Top"
-    >
-      <GoArrowUp size={30} className="text-[#e63a27]" />
-    </button>
+    <AnimatePresence>
+      {isVisible && (
+        <motion.button
+          onClick={scrollToTop}
+          aria-label="Back to Top"
+          initial={{ opacity: 0, scale: 0.75 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.75 }}
+          transition={{ duration: 0.3 }}
+          className="hidden xl:block fixed bottom-4 right-4 p-4 bg-white hover:bg-[#003269] z-50 text-white shadow-lg"
+        >
+          <GoArrowUp size={30} className="text-[#e63a27]" />
+        </motion.button>
+      )}
+    </AnimatePresence>
   );
 };
 

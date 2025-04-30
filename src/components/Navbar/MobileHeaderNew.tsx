@@ -14,22 +14,38 @@ export default function MobileHeader() {
   }, []);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
 
-  // Prevent hydration mismatch
+
   if (!hasMounted) return null;
+
+  const navItems = [
+    { name: "HOME", href: "/" },
+    { name: "ABOUT US", href: "/about" },
+    { name: "SERVICES", href: "/services" },
+    { name: "PROJECTS", href: "/projects" },
+    { name: "REVIEWS", href: "/reviews" },
+    { name: "CONTACT US", href: "/contact" },
+  ];
+
+  const socialLinks = [
+    {
+      href: "https://www.facebook.com/sasroofingwaterproofing",
+      icon: <FaFacebookF className="text-white text-lg" />,
+    },
+    {
+      href: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
+      icon: <FaHome className="text-white text-lg" />,
+    },
+  ];
 
   return (
     <>
-      {/* Mobile Top Bar */}
+      {/* Top Bar */}
       <div className="relative flex justify-between items-center h-[122px] w-full md:hidden bg-[#e63a27]">
         <Link href="/" className="flex items-center">
           <Image
@@ -58,88 +74,75 @@ export default function MobileHeader() {
         </button>
       </div>
 
-      {/* Sidebar & Overlay */}
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex justify-end">
-          {/* Overlay */}
-          <div
-            className="w-[60%] bg-black/30 backdrop-blur-sm"
+      {/* Sidebar Overlay & Drawer */}
+      <div
+        className={`fixed inset-0 z-50 flex justify-end transition-opacity duration-300 ${
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      >
+        {/* Overlay */}
+        <div
+          className="w-[60%] bg-black/30 backdrop-blur-sm"
+          onClick={() => setIsOpen(false)}
+        />
+
+        {/* Drawer */}
+        <div
+          className={`relative w-[40%] h-full bg-[#003269] text-white flex flex-col overflow-y-auto transform transition-transform duration-300 ease-in-out ${
+            isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          {/* Close */}
+          <button
             onClick={() => setIsOpen(false)}
-          />
+            aria-label="Close menu"
+            className="absolute top-3 right-3 bg-[#e63a27] text-white w-8 h-8 rounded-full flex items-center justify-center"
+          >
+            ✕
+          </button>
 
-          {/* Sidebar */}
-          <div className="relative w-[40%] h-full bg-[#003269] text-white flex flex-col overflow-y-auto">
-            {/* Close Button */}
-            <button
-              onClick={() => setIsOpen(false)}
-              aria-label="Close menu"
-              className="absolute top-3 right-3 text-white text-base bg-[#e63a27] rounded-full w-8 h-8 flex items-center justify-center z-10"
-            >
-              ✕
-            </button>
+          {/* Logo */}
+          <Link href="/" className="mx-auto mt-10 w-[130px] h-[65px] relative">
+            <Image
+              src="/Logo.webp"
+              alt="Company Logo"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 130px, 260px"
+              priority
+            />
+          </Link>
 
-            {/* Logo */}
-            <Link
-              href="/"
-              className="flex justify-center p-6 relative w-[130px] h-[65px] mx-auto mt-10"
-            >
-              <Image
-                src="/Logo.webp"
-                alt="Company Logo"
-                fill
-                className="object-contain cursor-pointer"
-                sizes="(max-width: 768px) 130px, 260px"
-                priority
-              />
-            </Link>
-
-            {/* Navigation Links */}
-            <ul className="flex flex-col mt-4">
-              {[
-                { name: "HOME", href: "/" },
-                { name: "ABOUT US", href: "/about" },
-                { name: "SERVICES", href: "/services" },
-                { name: "PROJECTS", href: "/projects" },
-                { name: "REVIEWS", href: "/reviews" },
-                { name: "CONTACT US", href: "/contact" },
-              ].map((item) => (
-                <li
-                  key={item.name}
-                  className="border-t border-white/20 last:border-b"
-                >
-                  <Link
-                    href={item.href}
-                    className="block px-6 py-4 hover:bg-white hover:text-black transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            {/* Social Icons */}
-            <div className="mt-auto flex justify-center gap-4 py-6 mb-15">
+          {/* Navigation */}
+          <nav className="mt-4">
+            {navItems.map(({ name, href }) => (
               <Link
-                href="https://www.facebook.com/sasroofingwaterproofing"
+                key={name}
+                href={href}
+                onClick={() => setIsOpen(false)}
+                className="block px-6 py-4 border-t border-white/20 last:border-b hover:bg-white hover:text-black transition-colors"
+              >
+                {name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Social Icons */}
+          <div className="mt-auto flex justify-center gap-4 py-6">
+            {socialLinks.map(({ href, icon }, i) => (
+              <Link
+                key={i}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
               >
-                <FaFacebookF className="text-white text-lg" />
+                {icon}
               </Link>
-              <Link
-                href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
-              >
-                <FaHome className="text-white text-lg" />
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }

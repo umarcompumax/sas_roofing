@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function FooterTopCTA() {
-  // Reusable animation props
   const fadeUp = (delay = 0) => ({
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -17,28 +16,31 @@ export default function FooterTopCTA() {
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-10 text-center lg:text-left">
         {/* Logo */}
         <motion.div
-          className="min-w-[120px] flex justify-center lg:justify-start"
+          className="min-w-[100px] sm:min-w-[120px] lg:min-w-[160px]"
           {...fadeUp(0)}
         >
-          <Link href="/">
-            <Image
-              src="/Logo.png"
-              alt="SAS Roofing Logo"
-              width={130}
-              height={130}
-              className="w-auto h-auto"
-              loading="lazy"
-            />
+          <Link href="/" className="block">
+            <div className="w-[100px] sm:w-[120px] lg:w-[160px]">
+              <Image
+                src="/Logo.png"
+                alt="SAS Roofing Logo"
+                width={160}
+                height={0}
+                sizes="(max-width: 768px) 100px, (max-width: 1024px) 120px, 160px"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
           </Link>
         </motion.div>
 
-        {/* Divider Line */}
-        <motion.div
-          className="hidden lg:block w-px h-[80px] bg-white/30"
+        {/* Vertical Divider */}
+        <motion.span
+          className="hidden lg:inline-block w-px h-[80px] bg-white/30"
           {...fadeUp(0.1)}
         />
 
-        {/* Text Section */}
+        {/* Text Content */}
         <motion.div className="max-w-md px-2" {...fadeUp(0.2)}>
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1">
             Roof Problems can’t wait?
@@ -48,22 +50,19 @@ export default function FooterTopCTA() {
           </p>
         </motion.div>
 
-        {/* Buttons Section */}
+        {/* CTA Buttons */}
         <motion.div
           className="flex gap-3 flex-wrap justify-center items-center"
           {...fadeUp(0.3)}
         >
-          {/* KNOW MORE button */}
           <Link href="/about">
             <button className="px-5 sm:px-6 py-3 text-[#e63a27] font-semibold bg-white border-2 border-[#e63a27] hover:bg-[#00254c] hover:text-white transition hover-button">
               KNOW MORE
             </button>
           </Link>
-
-          {/* Call button */}
           <a
             href="tel:+13472216549"
-            className="bg-[#e53935] text-white flex items-center gap-2 px-4 py-3 font-semibold transition hover:bg-[#e63a27] rounded-none cursor-pointer call-hover-button"
+            className="bg-[#e53935] text-white flex items-center gap-2 px-4 py-3 font-semibold transition hover:bg-[#e63a27] call-hover-button"
           >
             <FaHeadphonesAlt />
             <span className="text-sm sm:text-base">(347) 221-6549</span>

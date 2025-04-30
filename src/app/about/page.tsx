@@ -13,8 +13,8 @@ const page = () => {
   return (
     <>
       <Navbar />
-      <StickyNavbar />
       <ContactBar />
+      <StickyNavbar />
       <BreadCrum2
         breadcrumbItems={[]}
         pageTitle={"About Us"}

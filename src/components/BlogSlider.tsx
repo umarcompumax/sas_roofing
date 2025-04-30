@@ -45,8 +45,6 @@ export default function BlogSlider({ swiperRef }: Props) {
     if (swiperRef) {
       swiperRef.current = swiperInstanceRef.current;
     }
-
-    // Cleanup timeout on unmount
     return () => {
       if (autoplayTimeout.current) clearTimeout(autoplayTimeout.current);
     };
@@ -55,7 +53,6 @@ export default function BlogSlider({ swiperRef }: Props) {
   const handleManualSlide = (direction: "prev" | "next") => {
     if (!swiperInstanceRef.current) return;
     const swiper = swiperInstanceRef.current;
-
     swiper.autoplay?.stop();
 
     if (direction === "next") {
@@ -63,66 +60,65 @@ export default function BlogSlider({ swiperRef }: Props) {
     } else {
       swiper.slidePrev();
     }
-
-    if (autoplayTimeout.current) clearTimeout(autoplayTimeout.current);
     autoplayTimeout.current = setTimeout(() => {
       swiper.autoplay?.start();
     }, 2000);
   };
 
+  const navBtnClass =
+    "w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-[#ef4423] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#ef4423] transition";
+
   return (
-    <div className="w-full flex flex-col items-center px-4 sm:px-6">
-      <div className="w-full max-w-screen-xl overflow-hidden">
-        <Swiper
-          loop
-          speed={1000}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          allowTouchMove={false}
-          modules={[Autoplay]}
-          breakpoints={{
-            0: { slidesPerView: 1, spaceBetween: 14 },
-            640: { slidesPerView: 1.2, spaceBetween: 18 },
-            768: { slidesPerView: 2, spaceBetween: 22 },
-            1024: { slidesPerView: 2.5, spaceBetween: 26 },
-            1280: { slidesPerView: 3, spaceBetween: 28 },
-          }}
-          onSwiper={(swiper) => {
-            swiperInstanceRef.current = swiper;
-            if (swiperRef) swiperRef.current = swiper;
-          }}
-          className="!overflow-visible pb-6"
-        >
-          {[...Array(12)].map((_, i) => (
-            <SwiperSlide key={i}>
-              <BlogSlideCard slide={slides[i % slides.length]} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+    <div className="w-full px-4 sm:px-6 max-w-screen-xl mx-auto">
+      <Swiper
+        loop
+        speed={1000}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        allowTouchMove={false}
+        modules={[Autoplay]}
+        breakpoints={{
+          0: { slidesPerView: 1, spaceBetween: 14 },
+          640: { slidesPerView: 1.2, spaceBetween: 18 },
+          768: { slidesPerView: 2, spaceBetween: 22 },
+          1024: { slidesPerView: 2.5, spaceBetween: 26 },
+          1280: { slidesPerView: 3, spaceBetween: 28 },
+        }}
+        onSwiper={(swiper) => {
+          swiperInstanceRef.current = swiper;
+          if (swiperRef) swiperRef.current = swiper;
+        }}
+        className="pb-6"
+      >
+        {Array.from({ length: 6 }).map((_, i) => (
+          <SwiperSlide key={i}>
+            <BlogSlideCard slide={slides[i % slides.length]} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
       {/* Navigation Buttons */}
-      <nav
+      <div
         className="flex justify-center gap-4 pt-6"
-        aria-label="Blog carousel navigation"
+        aria-label="Slider navigation"
       >
         <button
           onClick={() => handleManualSlide("prev")}
-          aria-label="Previous blog post"
-          className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-[#ef4423] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#ef4423] transition"
+          aria-label="Previous"
+          className={navBtnClass}
         >
-          <FiChevronLeft className="w-5 h-5" aria-hidden="true" />
+          <FiChevronLeft className="w-5 h-5" aria-hidden />
         </button>
         <button
           onClick={() => handleManualSlide("next")}
-          aria-label="Next blog post"
-          className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-[#ef4423] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#ef4423] transition"
+          aria-label="Next"
+          className={navBtnClass}
         >
-          <FiChevronRight className="w-5 h-5" aria-hidden="true" />
+          <FiChevronRight className="w-5 h-5" aria-hidden />
         </button>
-      </nav>
+      </div>
     </div>
   );
 }

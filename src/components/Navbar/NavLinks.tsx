@@ -22,96 +22,74 @@ export default function NavLinks({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      {/* Main Nav */}
-      <ul className="flex gap-4 text-sm font-semibold text-[#0b2c55] items-stretch h-full w-full justify-end">
-        {/* Desktop nav links (xl+) */}
-        <li className="hidden xl:flex gap-6 items-stretch list-none">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.path}
-              className="flex items-center px-2 hover:text-[#e63a27]"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </li>
-
-        {/* Hamburger menu for xs-lg only */}
-        <li className="flex items-center xl:hidden">
-          {/* Menu button for md and below */}
-          <button
-            onClick={() => setIsOpen(true)}
-            aria-label="Open menu"
-            className="md:hidden"
-          >
-            <div className="border-2 border-white p-2">
-              <Image
-                src="/menu4.png"
-                alt=""
-                role="presentation"
-                width={28}
-                height={28}
-                className="object-contain"
-              />
-            </div>
-          </button>
-
-          {/* Menu button for md and above */}
-          <button
-            onClick={() => setIsOpen(true)}
-            aria-label="Open menu"
-            className="hidden md:block"
-          >
-            <div className="border-2 border-[#e63a27] p-2">
-              <Image
-                src="/menu3.png"
-                alt=""
-                role="presentation"
-                width={28}
-                height={28}
-                className="object-contain"
-              />
-            </div>
-          </button>
-        </li>
-
-        {/* Quote button (all sizes) */}
-        <li className="flex items-stretch">
-          <Link
-            href="/"
-            className="bg-[#e5392c] hover:bg-[#cc2e24] transition-colors text-white font-semibold px-6 flex items-center get-hover-button"
-          >
-            GET A QUOTE
+    <ul className="flex gap-4 text-sm font-semibold text-[#0b2c55] items-stretch h-full w-full justify-end">
+      {/* Desktop Links */}
+      <div className="hidden xl:flex gap-6 items-center">
+        {navItems.map(({ label, path }) => (
+          <Link key={label} href={path} className="px-2 hover:text-[#e63a27]">
+            {label}
           </Link>
-        </li>
+        ))}
+      </div>
 
-        {/* Menu icon for md and above only */}
-        <li className="hidden md:flex items-center">
-          <div
-            className="w-8 h-8 flex items-center justify-center cursor-pointer relative"
-            onClick={() => setSidebarOpen(true)}
-          >
-            <Image
-              src="/menu.png"
-              alt=""
-              role="presentation"
-              fill
-              className="object-contain opacity-100 hover:opacity-0 transition-opacity duration-200"
-            />
-            <Image
-              src="/menu-hover.png"
-              alt=""
-              role="presentation"
-              fill
-              className="object-contain opacity-0 hover:opacity-100 transition-opacity duration-200 absolute top-0 left-0"
-            />
-          </div>
-        </li>
-      </ul>
+      {/* Mobile Menu Toggle */}
+      <div className="flex xl:hidden items-center gap-2">
+        <button
+          onClick={() => setIsOpen(true)}
+          aria-label="Open menu"
+          className="md:hidden border-2 border-white p-2"
+        >
+          <Image
+            src="/menu4.png"
+            alt=""
+            width={28}
+            height={28}
+            className="object-contain"
+          />
+        </button>
+        <button
+          onClick={() => setIsOpen(true)}
+          aria-label="Open menu"
+          className="hidden md:block border-2 border-[#e63a27] p-2"
+        >
+          <Image
+            src="/menu3.png"
+            alt=""
+            width={28}
+            height={28}
+            className="object-contain"
+          />
+        </button>
+      </div>
 
-      {/* Mobile Slide-In Sidebar */}
+      {/* Quote Button */}
+      <Link
+        href="/"
+        className="bg-[#e5392c] hover:bg-[#cc2e24] transition-colors text-white font-semibold px-6 flex items-center get-hover-button"
+      >
+        GET A QUOTE
+      </Link>
+
+      {/* Sidebar Trigger (hover effect) */}
+      <div
+        className="hidden md:flex items-center w-8 h-8 cursor-pointer relative mt-5"
+        onClick={() => setSidebarOpen(true)}
+      >
+        <Image
+          src="/menu.png"
+          alt=""
+          fill
+          className="object-contain opacity-100 hover:opacity-0 transition-opacity duration-200"
+        />
+        <Image
+          src="/menu-hover.png"
+          alt=""
+          fill
+          className="object-contain opacity-0 hover:opacity-100 transition-opacity duration-200 absolute top-0 left-0"
+        />
+      </div>
+
+      {/* Sidebar Panel */}
       <div className="fixed inset-0 z-50 flex justify-end pointer-events-none">
         <div
           className={`w-[60%] bg-black/30 backdrop-blur-sm transition-opacity duration-300 ease-in-out ${
@@ -133,34 +111,28 @@ export default function NavLinks({
             ✕
           </button>
 
-          <div className="flex justify-center p-6">
-            <Link href="/">
-              <Image
-                src="/Logo.png"
-                alt="Company Logo"
-                width={260}
-                height={130}
-                className="object-contain cursor-pointer"
-              />
-            </Link>
-          </div>
+          <Link href="/" className="flex justify-center p-6">
+            <Image
+              src="/Logo.png"
+              alt="Company Logo"
+              width={260}
+              height={130}
+              className="object-contain cursor-pointer"
+            />
+          </Link>
 
-          <ul className="flex flex-col mt-4">
-            {navItems.map((item) => (
-              <li
-                key={item.label}
-                className="border-t border-white/20 last:border-b"
+          <nav className="flex flex-col mt-4">
+            {navItems.map(({ label, path }) => (
+              <Link
+                key={label}
+                href={path}
+                className="border-t border-white/20 last:border-b px-6 py-4 hover:bg-white hover:text-black transition-colors"
+                onClick={() => setIsOpen(false)}
               >
-                <Link
-                  href={item.path}
-                  className="block px-6 py-4 hover:bg-white hover:text-black transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              </li>
+                {label}
+              </Link>
             ))}
-          </ul>
+          </nav>
 
           <div className="mt-auto flex justify-center gap-4 py-6">
             <a
@@ -182,6 +154,6 @@ export default function NavLinks({
           </div>
         </div>
       </div>
-    </>
+    </ul>
   );
 }

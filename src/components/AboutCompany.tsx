@@ -6,10 +6,25 @@ import { FaCertificate, FaLightbulb, FaHome } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+// Reusable Feature Item
+const FeatureItem = ({
+  icon: Icon,
+  label,
+  color,
+}: {
+  icon: React.ElementType;
+  label: string;
+  color: string;
+}) => (
+  <div className="flex items-center gap-1">
+    <Icon className={color} aria-label={label} />
+    <span className="font-bold uppercase">{label}</span>
+  </div>
+);
+
 export default function AboutCompany() {
   return (
     <section className="flex flex-col xl:flex-row p-6 sm:p-8 xl:px-16 2xl:px-32 bg-white gap-10 w-5/6 max-w-screen-2xl mx-auto">
-      {/* Image Block with Animation */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -23,24 +38,15 @@ export default function AboutCompany() {
           fill
           className="object-cover"
         />
-
-        {/* Experience Block */}
-        <aside className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-blue-900 shadow-md flex items-center gap-2">
-          <span className="text-4xl sm:text-5xl font-extrabold text-blue-900">
-            12
-          </span>
-          <div className="leading-tight text-left">
-            <div className="text-sm sm:text-base font-bold uppercase tracking-wide">
-              Years
-            </div>
-            <div className="text-sm sm:text-base font-bold uppercase tracking-wide">
-              of Experience
-            </div>
+        <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-blue-900 shadow-md flex items-center gap-2">
+          <span className="text-4xl sm:text-5xl font-extrabold">12</span>
+          <div className="leading-tight text-sm sm:text-base font-bold uppercase tracking-wide">
+            <div>Years</div>
+            <div>of Experience</div>
           </div>
-        </aside>
+        </div>
       </motion.div>
 
-      {/* Text Content with Animation */}
       <motion.article
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -49,33 +55,33 @@ export default function AboutCompany() {
         className="w-full max-w-5xl mx-auto xl:mx-0 flex flex-col justify-between"
       >
         <div>
-          {/* Heading Section with red line */}
           <div className="flex items-center gap-3 mb-2">
             <div className="w-6 h-[1px] bg-red-600" />
             <h4 className="text-sm sm:text-base uppercase text-red-600 font-semibold tracking-wider">
               About Company
             </h4>
           </div>
+
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 leading-tight mb-4">
             Roofing Is Our Heritage & Quality Is Our Tradition
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-blue-800 mb-6">
-            <div className="flex items-center gap-1">
-              <FaCertificate className="text-red-500" aria-label="Certified" />
-              <span className="font-bold uppercase">Certified</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <FaLightbulb
-                className="text-yellow-400"
-                aria-label="Innovative Work"
-              />
-              <span className="font-bold uppercase">Innovative Work</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <FaHome className="text-red-500" aria-label="Experienced" />
-              <span className="font-bold uppercase">Experienced</span>
-            </div>
+            <FeatureItem
+              icon={FaCertificate}
+              label="Certified"
+              color="text-red-500"
+            />
+            <FeatureItem
+              icon={FaLightbulb}
+              label="Innovative Work"
+              color="text-yellow-400"
+            />
+            <FeatureItem
+              icon={FaHome}
+              label="Experienced"
+              color="text-red-500"
+            />
           </div>
 
           <p className="text-gray-600 text-sm sm:text-base lg:text-lg mb-8">
@@ -88,15 +94,14 @@ export default function AboutCompany() {
           </p>
         </div>
 
-        {/* Read More Link */}
-        <div className="inline-block border-4 border-[#003366] px-2 py-2 self-start">
-          <Link
-            href="/about"
-            className="border-2 border-red-600 text-red-600 px-6 py-3 font-bold uppercase tracking-wide hover:bg-red-600 hover:text-white transition text-sm lg:text-base hover-button inline-block"
-          >
+        <Link
+          href="/about"
+          className="border-4 border-[#003366] p-1 inline-block self-start"
+        >
+          <span className="block border-2 border-red-600 text-red-600 px-6 py-3 font-bold uppercase tracking-wide hover:bg-red-600 hover:text-white transition text-sm lg:text-base">
             Read More
-          </Link>
-        </div>
+          </span>
+        </Link>
       </motion.article>
     </section>
   );

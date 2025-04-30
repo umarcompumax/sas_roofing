@@ -19,9 +19,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <StickyNavbar />
       <ContactBar />
       <HeroSection />
-      <StickyNavbar />
       <OurServicesPage />
       <AboutCompanyHome />
       <Features />
