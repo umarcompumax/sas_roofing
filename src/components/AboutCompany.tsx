@@ -30,7 +30,7 @@ export default function AboutCompany() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="relative w-full sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] xl:max-w-[480px] border-2 border-red-600 rounded-md overflow-hidden flex-shrink-0 aspect-[4/3]"
+        className="relative w-full sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] xl:max-w-[480px] border-2 border-[#e63a27] rounded-md overflow-hidden flex-shrink-0 aspect-[4/3]"
       >
         <Image
           src="/aboutimg.jpg"
@@ -56,8 +56,8 @@ export default function AboutCompany() {
       >
         <div>
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-6 h-[1px] bg-red-600" />
-            <h4 className="text-sm sm:text-base uppercase text-red-600 font-semibold tracking-wider">
+            <div className="w-6 h-[1px] bg-[#e63a27]" />
+            <h4 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider">
               About Company
             </h4>
           </div>
@@ -98,7 +98,7 @@ export default function AboutCompany() {
           href="/about"
           className="border-4 border-[#003366] p-1 inline-block self-start"
         >
-          <span className="block border-2 border-red-600 text-red-600 px-6 py-3 font-bold uppercase tracking-wide hover:bg-red-600 hover:text-white transition text-sm lg:text-base">
+          <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide hover:bg-[#e63a27] hover:text-white transition text-sm lg:text-base hover-button">
             Read More
           </span>
         </Link>
