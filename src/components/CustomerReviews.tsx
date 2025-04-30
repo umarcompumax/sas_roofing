@@ -50,10 +50,10 @@ export default function CustomerReviews() {
   return (
     <section className="bg-gray-50 py-10 px-4">
       <div className="text-center mb-6">
-        <h2 className="text-2xl sm:text-3xl font-bold text-[#003366]">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#003269]">
           Customer Reviews
         </h2>
-        <div className="mt-1 h-1 w-12 mx-auto bg-[#003366]" />
+        <div className="mt-1 h-1 w-12 mx-auto bg-[#003269]" />
       </div>
 
       <div className="flex flex-wrap justify-center gap-6 sm:gap-8">

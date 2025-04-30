@@ -43,7 +43,7 @@ export default function FaqSection() {
           Common Questions & Answers
         </p>
       </div>
-      <h2 className="text-4xl lg:text-5xl font-bold text-[#003366] mb-8">
+      <h2 className="text-4xl lg:text-5xl font-bold text-[#003269] mb-8">
         Get Detailed Answers
       </h2>
 
@@ -66,7 +66,7 @@ export default function FaqSection() {
                   isOpen ? "bg-[#262e39]" : "bg-white"
                 }`}
               >
-                <span className="flex gap-2 text-lg font-semibold text-[#003366]">
+                <span className="flex gap-2 text-lg font-semibold text-[#003269]">
                   <span className="text-[#e63a27]">Q{index + 1}.</span>
                   <span className={isOpen ? "text-white" : ""}>
                     {faq.question}
@@ -74,7 +74,7 @@ export default function FaqSection() {
                 </span>
                 <span
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-white ${
-                    isOpen ? "bg-[#e63a27]" : "bg-[#003366]"
+                    isOpen ? "bg-[#e63a27]" : "bg-[#003269]"
                   }`}
                 >
                   {isOpen ? (

@@ -19,7 +19,7 @@ export default function AboutCompany() {
   ];
 
   return (
-    <section className="flex flex-col xl:flex-row p-6 sm:p-8 xl:px-16 2xl:px-32 bg-white gap-10 w-5/6 max-w-screen-2xl mx-auto lg:pt-20 ">
+    <section className="flex flex-col xl:flex-row px-6 sm:p-8 xl:px-16 2xl:px-32 bg-white gap-10 w-5/6 mx-auto lg:pt-20">
       {/* Image Block */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -36,8 +36,8 @@ export default function AboutCompany() {
           className="w-full h-full object-cover"
         />
 
-        <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-blue-900 shadow-md flex items-center gap-2">
-          <span className="text-4xl sm:text-5xl font-extrabold text-blue-900">
+        <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
+          <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#003269]">
             12
           </span>
           <div className="leading-tight text-left text-sm sm:text-base font-bold uppercase tracking-wide">
@@ -63,11 +63,11 @@ export default function AboutCompany() {
             </h4>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003269] leading-tight mb-4">
             Roofing Is Our Heritage & Quality Is Our Tradition
           </h1>
 
-          <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-blue-800 mb-6">
+          <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-[#003269] mb-6">
             {features.map(({ icon, label }) => (
               <div
                 key={label}

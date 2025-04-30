@@ -43,7 +43,7 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
         <a
           href="#"
           rel="noopener noreferrer"
-          className="flex items-center gap-1 font-bold text-[#003366] text-sm"
+          className="flex items-center gap-1 font-bold text-[#003269] text-sm"
         >
           <FiExternalLink className="w-4 h-4" />
           MORE DETAILS

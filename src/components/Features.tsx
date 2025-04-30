@@ -43,10 +43,10 @@ const fadeUpVariant = {
 
 const Features = () => (
   <div className="relative z-0">
-    <div className="absolute bottom-12 lg:bottom-0 left-0 w-full h-9/12 lg:h-80 bg-[#003369f5] z-[-1]" />
+    <div className="absolute bottom-12 lg:bottom-0 left-0 w-full h-9/12 lg:h-80 bg-[#08386c] z-[-1]" />
 
     <section className="py-22 relative z-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-0 px-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-0 px-12 ">
         {features.map(({ id, title, description }, i) => (
           <motion.div
             key={id}

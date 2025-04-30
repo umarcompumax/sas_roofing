@@ -88,7 +88,7 @@ export default function HeroSection() {
             {slide.description}
           </p>
           <Link href="/about">
-            <div className="inline-block border-4 border-[#0a356f] p-1">
+            <div className="inline-block border-4 border-[#003269] p-1">
               <Button className="Hero_hover-button text-sm sm:text-base lg:text-lg">
                 {slide.buttonText.toUpperCase()}
               </Button>

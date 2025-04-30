@@ -63,8 +63,8 @@ export default function ServicesSlider({ swiperRef }: Props) {
   };
 
   return (
-    <div className="w-full flex flex-col items-center px-4 sm:px-6">
-      <div className="w-full max-w-screen-xl overflow-hidden">
+    <div className="flex flex-col items-center px-4 sm:px-6">
+      <div className="w-3/4 overflow-hidden">
         <Swiper
           loop
           speed={1000}
@@ -90,30 +90,31 @@ export default function ServicesSlider({ swiperRef }: Props) {
             return (
               <SwiperSlide key={i}>
                 <div
-                  className="relative h-[280px] sm:h-[300px] md:h-[320px] lg:h-[360px] xl:h-[380px] flex items-end bg-cover bg-center"
+                  className="relative h-[240px] sm:h-[260px] md:h-[280px] lg:h-[350px] xl:h-[370px] flex items-end bg-cover bg-center"
                   style={{ backgroundImage: `url(${image})` }}
                 >
                   <div className="flex w-full items-end">
-                    <div className="w-[70%] bg-white shadow-md p-4 h-[120px] sm:h-[140px] md:h-[150px] flex flex-col">
-                      <h3 className="text-[#003366] text-[18px] md:text-[20px] font-bold tracking-wide">
+                    <div className="w-[70%] bg-white shadow-md p-4 min-h-[120px] sm:min-h-[140px] md:min-h-[150px] flex flex-col">
+                      <h3 className="text-[#003269] text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-wide">
                         {title}
                       </h3>
-                      <p className="text-[15px] text-gray-600 mt-1 leading-snug line-clamp-3">
+                      <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 mt-1 leading-snug line-clamp-3">
                         {description}
                       </p>
                     </div>
                     <Link
                       href="/services"
-                      className="w-[30%] bg-gray-100 border border-gray-300 flex items-center justify-center"
+                      className="w-[30%] bg-gray-100 border border-gray-300 flex items-center justify-center relative"
                       style={{ height: "50%" }}
                     >
-                      <Image
-                        src={icon}
-                        alt={`${title} Icon`}
-                        width={50}
-                        height={50}
-                        className="object-contain"
-                      />
+                      <div className="relative w-12 sm:w-16 aspect-square">
+                        <Image
+                          src={icon}
+                          alt={`${title} Icon`}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
                     </Link>
                   </div>
                 </div>
@@ -134,7 +135,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
             <button
               key={dir}
               onClick={() => handleManualSlide(dir as "prev" | "next")}
-              className="w-10 h-10 rounded-full border-2 border-[#003366] text-[#003366] flex items-center justify-center hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003366] transition"
+              className="w-10 h-10 rounded-full border-2 border-[#003269] text-[#003269] flex items-center justify-center hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003269] transition"
               aria-label={`${dir === "prev" ? "Previous" : "Next"} slide`}
             >
               <Icon className="w-5 h-5" aria-hidden="true" />

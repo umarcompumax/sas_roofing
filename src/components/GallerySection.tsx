@@ -43,7 +43,7 @@ function GalleryItem({
         height={height}
         className="object-cover w-full h-full"
       />
-      <div className="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
+      <div className="absolute inset-0 bg-[#003269] bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
         <span className="font-semibold text-2xl lg:text-2xl">SAS Roofing</span>
       </div>
     </motion.div>

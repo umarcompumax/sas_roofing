@@ -72,7 +72,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#043469] text-white text-sm sm:text-[15px]">
+    <footer className="bg-[#003269] text-white text-sm sm:text-[15px]">
       <motion.h2
         className="px-4 sm:px-6 md:px-12 pt-12 text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-100 mb-12 max-w-4xl mx-auto"
         {...fadeUp(0)}
@@ -176,11 +176,11 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-[#022f5c]">
+      <div className="bg-[#00254c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs sm:text-sm md:text-[15px]">
           <p className="text-center md:text-left">
             © 2025{" "}
-            <span className="text-[#e53935]">SAS Roofing & Waterproofing</span>{" "}
+            <span className="text-[#e63144]">SAS Roofing & Waterproofing</span>{" "}
             All Rights Reserved.
           </p>
           <div className="flex gap-x-6 flex-wrap justify-center md:justify-end">

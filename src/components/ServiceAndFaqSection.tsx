@@ -34,7 +34,7 @@ export default function ServiceAndFaqSection() {
               Book A Service
             </p>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#003366]">
+          <h2 className="text-4xl lg:text-5xl font-bold text-[#003269]">
             Free Estimation
           </h2>
           <p className="text-gray-500">
@@ -60,7 +60,7 @@ export default function ServiceAndFaqSection() {
             name="service"
             defaultValue=""
             required
-            className="p-3 text-[#003366] font-semibold border border-gray-300 bg-white appearance-none focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
+            className="p-3 text-[#003269] font-semibold border border-gray-300 bg-white appearance-none focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
           >
             <option value="" disabled>
               Service You Need
@@ -78,7 +78,7 @@ export default function ServiceAndFaqSection() {
           />
           <button
             type="submit"
-            className="border border-[#e63a27] text-[#e63a27] py-3 px-3 font-semibold rounded-md hover:bg-[#e63a27] hover:text-white transition"
+            className="border border-[#e63a27] text-[#e63a27] py-3 px-3 font-semibold rounded-md hover:bg-[#e63a27] hover:text-white transition hover-button"
           >
             SUBMIT NOW
           </button>

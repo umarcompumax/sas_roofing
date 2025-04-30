@@ -28,7 +28,7 @@ export default function OurTestimonial() {
           viewport={{ once: true, amount: 0.2 }}
           className="mb-8"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#003366]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#003269]">
             <span className="flex items-center justify-center gap-2 mb-2">
               <span className="w-6 h-px bg-[#e63a27]" />
               <span className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase">

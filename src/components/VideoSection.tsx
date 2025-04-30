@@ -30,7 +30,7 @@ const VideoSection = () => {
 
   return (
     <>
-      <section className="relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-white">
+      <section className="relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-white ">
         <Image
           src="/VideoSectionBg.webp"
           alt="Video background"

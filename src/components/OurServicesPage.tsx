@@ -19,14 +19,14 @@ export default function OurServicesPage() {
   };
 
   return (
-    <main className="px-4 sm:px-6 lg:px-12 pt-5 mb-10 sm:mb-20">
-      <div className="max-w-5xl mx-auto py-10 space-y-12">
+    <main className="px-4 sm:px-6 lg:px-12 pt-5">
+      <div className="mx-auto py-5 space-y-12">
         <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
-          className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4"
+          className="flex flex-col md:flex-row justify-evenly items-center text-center md:text-left gap-4"
         >
           <div>
             <div className="flex items-center gap-2 mb-1">
@@ -35,14 +35,14 @@ export default function OurServicesPage() {
                 Our Services
               </span>
             </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-[#003366] leading-snug">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-[#003269] leading-snug">
               SAS Roofing & Waterproofing
             </h1>
           </div>
 
           <Link
             href="/services"
-            className="group border-4 border-[#003366] p-2 inline-block"
+            className="group border-4 border-[#003269] p-2 inline-block"
           >
             <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button">
               All Services
@@ -55,7 +55,7 @@ export default function OurServicesPage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
-          className="h-[300px]"
+          className=""
         >
           <ServicesSlider swiperRef={swiperRef} />
         </motion.div>

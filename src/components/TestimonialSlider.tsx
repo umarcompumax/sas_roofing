@@ -120,7 +120,7 @@ export default function TestimonialSlider() {
                       className="mt-1"
                     />
                     <div>
-                      <h3 className="font-bold text-[#003366] text-lg leading-tight">
+                      <h3 className="font-bold text-[#003269] text-lg leading-tight">
                         {name}
                       </h3>
                       <p className="text-[#e63a27] text-sm uppercase font-semibold">
@@ -142,7 +142,7 @@ export default function TestimonialSlider() {
               key={dir}
               onClick={() => handleSlide(dir as "next" | "prev")}
               aria-label={`${dir === "next" ? "Next" : "Previous"} testimonial`}
-              className="w-10 h-10 flex items-center justify-center border-2 border-[#003366] text-[#003366] rounded-full hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003366] transition"
+              className="w-10 h-10 flex items-center justify-center border-2 border-[#003269] text-[#003269] rounded-full hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003269] transition"
             >
               {dir === "prev" ? (
                 <FiChevronLeft className="w-5 h-5" />

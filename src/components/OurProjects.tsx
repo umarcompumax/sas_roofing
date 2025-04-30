@@ -36,7 +36,7 @@ const OurProjects = () => {
               Our Projects
             </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-[#003366] leading-snug">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-[#003269] leading-snug">
             Recently Completed Works
           </h1>
         </div>
@@ -44,7 +44,7 @@ const OurProjects = () => {
         {/* Button */}
         <Link href="/projects">
           <button className="relative group self-start md:self-auto">
-            <div className="border-4 border-[#003366] px-2 py-2">
+            <div className="border-4 border-[#003269] px-2 py-2">
               <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button">
                 All Projects
               </div>
