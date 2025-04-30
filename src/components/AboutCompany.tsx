@@ -38,7 +38,7 @@ export default function AboutCompany() {
           fill
           className="object-cover"
         />
-        <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-blue-900 shadow-md flex items-center gap-2">
+        <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#0b2c55] shadow-md flex items-center gap-2">
           <span className="text-4xl sm:text-5xl font-extrabold">12</span>
           <div className="leading-tight text-sm sm:text-base font-bold uppercase tracking-wide">
             <div>Years</div>
@@ -62,11 +62,11 @@ export default function AboutCompany() {
             </h4>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0b2c55] leading-tight mb-4">
             Roofing Is Our Heritage & Quality Is Our Tradition
           </h1>
 
-          <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-blue-800 mb-6">
+          <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-[#0b2c55] mb-6">
             <FeatureItem
               icon={FaCertificate}
               label="Certified"
@@ -84,7 +84,7 @@ export default function AboutCompany() {
             />
           </div>
 
-          <p className="text-gray-600 text-sm sm:text-base lg:text-lg mb-8">
+          <p className="text-gray-600 text-xs sm:text-sm lg:text-base mb-8">
             For over twelve years, SAS Roofing & Waterproofing has proudly
             served Brooklyn, Manhattan, and Queens with top-tier roofing,
             waterproofing, and masonry solutions. Roofing isn’t just our
