@@ -39,7 +39,7 @@
 .hover-button {
   position: relative;
   padding: 12px 24px;
-  font-size: 16px;
+  font-size: 10px;
   color: #e5392c;
   background-color: #ffffff;
   border: 1px solid #e5392c;
@@ -92,7 +92,7 @@
   bottom: 0;
   width: 100%;
   height: 0%;
-  background-color: #003269;
+  background-color: #e5392c;
   border-radius: 90% 90% 0 0 / 90% 90% 0 0;
   transition: height 0.4s ease;
   z-index: -1;

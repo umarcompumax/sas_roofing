@@ -26,7 +26,7 @@ export default function OurTestimonial() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="mb-8"
+          className=""
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#003269]">
             <span className="flex items-center justify-center gap-2 mb-2">

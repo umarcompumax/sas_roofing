@@ -61,10 +61,10 @@ const Features = () => (
               {id}
             </div>
 
-            <h3 className="pt-20 pb-6 text-lg lg:text-xl font-semibold whitespace-pre-line">
+            <h3 className="pt-20 pb-6 text-base md:text-lg font-semibold whitespace-pre-line">
               {title}
             </h3>
-            <p className="text-md md:text-lg text-gray-300">{description}</p>
+            <p className="text-md md:text-base text-gray-300">{description}</p>
 
             <Link
               href="/reviews"

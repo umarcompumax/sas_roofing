@@ -79,7 +79,7 @@ export default function AboutCompany() {
             ))}
           </div>
 
-          <p className="text-gray-600 text-sm sm:text-base lg:text-lg mb-4">
+          <p className="text-gray-600 text-sm lg:text-base mb-4">
             For over twelve years, SAS Roofing & Waterproofing has proudly
             served Brooklyn, Manhattan, and Queens with top-tier roofing,
             waterproofing, and masonry solutions. Every roof we install, every
@@ -88,7 +88,7 @@ export default function AboutCompany() {
           </p>
 
           {showMore && (
-            <div className="text-gray-600 text-sm sm:text-base lg:text-lg space-y-4 mb-4">
+            <div className="text-gray-600 text-sm lg:text-base space-y-4 mb-4">
               <p>
                 As a trusted roofing contractor in Brooklyn, we specialize in
                 everything from residential roof repairs to complete commercial

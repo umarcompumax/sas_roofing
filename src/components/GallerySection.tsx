@@ -98,22 +98,29 @@ export default function GallerySection() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="flex xl:hidden flex-wrap justify-center gap-6">
-        {images.map((img, idx) => {
-          const isWide = idx === 2 || idx === 3;
-          const width = isWide ? 648 : 437;
-          const height = isWide ? 306 : 437;
-
-          return (
-            <GalleryItem
-              key={idx}
+      <div className="flex xl:hidden flex-wrap justify-center gap-4">
+        {images.map((img, idx) => (
+          <motion.div
+            key={idx}
+            className="w-full sm:w-[48%] md:w-[45%] max-w-[440px] aspect-[1/1] sm:aspect-[4/3] shadow-md overflow-hidden relative group"
+            initial={fadeUp.initial}
+            whileInView={fadeUp.animate}
+            transition={fadeUp.transition}
+            viewport={{ once: true }}
+          >
+            <Image
               src={img}
-              width={width}
-              height={height}
               alt={`Gallery image ${idx + 1}`}
+              fill
+              className="object-cover w-full h-full"
             />
-          );
-        })}
+            <div className="absolute inset-0 bg-[#003269] bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
+              <span className="font-semibold text-lg sm:text-xl">
+                SAS Roofing
+              </span>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

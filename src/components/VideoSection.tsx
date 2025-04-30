@@ -58,9 +58,12 @@ const VideoSection = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h5 className="text-sm uppercase font-semibold mb-2">
-                Video Proof
-              </h5>
+              {/* Title with left line */}
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-6 h-px bg-white" />
+                <h5 className="text-sm uppercase font-semibold">Video Proof</h5>
+              </div>
+
               <h2 className="text-4xl lg:text-5xl font-medium leading-tight mb-4">
                 Have a Look <br /> At Our Video
               </h2>
@@ -70,20 +73,16 @@ const VideoSection = () => {
               </p>
               <ul className="space-y-2">
                 <li>
-                  <SiTicktick className="inline mr-2" />
-                  Roof of the Year
+                  <SiTicktick className="inline mr-2" /> Roof of the Year
                 </li>
                 <li>
-                  <SiTicktick className="inline mr-2" />
-                  Fully supported metal
+                  <SiTicktick className="inline mr-2" /> Fully supported metal
                 </li>
                 <li>
-                  <SiTicktick className="inline mr-2" />
-                  Reliable & Trustworthy
+                  <SiTicktick className="inline mr-2" /> Reliable & Trustworthy
                 </li>
                 <li>
-                  <SiTicktick className="inline mr-2" />
-                  Dependable
+                  <SiTicktick className="inline mr-2" /> Dependable
                 </li>
               </ul>
 

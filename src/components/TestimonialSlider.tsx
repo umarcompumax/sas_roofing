@@ -88,7 +88,7 @@ export default function TestimonialSlider() {
         >
           {testimonials.map(({ name, location, text, rating, avatar }, i) => (
             <SwiperSlide key={i}>
-              <div className="flex h-[230px] bg-white shadow-md rounded-sm overflow-hidden">
+              <div className="flex h-[230px] bg-white shadow-lg rounded-sm overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div
                   className="w-[50%] flex flex-col items-center justify-center p-4"
                   style={{

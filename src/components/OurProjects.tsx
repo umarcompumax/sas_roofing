@@ -32,7 +32,7 @@ const OurProjects = () => {
         <div>
           <div className="flex items-center gap-2 mb-1">
             <div className="w-6 h-px bg-[#e63a27]" />
-            <span className="text-xs sm:text-sm lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap">
+            <span className="text-sm sm:text-md lg:text-base font-bold text-[#e63a27] uppercase whitespace-nowrap">
               Our Projects
             </span>
           </div>
