@@ -9,11 +9,8 @@ export default function StickyNavbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const hero = document.getElementById("hero-section");
-      if (hero) {
-        const triggerPoint = hero.getBoundingClientRect().height * 0.5;
-        setShowSticky(window.scrollY > triggerPoint);
-      }
+      const triggerPoint = 400; // Show sticky nav after 400px scroll
+      setShowSticky(window.scrollY > triggerPoint);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -23,12 +20,12 @@ export default function StickyNavbar() {
   if (!showSticky) return null;
 
   return (
-    <div className="hidden xl:flex fixed top-0 left-0 right-0 items-center justify-between bg-white z-50 shadow-md transition-all">
-      <Link href="/" className="bg-[#003269] p-2">
+    <div className="hidden xl:flex fixed top-0 left-0 right-0 items-center justify-between bg-white z-50 shadow-md transition-all ">
+      <Link href="/" className="bg-[#003269]">
         <Image src="/Logo.png" alt="Logo" width={210} height={140} />
       </Link>
 
-      <nav className="hidden md:flex gap-6 font-medium text-lg pr-8">
+      <nav className="hidden md:flex gap-6 font-medium text-base pr-6 text-[#003269]">
         {[
           { name: "Home", path: "/" },
           { name: "About Us", path: "/about" },

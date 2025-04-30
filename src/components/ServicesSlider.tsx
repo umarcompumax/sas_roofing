@@ -94,7 +94,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
                   style={{ backgroundImage: `url(${image})` }}
                 >
                   <div className="flex w-full items-end">
-                    <div className="w-[70%] bg-white shadow-md p-4 min-h-[120px] sm:min-h-[140px] md:min-h-[150px] flex flex-col">
+                    <div className="w-[70%] bg-[#f5f5f5] shadow-md p-4 min-h-[120px] sm:min-h-[140px] md:min-h-[150px] flex flex-col">
                       <h3 className="text-[#003269] text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-wide">
                         {title}
                       </h3>
@@ -107,7 +107,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
                       className="w-[30%] bg-gray-100 border border-gray-300 flex items-center justify-center relative"
                       style={{ height: "50%" }}
                     >
-                      <div className="relative w-12 sm:w-16 aspect-square">
+                      <div className="relative w-12 sm:w-14 aspect-square">
                         <Image
                           src={icon}
                           alt={`${title} Icon`}

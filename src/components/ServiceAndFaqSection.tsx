@@ -14,12 +14,12 @@ export default function ServiceAndFaqSection() {
 
   return (
     <section className="relative w-full pb-24 bg-white overflow-hidden border-t border-black/40">
-      <div className="absolute inset-0 hidden lg:flex z-0 min-h-[90%]">
+      <div className="absolute inset-0 hidden lg:flex z-0">
         <div className="w-[30%] bg-[#e63a27]" />
         <div className="w-[70%] bg-white" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 flex flex-col lg:flex-row items-center text-center md:text-left">
+      <div className="relative z-10 w-3/4 mx-auto px-4 md:px-8 flex flex-col lg:flex-row items-center text-center md:text-left">
         <motion.form
           variants={fadeUp}
           initial="hidden"

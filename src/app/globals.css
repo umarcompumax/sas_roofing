@@ -76,9 +76,9 @@
   position: relative;
   padding: 12px 24px;
   font-size: 16px;
-  color: #e5392c;
-  background-color: #0b2c55;
-  border: 1px solid #e5392c;
+  color: white;
+  background-color: #003269;
+  border: 1px solid white;
   cursor: pointer;
   overflow: hidden;
   z-index: 0;
