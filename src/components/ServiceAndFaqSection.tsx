@@ -19,7 +19,7 @@ export default function ServiceAndFaqSection() {
         <div className="w-[70%] bg-white" />
       </div>
 
-      <div className="relative z-10 w-3/4 mx-auto px-4 md:px-8 flex flex-col lg:flex-row items-center text-center md:text-left">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 flex flex-col lg:flex-row items-center lg:items-start gap-12 text-center lg:text-left">
         <motion.form
           variants={fadeUp}
           initial="hidden"

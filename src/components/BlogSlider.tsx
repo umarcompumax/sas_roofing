@@ -81,9 +81,9 @@ export default function BlogSlider({ swiperRef }: Props) {
         modules={[Autoplay]}
         breakpoints={{
           0: { slidesPerView: 1, spaceBetween: 14 },
-          640: { slidesPerView: 1.2, spaceBetween: 18 },
+          640: { slidesPerView: 1, spaceBetween: 18 },
           768: { slidesPerView: 2, spaceBetween: 22 },
-          1024: { slidesPerView: 2.5, spaceBetween: 26 },
+          1024: { slidesPerView: 2, spaceBetween: 26 },
           1280: { slidesPerView: 3, spaceBetween: 28 },
         }}
         onSwiper={(swiper) => {

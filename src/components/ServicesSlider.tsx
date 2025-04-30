@@ -64,7 +64,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
 
   return (
     <div className="flex flex-col items-center px-4 sm:px-6">
-      <div className="w-3/4 overflow-hidden">
+      <div className="w-11/12 overflow-hidden">
         <Swiper
           loop
           speed={1000}
@@ -90,7 +90,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
             return (
               <SwiperSlide key={i}>
                 <div
-                  className="relative h-[240px] sm:h-[260px] md:h-[280px] lg:h-[350px] xl:h-[370px] flex items-end bg-cover bg-center"
+                  className="relative h-[380px] flex items-end bg-cover bg-center"
                   style={{ backgroundImage: `url(${image})` }}
                 >
                   <div className="flex w-full items-end">
