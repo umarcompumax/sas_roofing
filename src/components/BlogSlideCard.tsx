@@ -8,7 +8,7 @@ interface Slide {
 }
 
 export default function BlogSlideCard({ slide }: { slide: Slide }) {
-  const [day, month] = slide.date.split(" ");
+  // const [day, month] = slide.date.split(" ");
 
   return (
     <div className="relative w-full h-[400px] rounded-sm shadow-md overflow-hidden flex flex-col">
@@ -20,15 +20,15 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
 
-        {/* Date Badge */}
+        {/* Date Badge
         <div className="absolute top-3 right-3 bg-[#ef4423] text-white px-2 py-1 rounded-sm text-center leading-none">
           <div className="text-2xl font-extrabold">{day}</div>
           <div className="text-xs font-semibold uppercase">{month}</div>
-        </div>
+        </div> */}
 
         {/* Title & Category */}
         <div className="absolute bottom-4 left-4 right-4 flex flex-col gap-1 text-left text-white">
-          <div className="flex items-center gap-2 text-[#ef4423] text-xs font-semibold uppercase tracking-wide">
+          <div className="flex items-center gap-2 text-[#e63a27] text-xs font-semibold uppercase tracking-wide">
             <FiFolder className="w-4 h-4" />
             {slide.description}
           </div>
