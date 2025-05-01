@@ -87,7 +87,7 @@ export default function AboutCompany() {
           </p>
 
           {showMore && (
-            <div className="text-gray-600 text-sm lg:text-base space-y-4 mb-4">
+            <div className="text-gray-600 text-base lg:text-lg space-y-4 mb-4">
               <p>
                 As a trusted roofing contractor in Brooklyn, we specialize in
                 everything from residential roof repairs to complete commercial
@@ -118,7 +118,7 @@ export default function AboutCompany() {
         {/* Read More Link */}
         <Link
           href="/about"
-          className="inline-block border-4 border-[#003366] p-2 self-start group"
+          className="inline-block border-4 border-[#003269] p-2 self-start group"
         >
           <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide text-sm lg:text-base transition group-hover:bg-[#e63a27] group-hover:text-white hover-button">
             Read More
