@@ -36,7 +36,7 @@ export default function AboutCompany() {
           src="/aboutimg.jpg"
           alt="Roof house illustration"
           fill
-          className="object-cover"
+          className="object-fill"
         />
         <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#0b2c55] shadow-md flex items-center gap-2">
           <span className="text-4xl sm:text-5xl font-extrabold">12</span>
