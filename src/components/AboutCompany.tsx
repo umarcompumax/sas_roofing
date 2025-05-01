@@ -84,7 +84,7 @@ export default function AboutCompany() {
             />
           </div>
 
-          <p className="text-gray-600 text-sm lg:text-base mb-10 xl:mb-0">
+          <p className="text-gray-600 text-base lg:text-lg mb-10 xl:mb-0">
             For over twelve years, SAS Roofing & Waterproofing has proudly
             served Brooklyn, Manhattan, and Queens with top-tier roofing,
             waterproofing, and masonry solutions. Roofing isn’t just our
