@@ -50,7 +50,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero-section"
-      className="relative w-full min-h-[520px] lg:min-h-[700px] overflow-hidden"
+      className="relative w-full min-h-[530px] lg:min-h-[700px] overflow-hidden"
     >
       <AnimatePresence mode="wait">
         <motion.div
