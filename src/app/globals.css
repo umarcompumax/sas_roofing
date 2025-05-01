@@ -39,7 +39,7 @@
 .hover-button {
   position: relative;
   padding: 12px 24px;
-  font-size: 15px;
+  font-size: 14px;
   color: #e5392c;
   background-color: #ffffff;
   border: 1px solid #e5392c;
@@ -75,7 +75,7 @@
 .form-hover-button {
   position: relative;
   padding: 12px 24px;
-  font-size: 16px;
+  font-size: 14px;
   color: white;
   background-color: #003269;
   border: 1px solid white;
@@ -112,7 +112,7 @@
 .get-hover-button {
   position: relative;
   padding: 12px 24px;
-  font-size: 16px;
+  font-size: 14px;
   color: white;
   background-color: #e5392c;
   border: none;
@@ -152,7 +152,7 @@
 .More-hover-button {
   position: relative;
   padding: 12px 24px;
-  font-size: 16px;
+  font-size: 14px;
   color: white;
   background-color: #e5392c;
   cursor: pointer;
@@ -187,7 +187,7 @@
 .call-hover-button {
   position: relative;
   padding: 12px 24px;
-  font-size: 16px;
+  font-size: 14px;
   color: white;
   background-color: #e5392c;
   border: none;
