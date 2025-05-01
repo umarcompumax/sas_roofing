@@ -22,21 +22,21 @@ const slides = [
     description:
       "Highest quality single-ply membrane systems keeps us at the forefront of the business...",
     image: "/services1.jpg",
-    icon: "/pattern1.png",
+    icon: "/pattern-1.png",
   },
   {
     title: "MASONRY",
     description:
       "If you need paving, bluestone, brickwork, cement work, etc... or any other structure then give...",
     image: "/services2.jpg",
-    icon: "/pattern2.png",
+    icon: "/masonry.png",
   },
   {
     title: "ROOFING",
     description:
       "We service all types of roofing big or small, from repairs to new installs, residential or...",
     image: "/services3.jpg",
-    icon: "/pattern3.png",
+    icon: "/roofing.png",
   },
 ];
 
@@ -95,10 +95,10 @@ export default function ServicesSlider({ swiperRef }: Props) {
                 >
                   <div className="flex w-full items-end">
                     <div className="w-[70%] bg-[#f5f5f5] shadow-md p-4 min-h-[120px] sm:min-h-[140px] md:min-h-[150px] flex flex-col">
-                      <h3 className="text-[#003269] text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-wide">
+                      <h3 className="text-[#003269] text-sm md:text-base lg:text-lg font-bold tracking-wide">
                         {title}
                       </h3>
-                      <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 mt-1 leading-snug line-clamp-3">
+                      <p className="text-sm text-gray-600 mt-1 leading-snug line-clamp-3">
                         {description}
                       </p>
                     </div>
@@ -112,7 +112,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
                           src={icon}
                           alt={`${title} Icon`}
                           fill
-                          className="object-contain"
+                          className="object-center"
                         />
                       </div>
                     </Link>

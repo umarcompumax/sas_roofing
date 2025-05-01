@@ -64,7 +64,7 @@ export default function CustomerReviews() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Visit our reviews on ${alt}`}
-            className="border rounded-md p-3 shadow-sm hover:shadow-md transition bg-white w-[100px] h-[100px] flex items-center justify-center"
+            className="border rounded-md p-3 shadow-sm hover:shadow-md transition bg-white w-[70px] h-[70px]  lg:w-[100px] lg:h-[100px] flex items-center justify-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

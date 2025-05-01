@@ -221,9 +221,9 @@
 .Hero_hover-button {
   position: relative;
   padding: 28px 40px; /* py-7 px-10 */
-  font-size: 16px; /* base */
+  font-size: 14px; /* base */
   color: white;
-  background-color: #e53935;
+  background-color: #e63a27;
   border: none;
   border-radius: 0;
   cursor: pointer;

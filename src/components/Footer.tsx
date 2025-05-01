@@ -94,7 +94,7 @@ export default function Footer() {
 
           <Link
             href="/"
-            className="inline-block mt-6 bg-[#e53935] text-white px-6 py-3 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base rounded-md More-hover-button"
+            className="inline-block mt-6 bg-[#e53935] text-white px-6 py-3 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base More-hover-button"
           >
             MORE DETAILS
           </Link>

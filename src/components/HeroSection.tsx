@@ -50,7 +50,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero-section"
-      className="relative w-full min-h-[380px] lg:min-h-[700px] overflow-hidden"
+      className="relative w-full min-h-[500px] lg:min-h-[700px] overflow-hidden"
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -81,10 +81,10 @@ export default function HeroSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-3xl space-y-6 pt-10"
         >
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-[90px] 2xl:text-[100px] font-extrabold leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-[80px] xl:text-[90px] 2xl:text-[100px] font-extrabold leading-tight">
             {slide.title}
           </h1>
-          <p className="text-base sm:text-lg md:text-xl font-light tracking-wide">
+          <p className="text-lg md:text-xl font-light tracking-wide">
             {slide.description}
           </p>
           <Link href="/about">

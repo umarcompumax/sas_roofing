@@ -20,7 +20,6 @@ export default function MobileHeader() {
     };
   }, [isOpen]);
 
-
   if (!hasMounted) return null;
 
   const navItems = [
@@ -52,7 +51,7 @@ export default function MobileHeader() {
             src="/MobileLogo.webp"
             alt="Logo"
             width={200}
-            height={100}
+            height={80}
             className="object-contain h-full w-auto"
             priority
           />
@@ -76,19 +75,19 @@ export default function MobileHeader() {
 
       {/* Sidebar Overlay & Drawer */}
       <div
-        className={`fixed inset-0 z-50 flex justify-end transition-opacity duration-300 ${
+        className={`fixed inset-0 z-60 flex justify-end transition-opacity duration-300 ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
         {/* Overlay */}
         <div
-          className="w-[60%] bg-black/30 backdrop-blur-sm"
+          className="w-[40%] bg-black/30 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
         />
 
         {/* Drawer */}
         <div
-          className={`relative w-[40%] h-full bg-[#003269] text-white flex flex-col overflow-y-auto transform transition-transform duration-300 ease-in-out ${
+          className={`relative w-[60%] h-full bg-[#003269] text-white flex flex-col overflow-y-auto transform transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -96,20 +95,19 @@ export default function MobileHeader() {
           <button
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"
-            className="absolute top-3 right-3 bg-[#e63a27] text-white w-8 h-8 rounded-full flex items-center justify-center"
+            className="absolute top-3 right-3 bg-[#e63a27] text-white w-6 h-6 rounded-full flex items-center justify-center"
           >
             ✕
           </button>
 
           {/* Logo */}
-          <Link href="/" className="mx-auto mt-10 w-[130px] h-[65px] relative">
+          <Link href="/" className="flex justify-center p-4">
             <Image
-              src="/Logo.webp"
+              src="/Logo.png"
               alt="Company Logo"
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 130px, 260px"
-              priority
+              width={260}
+              height={130}
+              className="object-contain cursor-pointer"
             />
           </Link>
 
