@@ -33,7 +33,7 @@ const faqs = [
 ];
 
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <div className="pt-8 text-left lg:ml-15">
@@ -62,7 +62,7 @@ export default function FaqSection() {
                 }
                 aria-expanded={isOpen}
                 aria-controls={`faq-${index}`}
-                className={`w-full flex justify-between items-center px-6 py-5 text-left focus:outline-none ${
+                className={`w-full flex justify-between items-center px-6 py-5 text-left focus:outline-none transition-all ${
                   isOpen ? "bg-[#262e39]" : "bg-white"
                 }`}
               >
@@ -72,17 +72,20 @@ export default function FaqSection() {
                     {faq.question}
                   </span>
                 </span>
-                <span
-                  className={`w-8 h-8 rounded-full flex items-center justify-center text-white ${
+                <motion.span
+                  className={`w-5 h-5 md:w-8 md:h-8 rounded-full flex items-center justify-center text-white ${
                     isOpen ? "bg-[#e63a27]" : "bg-[#003269]"
                   }`}
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: isOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
                 >
                   {isOpen ? (
                     <FiChevronDown size={18} />
                   ) : (
                     <FiChevronRight size={18} />
                   )}
-                </span>
+                </motion.span>
               </button>
 
               <AnimatePresence initial={false}>
@@ -93,7 +96,7 @@ export default function FaqSection() {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.5 }}
                     className="px-6 pb-6 pt-4 bg-white text-gray-600 leading-relaxed"
                   >
                     {faq.answer}

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
 .slanted-right::after {
   content: "";
   position: absolute;
@@ -106,7 +107,6 @@
   color: white;
   border: none;
 }
-
 
 /* Get Quote  */
 .get-hover-button {

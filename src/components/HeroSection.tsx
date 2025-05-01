@@ -32,13 +32,18 @@ const slides = [
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
+const [clickedButton, setClickedButton] = useState<"prev" | "next" | null>(
+  null
+);
 
   const nextSlide = useCallback(
     () => setCurrent((prev) => (prev + 1) % slides.length),
     []
   );
+
   const prevSlide = () =>
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+
 
   useEffect(() => {
     const interval = setInterval(() => nextSlide(), 6000);
@@ -99,16 +104,29 @@ export default function HeroSection() {
 
       {/* Controls */}
       <button
-        onClick={prevSlide}
+        onClick={() => {
+          setClickedButton("prev");
+          prevSlide();
+          setTimeout(() => setClickedButton(null), 200);
+        }}
         aria-label="Previous Slide"
-        className="absolute left-5 top-1/2 -translate-y-1/2 bg-black/40 rounded-full p-2 z-20"
+        className={`absolute left-5 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 transition-all duration-200 transform
+    ${clickedButton === "prev" ? "bg-[#e63a27]" : "bg-black/40"}
+    hover:bg-[#e63a27] active:scale-95`}
       >
         <ArrowLeft className="text-white" />
       </button>
+
       <button
-        onClick={nextSlide}
+        onClick={() => {
+          setClickedButton("next");
+          nextSlide();
+          setTimeout(() => setClickedButton(null), 200);
+        }}
         aria-label="Next Slide"
-        className="absolute right-5 top-1/2 -translate-y-1/2 bg-[#e63a27] rounded-full p-2 z-20"
+        className={`absolute right-5 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 transition-all duration-200 transform
+    ${clickedButton === "next" ? "bg-[#e63a27]" : "bg-black/40"}
+    hover:bg-[#e63a27] active:scale-95`}
       >
         <ArrowRight className="text-white" />
       </button>
