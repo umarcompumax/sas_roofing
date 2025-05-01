@@ -26,14 +26,13 @@ export default function AboutCompany() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="relative w-full sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] xl:max-w-[480px] border-2 border-[#e63a27] rounded-md overflow-hidden flex-shrink-0 xl:self-start"
+        className="relative w-full sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] xl:max-w-[480px] border-2 border-[#e63a27] rounded-md overflow-hidden flex-shrink-0 xl:self-start aspect-[5/6] xl:aspect-[7/8]"
       >
         <Image
           src="/aboutimg.jpg"
           alt="Roof house illustration"
-          width={400}
-          height={400}
-          className="w-full h-full object-cover"
+          fill
+          className="object-fill"
         />
 
         <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
