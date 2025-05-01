@@ -12,8 +12,8 @@ export default function FooterTopCTA() {
   });
 
   return (
-    <div className="bg-[#00254c] text-white py-6 px-4 sm:py-8 sm:px-6 md:px-12">
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-10 text-center lg:text-left">
+    <div className="bg-[#00254c] text-white px-4 py-10 sm:px-6 md:px-12">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 text-center lg:text-left">
         {/* Logo */}
         <motion.div
           className="min-w-[100px] sm:min-w-[120px] lg:min-w-[160px]"
@@ -55,7 +55,7 @@ export default function FooterTopCTA() {
           {...fadeUp(0.3)}
         >
           <Link href="/about">
-            <button className="px-5 sm:px-6 py-3 text-white font-semibold bg-[#e63a27] border-2 border-[#e63a27] hover:bg-[#00254c] hover:text-white transition call-hover-button">
+            <button className=" call-hover-button">
               KNOW MORE
             </button>
           </Link>

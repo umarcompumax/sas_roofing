@@ -30,7 +30,7 @@ export default function AboutCompany() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="relative w-full sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] xl:max-w-[480px] border-2 border-[#e63a27] rounded-md overflow-hidden flex-shrink-0 aspect-[5/6] xl:aspect-[4/3]"
+        className="relative w-full sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] xl:max-w-[480px] border-2 border-[#e63a27] rounded-md overflow-hidden flex-shrink-0 aspect-[5/6] xl:aspect-[4/4]"
       >
         <Image
           src="/aboutimg.jpg"
@@ -38,7 +38,7 @@ export default function AboutCompany() {
           fill
           className="object-fill"
         />
-        <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#0b2c55] shadow-md flex items-center gap-2">
+        <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
           <span className="text-4xl sm:text-5xl font-extrabold">12</span>
           <div className="leading-tight text-sm sm:text-base font-bold uppercase tracking-wide">
             <div>Years</div>
@@ -62,11 +62,11 @@ export default function AboutCompany() {
             </h4>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0b2c55] leading-tight mb-4">
+          <h1 className="text-3xl lg:text-[45px] font-bold text-[#003269] leading-tight mb-4">
             Roofing Is Our Heritage & Quality Is Our Tradition
           </h1>
 
-          <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-[#0b2c55] mb-6">
+          <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-[#003269] mb-6">
             <FeatureItem
               icon={FaCertificate}
               label="Certified"
@@ -84,7 +84,7 @@ export default function AboutCompany() {
             />
           </div>
 
-          <p className="text-gray-600 text-xs sm:text-sm lg:text-base mb-8">
+          <p className="text-gray-600 text-sm lg:text-base mb-10 xl:mb-0">
             For over twelve years, SAS Roofing & Waterproofing has proudly
             served Brooklyn, Manhattan, and Queens with top-tier roofing,
             waterproofing, and masonry solutions. Roofing isn’t just our
@@ -96,7 +96,7 @@ export default function AboutCompany() {
 
         <Link
           href="/about"
-          className="border-4 border-[#003366] p-1 inline-block self-start"
+          className="border-4 border-[#003269] p-1 inline-block self-start"
         >
           <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide hover:bg-[#e63a27] hover:text-white transition text-sm lg:text-base hover-button">
             Read More
