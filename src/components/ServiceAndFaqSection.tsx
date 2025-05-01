@@ -13,7 +13,7 @@ export default function ServiceAndFaqSection() {
   const handleSubmit = (e: React.FormEvent) => e.preventDefault();
 
   return (
-    <section className="relative w-full pt-5 pb-20 bg-white overflow-hidden border-t border-black/40">
+    <section className="relative w-full lg:h-[100vh] pt-5 pb-24 bg-white overflow-hidden border-t border-black/40">
       <div className="absolute inset-0 hidden lg:flex z-0">
         <div className="w-[30%] bg-[#e63a27]" />
         <div className="w-[70%] bg-white" />
@@ -26,7 +26,7 @@ export default function ServiceAndFaqSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           onSubmit={handleSubmit}
-          className="bg-[#f5f5f5] w-full max-w-md p-6 md:p-12 shadow-xl grid gap-4 text-base mb-5 lg:mb-0"
+          className="bg-[#f5f5f5] w-full max-w-md p-6 md:p-12 shadow-xl grid gap-4 text-base mb-12 lg:mb-0"
         >
           <div className="flex items-center gap-2">
             <div className="w-6 h-[3px] bg-[#e63a27]" />

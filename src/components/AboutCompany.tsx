@@ -62,7 +62,7 @@ export default function AboutCompany() {
             </h4>
           </div>
 
-          <h1 className="text-3xl lg:text-[45px] font-bold text-[#003269] leading-tight mb-4">
+          <h1 className="text-4xl lg:text-5xl font-bold text-[#003269] leading-tight mb-4">
             Roofing Is Our Heritage & Quality Is Our Tradition
           </h1>
 

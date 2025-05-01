@@ -20,7 +20,7 @@ export default function OurServicesPage() {
 
   return (
     <main className="px-4 sm:px-6 lg:px-12 pt-5">
-      <div className="mx-auto py-5 space-y-12">
+      <div className="mx-auto py-8 space-y-12 ">
         <motion.section
           initial="hidden"
           whileInView="visible"
