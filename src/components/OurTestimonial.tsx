@@ -19,28 +19,30 @@ const fadeUp = {
 
 export default function OurTestimonial() {
   return (
-    <section className="pt-12 pb-4 px-4 sm:px-6">
-      <div className="max-w-screen-xl mx-auto text-center">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className=""
-        >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#003269]">
-            <span className="flex items-center justify-center gap-2 mb-2">
-              <span className="w-6 h-px bg-[#e63a27]" />
-              <span className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase">
-                Testimonials
+    <div className="p-2 m-5 md:m-0 md:mb-10 shadow-xl">
+      <section className="pt-8 pb-4 px-4 sm:px-6 bg-[#f9f9f9]">
+        <div className="max-w-screen-xl mx-auto text-center">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className=""
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#003269]">
+              <span className="flex items-center justify-center gap-2 mb-2">
+                <span className="w-6 h-px bg-[#e63a27]" />
+                <span className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase">
+                  Testimonials
+                </span>
               </span>
-            </span>
-            Words From Our Customer
-          </h2>
-        </motion.div>
+              Words From Our Customer
+            </h2>
+          </motion.div>
 
-        <TestimonialSlider />
-      </div>
-    </section>
+          <TestimonialSlider />
+        </div>
+      </section>
+    </div>
   );
 }

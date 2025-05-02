@@ -42,40 +42,44 @@ const fadeUpVariant = {
 };
 
 const Features = () => (
-  <div className="relative z-0">
-    <div className="absolute bottom-0 left-0 w-full h-9/10 lg:h-80 bg-[#08386c] z-[-1]" />
+  <div className="p-2 m-5 md:p-2 md:m-0 md:mb-5 shadow-xl">
+    <div className="relative z-0 bg-[#f9f9f9]">
+      <div className="absolute bottom-0 left-0 w-full h-9/10 lg:h-80 bg-[#08386c] z-[-1]" />
 
-    <section className="py-16 relative z-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-0 px-12 ">
-        {features.map(({ id, title, description }, i) => (
-          <motion.div
-            key={id}
-            className="relative bg-[#003269] text-white text-center h-[370px] p-6 overflow-hidden feature-card"
-            variants={fadeUpVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            custom={i}
-          >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-20 bg-[#e63a27] clip-top-shape flex items-center justify-center font-bold text-lg">
-              {id}
-            </div>
-
-            <h3 className="pt-20 pb-6 text-base md:text-lg font-semibold whitespace-pre-line">
-              {title}
-            </h3>
-            <p className="text-sm md:text-base text-gray-300">{description}</p>
-
-            <Link
-              href="/reviews"
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-20 bg-[#e63a27] clip-bottom-shape flex items-center justify-center text-white text-sm font-semibold"
+      <section className="py-16 relative z-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-0 px-12 ">
+          {features.map(({ id, title, description }, i) => (
+            <motion.div
+              key={id}
+              className="relative bg-[#003269] text-white text-center h-[370px] p-6 overflow-hidden feature-card"
+              variants={fadeUpVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              custom={i}
             >
-              <FaArrowRight className="mr-2" /> DETAILS
-            </Link>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-20 bg-[#e63a27] clip-top-shape flex items-center justify-center font-bold text-lg">
+                {id}
+              </div>
+
+              <h3 className="pt-20 pb-6 text-base md:text-lg font-semibold whitespace-pre-line">
+                {title}
+              </h3>
+              <p className="text-sm md:text-base text-gray-300">
+                {description}
+              </p>
+
+              <Link
+                href="/reviews"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-20 bg-[#e63a27] clip-bottom-shape flex items-center justify-center text-white text-sm font-semibold"
+              >
+                <FaArrowRight className="mr-2" /> DETAILS
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    </div>
   </div>
 );
 

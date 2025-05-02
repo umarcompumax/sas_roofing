@@ -29,8 +29,8 @@ const VideoSection = () => {
     "https://www.youtube.com/embed/Z4gunD5Wbi8?autoplay=1&rel=0&modestbranding=1";
 
   return (
-    <>
-      <section className="relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-white ">
+    <div className="p-2 m-5 md:p-0 md:pb-1 md:m-0 md:mb-5 shadow-2xl ">
+      <section className="relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-[#f9f9f9] ">
         <Image
           src="/VideoSectionBg.webp"
           alt="Video background"
@@ -67,9 +67,7 @@ const VideoSection = () => {
               <h2 className="text-4xl lg:text-5xl font-medium leading-tight mb-4">
                 Have a Look <br /> At Our Video
               </h2>
-              <p className="mb-6">
-                
-              </p>
+              <p className="mb-6"></p>
               <ul className="space-y-2">
                 <li>
                   <SiTicktick className="inline mr-2" /> Roof of the Year
@@ -141,7 +139,7 @@ const VideoSection = () => {
           </div>
         </DialogContent>
       </Dialog>
-    </>
+    </div>
   );
 };
 
