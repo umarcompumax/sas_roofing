@@ -28,7 +28,7 @@ export default function AboutCompany() {
       className={`
         mb-12 sm:mb-16 lg:mb-20                         
         py-12 sm:py-16 lg:py-20                        
-        bg-[#ececec]                                
+        bg-[#f9f9f9]                                
         bg-repeat                                   
         shadow-xl                                  
       `}

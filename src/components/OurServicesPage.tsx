@@ -26,7 +26,7 @@ export default function OurServicesPage() {
     // --- Apply styling to the main container ---
     <main
       className={`
-        px-4 sm:px-6 lg:px-12 pt-5 pb-12 sm:pb-16 lg:pb-20 mt-3 mb-5 bg-[#ececec] bg-repeat        shadow-xl relative`}
+        px-4 sm:px-6 lg:px-12 pt-5 pb-12 sm:pb-16 lg:pb-20 mt-3 mb-5 bg-[#f9f9f9] bg-repeat        shadow-xl relative`}
       // Apply background image using inline style for dynamic URL handling
       style={{ backgroundImage: `url(${bgPatternPath})` }}
     >
