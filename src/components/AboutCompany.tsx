@@ -39,7 +39,7 @@ export default function AboutCompany() {
           className="object-fill"
         />
         <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
-          <span className="text-4xl sm:text-5xl font-extrabold">12</span>
+          <span className="text-4xl sm:text-5xl font-extrabold">15</span>
           <div className="leading-tight text-sm sm:text-base font-bold uppercase tracking-wide">
             <div>Years</div>
             <div>of Experience</div>

@@ -32,9 +32,9 @@ const slides = [
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
-const [clickedButton, setClickedButton] = useState<"prev" | "next" | null>(
-  null
-);
+  const [clickedButton, setClickedButton] = useState<"prev" | "next" | null>(
+    null
+  );
 
   const nextSlide = useCallback(
     () => setCurrent((prev) => (prev + 1) % slides.length),
@@ -43,7 +43,6 @@ const [clickedButton, setClickedButton] = useState<"prev" | "next" | null>(
 
   const prevSlide = () =>
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-
 
   useEffect(() => {
     const interval = setInterval(() => nextSlide(), 6000);
@@ -57,23 +56,36 @@ const [clickedButton, setClickedButton] = useState<"prev" | "next" | null>(
       id="hero-section"
       className="relative w-full min-h-[530px] lg:min-h-[700px] overflow-hidden"
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={slide.image}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 1.05 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0"
+          className="absolute inset-0 z-0 cursor-grab active:cursor-grabbing"
+          initial={{ x: 300, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: -300, opacity: 0 }}
+          transition={{ duration: 0.6 }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
+          onDragEnd={(e, info) => {
+            if (info.offset.x < -100) {
+              nextSlide();
+            } else if (info.offset.x > 100) {
+              prevSlide();
+            }
+          }}
         >
-          <Image
-            src={slide.image}
-            alt={slide.title}
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="relative w-full h-full">
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              priority
+              className="object-cover select-none pointer-events-none"
+            />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
         </motion.div>
       </AnimatePresence>
 
@@ -102,7 +114,7 @@ const [clickedButton, setClickedButton] = useState<"prev" | "next" | null>(
         </motion.div>
       </div>
 
-      {/* Controls */}
+      {/* Arrow Controls */}
       <button
         onClick={() => {
           setClickedButton("prev");
@@ -110,9 +122,9 @@ const [clickedButton, setClickedButton] = useState<"prev" | "next" | null>(
           setTimeout(() => setClickedButton(null), 200);
         }}
         aria-label="Previous Slide"
-        className={`absolute left-5 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 transition-all duration-200 transform
-    ${clickedButton === "prev" ? "bg-[#e63a27]" : "bg-black/40"}
-    hover:bg-[#e63a27] active:scale-95`}
+        className={`hidden md:block absolute left-5 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 transition-all duration-200 transform
+        ${clickedButton === "prev" ? "bg-[#e63a27]" : "bg-black/40"}
+        hover:bg-[#e63a27] active:scale-95`}
       >
         <ArrowLeft className="text-white" />
       </button>
@@ -124,14 +136,14 @@ const [clickedButton, setClickedButton] = useState<"prev" | "next" | null>(
           setTimeout(() => setClickedButton(null), 200);
         }}
         aria-label="Next Slide"
-        className={`absolute right-5 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 transition-all duration-200 transform
-    ${clickedButton === "next" ? "bg-[#e63a27]" : "bg-black/40"}
-    hover:bg-[#e63a27] active:scale-95`}
+        className={`hidden md:block absolute right-5 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 transition-all duration-200 transform
+        ${clickedButton === "next" ? "bg-[#e63a27]" : "bg-black/40"}
+        hover:bg-[#e63a27] active:scale-95`}
       >
         <ArrowRight className="text-white" />
       </button>
 
-      {/* Dots */}
+      {/* Slide Dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
         {slides.map((_, i) => (
           <div
