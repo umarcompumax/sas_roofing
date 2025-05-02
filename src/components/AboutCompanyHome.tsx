@@ -20,18 +20,17 @@ export default function AboutCompany() {
 
   // --- Define the path to your repeating background image ---
   // --- Make sure this image exists in your /public directory ---
-  const bgPatternPath = "/thm-pattern-5.png"; // <-- *** REPLACE THIS PATH ***
+  const bgPatternPath = ""; // <-- *** REPLACE THIS PATH ***
 
   return (
     // --- Outer container for background, shadow, and margin ---
     <div
       className={`
-        mb-12 sm:mb-16 lg:mb-20                        // Added top/bottom margin for separation
-        py-12 sm:py-16 lg:py-20                        // Added vertical padding
-        bg-[#f5f5f5]                                // Set background color
-        bg-repeat                                   // Set background image to repeat
-        shadow-xl                                   // Added a large shadow
-        relative                                    // Good practice for styled containers
+        mb-12 sm:mb-16 lg:mb-20                         
+        py-12 sm:py-16 lg:py-20                        
+        bg-[#ececec]                                
+        bg-repeat                                   
+        shadow-xl                                  
       `}
       // Apply background image using inline style
       style={{ backgroundImage: `url(${bgPatternPath})` }}
