@@ -29,8 +29,8 @@ const Contact = () => {
   const contactItems = [
     {
       icon: <MapPin className="text-white w-6 h-6" />,
-      title: "Visit a Office",
-      desc: "You are most welcome to visit office.",
+      title: "Visit Our Office",
+      desc: "You are most welcome to visit our office.",
       content: "552 Rugby Rd\nBrooklyn NY 11230",
     },
     {

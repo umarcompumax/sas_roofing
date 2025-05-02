@@ -68,8 +68,7 @@ const VideoSection = () => {
                 Have a Look <br /> At Our Video
               </h2>
               <p className="mb-6">
-                Indignation and dislike men who are so beguiled demoralized by
-                the charms of pleasure of the moment.
+                
               </p>
               <ul className="space-y-2">
                 <li>

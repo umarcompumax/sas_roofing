@@ -13,7 +13,7 @@ export default function ServiceAndFaqSection() {
   const handleSubmit = (e: React.FormEvent) => e.preventDefault();
 
   return (
-    <section className="relative w-full lg:h-[100vh] pt-5 pb-24 bg-white overflow-hidden border-t border-black/40">
+    <section className="relative w-full lg:h-[100vh] md:pt-5 pb-24 bg-white overflow-hidden border-t border-black/40">
       <div className="absolute inset-0 hidden lg:flex z-0">
         <div className="w-[30%] bg-[#e63a27]" />
         <div className="w-[70%] bg-white" />

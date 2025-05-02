@@ -18,18 +18,33 @@ export default function OurServicesPage() {
     },
   };
 
+  // --- Define the path to your repeating background image ---
+  // --- Make sure this image exists in your /public directory ---
+  const bgPatternPath = "/thm-pattern-5.png"; // <-- *** REPLACE THIS PATH ***
+
   return (
-    <main className="px-4 sm:px-6 lg:px-12 pt-5">
-      <div className="mx-auto py-8 space-y-12 ">
+    // --- Apply styling to the main container ---
+    <main
+      className={`
+        px-4 sm:px-6 lg:px-12 pt-5 pb-12 sm:pb-16 lg:pb-20 mt-3 mb-5 bg-[#f5f5f5] bg-repeat        shadow-xl relative`}
+      // Apply background image using inline style for dynamic URL handling
+      style={{ backgroundImage: `url(${bgPatternPath})` }}
+    >
+      {/* You could also use a fixed background if desired: bg-fixed */}
+
+      {/* Inner container for content - keeps padding separate from margin */}
+      <div className="mx-auto space-y-12 ">
         <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
-          className="flex flex-col md:flex-row justify-evenly items-center text-center md:text-left gap-4"
+          className="flex flex-col md:flex-row justify-evenly items-center text-center md:text-left gap-8 md:gap-4" // Increased gap for spacing
         >
           <div>
-            <div className="flex items-center gap-2 mb-1">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
+              {" "}
+              {/* Center on small screens */}
               <div className="w-6 h-px bg-[#e63a27]" />
               <span className="text-xs sm:text-sm lg:text-lg font-bold text-[#e63a27] uppercase">
                 Our Services
@@ -42,7 +57,7 @@ export default function OurServicesPage() {
 
           <Link
             href="/services"
-            className="group border-4 border-[#003269] p-2 inline-block"
+            className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0" // Added flex-shrink-0
           >
             <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button">
               All Services
@@ -55,7 +70,7 @@ export default function OurServicesPage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
-          className=""
+          className="" // No specific class needed here usually
         >
           <ServicesSlider swiperRef={swiperRef} />
         </motion.div>
