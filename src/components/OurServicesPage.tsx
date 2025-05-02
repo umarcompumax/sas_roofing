@@ -26,11 +26,9 @@ export default function OurServicesPage({ margin }: Props) {
   const bgPatternPath = "";
 
   return (
-    <div
-      className={`m-${margin[0]} md:m-${margin[2]} mb-${margin[1]} md:mb-${margin[1]} shadow-2xl`}
-    >
       <main
         className={`
+        mb-${margin[1]} md:mb-${margin[1]} shadow-2xl
         px-4 sm:px-6 lg:px-12 pt-10 pb-12 sm:pb-16 lg:pb-20 bg-[#f9f9f9] relative`}
         // Apply background image using inline style for dynamic URL handling
         style={{ backgroundImage: `url(${bgPatternPath})` }}
@@ -81,6 +79,5 @@ export default function OurServicesPage({ margin }: Props) {
           </motion.div>
         </div>
       </main>
-    </div>
   );
 }

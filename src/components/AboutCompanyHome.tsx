@@ -18,27 +18,18 @@ export default function AboutCompany() {
     { icon: <FaHome className="text-[#e63a27]" />, label: "Experienced" },
   ];
 
-  // --- Define the path to your repeating background image ---
-  // --- Make sure this image exists in your /public directory ---
-  const bgPatternPath = ""; // <-- *** REPLACE THIS PATH ***
-
   return (
-    <div className="m-2 mb-5 md:m-0 md:mb-10 shadow-xl">
       <div
         className={`
+        mb-5 md:mb-10 shadow-xl
         py-10 sm:py-16 lg:py-20 bg-[#f9f9f9]                                                                                                  
       `}
-        // Apply background image using inline style
-        style={{ backgroundImage: `url(${bgPatternPath})` }}
       >
-        {/* --- Inner container for content layout and max-width --- */}
-        {/*     Removed bg-white, w-5/6 from original section     */}
-        {/*     Added max-width and mx-auto here               */}
         <section
-          className="flex flex-col xl:flex-row px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 // Adjusted horizontal padding slightly
-                   gap-10 lg:gap-16                             // Increased gap
-                   max-w-7xl                                  // Constrain content width
-                   mx-auto" // Center the content container
+          className="flex flex-col xl:flex-row px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20
+                   gap-10 lg:gap-16                             
+                   max-w-7xl
+                   mx-auto"
         >
           {/* Image Block - No major changes needed here */}
           <motion.div
@@ -158,6 +149,5 @@ export default function AboutCompany() {
           </motion.div>
         </section>
       </div>
-    </div>
   );
 }

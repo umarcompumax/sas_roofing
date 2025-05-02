@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+body{
+  overflow-x: hidden;
+}
 
 .slanted-right::after {
   content: "";

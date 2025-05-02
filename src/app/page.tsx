@@ -16,7 +16,7 @@ import AboutCompanyHome from "@/components/AboutCompanyHome";
 
 
 export default function Home() {
-  const mvalue = [2,15,0];
+  const mvalue = [0,15,0];
   return (
     <>
       <Navbar />

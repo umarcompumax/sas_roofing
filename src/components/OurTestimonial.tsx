@@ -19,8 +19,7 @@ const fadeUp = {
 
 export default function OurTestimonial() {
   return (
-    <div className="m-2 mb-5 md:m-0 md:mb-15 shadow-xl">
-      <section className="pt-8 pb-4 px-4 sm:px-6 bg-[#f9f9f9]">
+      <section className="pt-8 pb-4 px-4 sm:px-6 bg-[#f9f9f9] mb-10 md:mb-15 shadow-xl">
         <div className="max-w-screen-xl mx-auto text-center">
           <motion.div
             variants={fadeUp}
@@ -43,6 +42,5 @@ export default function OurTestimonial() {
           <TestimonialSlider />
         </div>
       </section>
-    </div>
   );
 }

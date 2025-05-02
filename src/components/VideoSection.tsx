@@ -33,10 +33,10 @@ const VideoSection = ({margin} : Props) => {
     "https://www.youtube.com/embed/Z4gunD5Wbi8?autoplay=1&rel=0&modestbranding=1";
 
   return (
-    <div
-      className={`m-${margin[0]} md:m-${margin[2]} mb-${margin[1]} md:mb-${margin[1]} shadow-2xl`}
-    >
-      <section className="relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-[#f9f9f9] ">
+    <div className={``}>
+      <section
+        className={`relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-[#f9f9f9] mb-${margin[1]} md:mb-${margin[1]} shadow-2xl`}
+      >
         <Image
           src="/VideoSectionBg.webp"
           alt="Video background"

@@ -13,8 +13,7 @@ export default function ServiceAndFaqSection() {
   const handleSubmit = (e: React.FormEvent) => e.preventDefault();
 
   return (
-    <div className="m-2 md:m-0 mb-10 md:mb-10 shadow-2xl">
-      <section className="relative w-full lg:h-[100vh] md:pt-5 pb-24 bg-[#f9f9f9] overflow-hidden md:border-t md:border-black/40">
+      <section className="relative w-full lg:h-[100vh] md:pt-5 pb-24 bg-[#f9f9f9] overflow-hidden md:border-t md:border-black/40 mb-10 md:mb-15 shadow-2xl">
         <div className="absolute inset-0 hidden lg:flex z-0">
           <div className="w-[30%] bg-[#e63a27]" />
           <div className="w-[70%] bg-white" />
@@ -96,6 +95,5 @@ export default function ServiceAndFaqSection() {
           </motion.div>
         </div>
       </section>
-    </div>
   );
 }
