@@ -23,11 +23,10 @@ export default function AboutCompany() {
   const bgPatternPath = ""; // <-- *** REPLACE THIS PATH ***
 
   return (
-    <div className="p-2 m-5 md:m-0 md:mb-5 shadow-xl">
+    <div className="m-2 mb-5 md:m-0 md:mb-10 shadow-xl">
       <div
         className={`
-        py-12 sm:py-16 lg:py-20                        
-        bg-[#f9f9f9]                                                                                                  
+        py-10 sm:py-16 lg:py-20 bg-[#f9f9f9]                                                                                                  
       `}
         // Apply background image using inline style
         style={{ backgroundImage: `url(${bgPatternPath})` }}

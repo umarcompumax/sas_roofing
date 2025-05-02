@@ -10,6 +10,7 @@ import StickyNavbar from "@/components/StickyNavbar";
 import React from "react";
 
 const page = () => {
+  const mvalue = [0, 0, 0];
   return (
     <>
       <Navbar />
@@ -21,7 +22,7 @@ const page = () => {
         imageSrc={"/slider-1.jpg"}
       />
       <AboutCompany />
-      <Features />
+      <Features margin={mvalue} />
       <FooterTopCTA />
       <Footer />
       <BackToTop />

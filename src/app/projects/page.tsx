@@ -10,6 +10,7 @@ import VideoSection from "@/components/VideoSection";
 import React from "react";
 
 const page = () => {
+  const mvalue = [0, 0, 0];
   return (
     <>
       <Navbar />
@@ -21,7 +22,7 @@ const page = () => {
         imageSrc={"/breadcrumb-19.jpg"}
       />
       <OurProjects />
-      <VideoSection />
+      <VideoSection margin={mvalue}/>
       <FooterTopCTA />
       <Footer />
       <BackToTop />

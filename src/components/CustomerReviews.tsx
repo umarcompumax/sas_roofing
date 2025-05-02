@@ -48,7 +48,7 @@ const reviewLogos = [
 
 export default function CustomerReviews() {
   return (
-    <section className="bg-gray-50 py-10 px-4">
+    <section className="bg-[#f9f9f9] py-10 px-4">
       <div className="text-center mb-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-[#003269]">
           Customer Reviews

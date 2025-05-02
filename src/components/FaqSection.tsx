@@ -36,7 +36,7 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="pt-8 text-left lg:ml-15">
+    <div className="pt-8 text-left lg:ml-15 bg-[#f9f9f9]">
       <div className="flex items-center gap-2 mb-2">
         <div className="w-6 h-[1px] bg-[#e63a27]" />
         <p className="text-base uppercase text-[#e63a27] font-semibold tracking-wide">

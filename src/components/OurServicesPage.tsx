@@ -6,7 +6,12 @@ import type { Swiper as SwiperType } from "swiper";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function OurServicesPage() {
+
+type Props = {
+  margin: number[];
+};
+
+export default function OurServicesPage({ margin }: Props) {
   const swiperRef = useRef<SwiperType | null>(null);
 
   const fadeUp = {
@@ -21,10 +26,12 @@ export default function OurServicesPage() {
   const bgPatternPath = "";
 
   return (
-    <div className="p-2 m-5 md:m-0 md:mb-5 shadow-xl">
+    <div
+      className={`m-${margin[0]} md:m-${margin[2]} mb-${margin[1]} md:mb-${margin[1]} shadow-2xl`}
+    >
       <main
         className={`
-        px-4 sm:px-6 lg:px-12 pt-3 pb-12 sm:pb-16 lg:pb-20 bg-[#f9f9f9] relative`}
+        px-4 sm:px-6 lg:px-12 pt-10 pb-12 sm:pb-16 lg:pb-20 bg-[#f9f9f9] relative`}
         // Apply background image using inline style for dynamic URL handling
         style={{ backgroundImage: `url(${bgPatternPath})` }}
       >

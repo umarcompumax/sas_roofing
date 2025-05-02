@@ -9,6 +9,7 @@ import StickyNavbar from "@/components/StickyNavbar";
 import React from "react";
 
 const page = () => {
+  const mvalue = [0, 0, 0];
   return (
     <>
       <Navbar />
@@ -19,7 +20,7 @@ const page = () => {
         pageTitle={"Services"}
         imageSrc={"/breadcrumb-19.jpg"}
       />
-      <OurServicesPage />
+      <OurServicesPage margin={mvalue}/>
       <FooterTopCTA />
       <Footer />
       <BackToTop />

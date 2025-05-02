@@ -20,8 +20,8 @@ const fadeUp = {
 
 const OurProjects = () => {
   return (
-    <div className="p-2 m-5 md:m-0 md:mb-5 shadow-2xl">
-      <main className="px-4 sm:px-6 lg:px-12 py-5 bg-[#f9f9f9]">
+    <div className="m-2 md:m-0 mb-5 md:mb-15 shadow-2xl">
+      <main className="px-4 sm:px-6 lg:px-12 py-8 bg-[#f9f9f9]">
         <motion.section
           className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6"
           variants={fadeUp}

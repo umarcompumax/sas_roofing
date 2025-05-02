@@ -13,7 +13,7 @@ export default function Blog() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <div className="p-2 m-5 md:m-0 shadow-xl">
+    <div className="mx-2 md:m-0 shadow-xl">
     <section className="pb-15 pt-5 px-4 sm:px-6 bg-[#f9f9f9]">
       <motion.div
         className="max-w-screen-xl mx-auto text-center"

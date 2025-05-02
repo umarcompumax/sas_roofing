@@ -16,17 +16,18 @@ import AboutCompanyHome from "@/components/AboutCompanyHome";
 
 
 export default function Home() {
+  const mvalue = [2,15,0];
   return (
     <>
       <Navbar />
       <StickyNavbar />
       <ContactBar />
       <HeroSection />
-      <OurServicesPage />
+      <OurServicesPage margin={mvalue} />
       <AboutCompanyHome />
-      <Features />
+      <Features margin={mvalue} />
       <OurProjects />
-      <VideoSection />
+      <VideoSection margin={mvalue} />
       <OurTestimonial />
       <ServiceAndFaqSection />
       <Blog />

@@ -17,7 +17,11 @@ const fadeUp = {
   },
 };
 
-const VideoSection = () => {
+type Props = {
+  margin: number[];
+};
+
+const VideoSection = ({margin} : Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -29,7 +33,9 @@ const VideoSection = () => {
     "https://www.youtube.com/embed/Z4gunD5Wbi8?autoplay=1&rel=0&modestbranding=1";
 
   return (
-    <div className="p-2 m-5 md:p-0 md:pb-1 md:m-0 md:mb-5 shadow-2xl ">
+    <div
+      className={`m-${margin[0]} md:m-${margin[2]} mb-${margin[1]} md:mb-${margin[1]} shadow-2xl`}
+    >
       <section className="relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-[#f9f9f9] ">
         <Image
           src="/VideoSectionBg.webp"
