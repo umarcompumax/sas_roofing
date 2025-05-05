@@ -63,7 +63,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center px-4 sm:px-6">
+    <div className="flex flex-col items-center px-4 sm:px-6 mb-5">
       <div className="w-11/12 overflow-hidden">
         <Swiper
           loop

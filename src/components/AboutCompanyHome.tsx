@@ -31,24 +31,22 @@ export default function AboutCompany() {
                    max-w-7xl
                    mx-auto"
       >
-        {/* Image Block - No major changes needed here */}
+        {/* Image Block */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }} // Changed animation slightly
+          initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
           className="relative w-full max-w-sm mx-auto xl:mx-0 md:max-w-md lg:max-w-lg xl:max-w-xl
-                     flex-shrink-0 xl:self-start aspect-[5/5] shadow-lg                    rounded-md"
+                     flex-shrink-0 xl:self-start aspect-[5/5] shadow-lg rounded-md"
         >
-          {/* Inner div for image border effect if needed */}
           <div className="relative w-full h-full border-2 border-[#e63a27] rounded-sm overflow-hidden">
             <Image
-              src="/aboutimg.jpg" // Ensure this image exists
+              src="/aboutimg.jpg"
               alt="SAS Roofing & Waterproofing team working"
               fill
-              className="object-cover" // Changed to object-cover for better scaling
+              className="object-cover"
             />
-
             <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
               <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#003269]">
                 15
@@ -61,13 +59,13 @@ export default function AboutCompany() {
           </div>
         </motion.div>
 
-        {/* Text Content Block - No major changes needed here */}
+        {/* Text Content Block */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
-          className="w-full flex flex-col justify-between" // Removed max-width here, handled by parent section
+          className="w-full flex flex-col justify-between"
         >
           <div>
             <div className="flex items-center gap-3 mb-2">
@@ -82,12 +80,10 @@ export default function AboutCompany() {
             </h1>
 
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold text-[#003269] mb-6">
-              {" "}
-              {/* Adjusted gap */}
               {features.map(({ icon, label }) => (
                 <div
                   key={label}
-                  className="flex items-center gap-1.5 uppercase font-bold" // Adjusted gap
+                  className="flex items-center gap-1.5 uppercase font-bold"
                 >
                   {icon}
                   <span>{label}</span>
@@ -95,10 +91,7 @@ export default function AboutCompany() {
               ))}
             </div>
 
-            {/* Paragraph text - using prose for potential better styling */}
             <div className="prose prose-lg max-w-none text-gray-700 mb-4">
-              {" "}
-              {/* Adjusted text color slightly */}
               <p>
                 For over twelve years, SAS Roofing & Waterproofing has proudly
                 served Brooklyn, Manhattan, and Queens with top-tier roofing,
@@ -134,17 +127,31 @@ export default function AboutCompany() {
             >
               {showMore ? "Read Less" : "Read More"}
             </button>
+
+            {/* ✅ Certified Company Block */}
+            <div className="flex items-center gap-4 mt-0 mb-2">
+              <Image
+                src="/certified-badge.jpg"
+                alt="Certified Company Badge"
+                width={50}
+                height={50}
+                className="flex-shrink-0"
+              />
+              <div className="text-[#003269] text-base font-medium">
+                <h4 className="font-bold mb-1">Certified Company</h4>
+                <p>HIC #2050416-DCA</p>
+              </div>
+            </div>
           </div>
 
           {/* Read More Link */}
           <Link
             href="/about"
-            className="inline-block border-4 border-[#003269] p-2 self-start group mt-4" // Added margin top
+            className="inline-block border-4 border-[#003269] p-2 self-start group mt-4"
           >
             <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide text-sm lg:text-base hover-button">
               Read More
             </span>
-            {/* Note: Ensure your .hover-button CSS handles the hover effect */}
           </Link>
         </motion.div>
       </section>

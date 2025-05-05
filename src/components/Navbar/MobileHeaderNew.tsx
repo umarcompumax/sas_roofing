@@ -8,6 +8,8 @@ import { FaFacebookF, FaHome } from "react-icons/fa";
 export default function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+
 
   useEffect(() => {
     setHasMounted(true);
@@ -25,7 +27,15 @@ export default function MobileHeader() {
   const navItems = [
     { name: "HOME", href: "/" },
     { name: "ABOUT US", href: "/about" },
-    { name: "SERVICES", href: "/services" },
+    {
+      name: "SERVICES",
+      href: "/services",
+      subItems: [
+        { name: "Roofing", href: "/services/roofing" },
+        { name: "Waterproofing", href: "/services/waterproofing" },
+        { name: "Masonry", href: "/services/masonry" },
+      ],
+    },
     { name: "PROJECTS", href: "/projects" },
     { name: "REVIEWS", href: "/reviews" },
     { name: "CONTACT US", href: "/contact" },
@@ -113,16 +123,55 @@ export default function MobileHeader() {
 
           {/* Navigation */}
           <nav className="mt-4">
-            {navItems.map(({ name, href }) => (
-              <Link
-                key={name}
-                href={href}
-                onClick={() => setIsOpen(false)}
-                className="block px-6 py-4 border-t border-white/20 last:border-b hover:bg-white hover:text-black transition-colors"
-              >
-                {name}
-              </Link>
-            ))}
+            <nav className="mt-4">
+              {navItems.map(({ name, href, subItems }) =>
+                subItems ? (
+                  <div
+                    key={name}
+                    className="border-t border-white/20 last:border-b"
+                  >
+                    <button
+                      onClick={() => setServicesOpen((prev) => !prev)}
+                      className="w-full px-6 py-4 text-left flex justify-between items-center font-semibold hover:bg-white hover:text-black transition-colors"
+                    >
+                      {name}
+                      <span
+                        className={`transform transition-transform duration-200 ${
+                          servicesOpen ? "rotate-180" : ""
+                        }`}
+                      >
+                        ▼
+                      </span>
+                    </button>
+                    <div
+                      className={`bg-[#00244d] text-sm overflow-hidden transition-all duration-300 ease-in-out ${
+                        servicesOpen ? "max-h-96" : "max-h-0"
+                      }`}
+                    >
+                      {subItems.map(({ name: subName, href: subHref }) => (
+                        <Link
+                          key={subName}
+                          href={subHref}
+                          onClick={() => setIsOpen(false)}
+                          className="block px-8 py-3 hover:bg-white hover:text-black transition-colors"
+                        >
+                          {subName}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={name}
+                    href={href}
+                    onClick={() => setIsOpen(false)}
+                    className="block px-6 py-4 border-t border-white/20 last:border-b hover:bg-white hover:text-black transition-colors"
+                  >
+                    {name}
+                  </Link>
+                )
+              )}
+            </nav>
           </nav>
 
           {/* Social Icons */}
