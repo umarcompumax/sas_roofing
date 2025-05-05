@@ -4,7 +4,7 @@ import { Phone, MapPin, Mail } from "lucide-react";
 
 const contactItems = [
   {
-    href: "tel:+3472216549",
+    href: "tel:13472216549",
     label: "Call SAS Roofing",
     icon: <Phone size={24} />,
     text: "Phone",
