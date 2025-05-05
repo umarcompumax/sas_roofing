@@ -128,9 +128,6 @@ export default function AboutCompany() {
               )}
             </div>
 
-            <div>
-              <Image src="/certified.png" alt="Certified Company" fill />
-            </div>
             <button
               onClick={() => setShowMore((prev) => !prev)}
               className="text-[#e63a27] font-semibold text-sm underline mb-6 hover:text-[#003269] transition-colors"
