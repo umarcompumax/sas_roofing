@@ -184,7 +184,7 @@ export default function Footer() {
             All Rights Reserved.
           </p>
           <div className="flex gap-x-6 flex-wrap justify-center md:justify-end">
-            {["Terms of Service", "Privacy Policy", "Sitemap"].map((text) => (
+            {["Terms of Service", "Privacy Policy"].map((text) => (
               <Link key={text} href="#" className="hover:underline">
                 {text}
               </Link>

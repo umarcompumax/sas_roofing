@@ -32,7 +32,7 @@ const page = () => {
       <ContactBar />
       <BreadCrum2
         breadcrumbItems={[]}
-        pageTitle={"Services"}
+        pageTitle={"Roofing Services"}
         imageSrc={"/breadcrumb-19.jpg"}
       />
       <RoofingServices />
@@ -41,7 +41,7 @@ const page = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={fadeUp}
-        className=""
+        className="" // No specific class needed here usually
       >
         <ServicesSlider swiperRef={swiperRef} />
       </motion.div>

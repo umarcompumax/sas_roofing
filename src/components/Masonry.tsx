@@ -15,20 +15,16 @@ const fadeUp = {
 export default function RoofingServices() {
   const services = [
     {
-      title: "Waterproofing Solutions in Brooklyn",
-      desc: "We specialize in basement waterproofing and roof waterproofing in Brooklyn, ensuring your property stays dry and protected. Our waterproofing solutions in Brooklyn are designed to prevent leaks and mold growth.",
+      title: "Masonry Services in Brooklyn",
+      desc: "We specialize in brick masonry, stone masonry, and concrete masonry in Brooklyn, delivering high-quality results for both residential and commercial projects. From masonry repair in Queens to custom masonry in Queens, our experienced team ensures durability and beauty for your property.",
     },
     {
-      title: "Foundation Waterproofing Manhattan",
-      desc: "Protect your foundation with our foundation waterproofing services in Manhattan. We seal cracks and provide long-lasting solutions to keep your property secure.",
+      title: "Masonry Construction in Manhattan",
+      desc: "Our team offers expert masonry construction in Manhattan, handling everything from new builds to repairs. We are among the best masonry contractors in Brooklyn, providing services that last.",
     },
     {
-      title: "Waterproofing Experts in Queens",
-      desc: "Our team of waterproofing experts in Queens offers comprehensive services to protect your home or business from water damage. We handle everything from exterior waterproofing to basement waterproofing.",
-    },
-    {
-      title: "Commercial Waterproofing Manhattan",
-      desc: "For businesses in Manhattan, we offer commercial waterproofing, ensuring your commercial property stays safe from water-related issues.",
+      title: "Residential and Commercial Masonry Services in Manhattan",
+      desc: "For homeowners in Manhattan, our residential and commercial masonry services include everything from brickwork to stone and concrete masonry, creating lasting, beautiful structures.",
     },
     {
       title: "Why Choose SAS Roofing & Waterproofing?",
@@ -49,12 +45,11 @@ export default function RoofingServices() {
           <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
             <div className="w-6 h-px bg-[#e63a27]" />
             <span className="text-sm font-bold text-[#e63a27] uppercase">
-              Waterproofing Services
+              Top Masonry Contractors NYC
             </span>
           </div>
           <h2 className="text-3xl font-bold text-[#003269] leading-snug">
-            Professional Waterproofing Services in Brooklyn, Manhattan, and
-            Queens
+            Expert Masonry Services in Brooklyn, Manhattan, and Queens
           </h2>
         </div>
 
@@ -76,10 +71,10 @@ export default function RoofingServices() {
         variants={fadeUp}
         className="text-sm md:text-lg text-gray-700 mb-6"
       >
-        SAS Roofing & Waterproofing offers expert waterproofing services across
-        Brooklyn, Manhattan, and Queens. From basement waterproofing in Brooklyn
-        to commercial waterproofing in Manhattan, we provide reliable solutions
-        to keep your property safe from water damage.
+        SAS Roofing & Waterproofing provides top-tier masonry services across
+        Brooklyn, Manhattan, and Queens. Whether you need brickwork contractors
+        in Brooklyn or stone masonry in Brooklyn, we offer expert solutions
+        tailored to your needs.
       </motion.p>
 
       <div className="grid gap-8">
@@ -97,15 +92,17 @@ export default function RoofingServices() {
             </h3>
             {isLink ? (
               <div className="text-sm md:text-lg text-gray-700">
-                At SAS Roofing & Waterproofing, we provide top-quality, durable
-                waterproofing services in Brooklyn, Manhattan, and Queens.
-                Protect your property today by Visit{" "}
+                At SAS Roofing & Waterproofing, we are committed to delivering
+                exceptional masonry solutions. Our team provides reliable,
+                long-lasting masonry construction and repair across Brooklyn,
+                Manhattan, and Queens. Visit{" "}
                 <Link
                   href="/"
                   className="text-[#e63a27] underline hover:text-[#c72d1f]"
                 >
                   SAS Roofing & Waterproofing
-                </Link>
+                </Link>{" "}
+                to learn more.
               </div>
             ) : (
               <p className="text-sm md:text-lg text-gray-700">{desc}</p>

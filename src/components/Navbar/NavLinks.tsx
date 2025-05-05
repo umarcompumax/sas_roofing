@@ -53,7 +53,7 @@ export default function NavLinks({
                   <Link
                     key={subLabel}
                     href={subPath}
-                    className="block px-5 py-3 text-[#003269] hover:bg-[#f0f0f0] text-sm"
+                    className="block px-5 py-3 text-[#003269] hover:bg-[#e63a27] hover:text-white text-sm"
                   >
                     {subLabel}
                   </Link>
