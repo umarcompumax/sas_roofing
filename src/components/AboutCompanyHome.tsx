@@ -37,8 +37,7 @@ export default function AboutCompany() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative w-full max-w-sm mx-auto xl:mx-0 md:max-w-md lg:max-w-lg xl:max-w-xl
-                     flex-shrink-0 xl:self-start aspect-[5/5] shadow-lg rounded-md"
+          className="relative w-full max-w-sm mx-auto xl:mx-0 md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0 xl:self-start aspect-[5/5] shadow-lg rounded-md"
         >
           <div className="relative w-full h-full border-2 border-[#e63a27] rounded-sm overflow-hidden">
             <Image
@@ -94,11 +93,39 @@ export default function AboutCompany() {
             <div className="prose prose-lg max-w-none text-gray-700 mb-4">
               <p>
                 For over twelve years, SAS Roofing & Waterproofing has proudly
-                served Brooklyn, Manhattan, and Queens with top-tier roofing,
-                waterproofing, and masonry solutions. Every roof we install,
-                every leak we seal, and every brick we lay reflects our
-                unwavering commitment to quality and craftsmanship.
+                served{" "}
+                <Link
+                  href="https://www.wikidata.org/wiki/Q11299"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  
+                >
+                  Brooklyn
+                </Link>
+                ,{" "}
+                <Link
+                  href="https://www.wikidata.org/wiki/Q60"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  
+                >
+                  Manhattan
+                </Link>
+                , and{" "}
+                <Link
+                  href="https://www.wikidata.org/wiki/Q18419"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  
+                >
+                  Queens
+                </Link>{" "}
+                with top-tier roofing, waterproofing, and masonry solutions.
+                Every roof we install, every leak we seal, and every brick we
+                lay reflects our unwavering commitment to quality and
+                craftsmanship.
               </p>
+
               {showMore && (
                 <div className="space-y-4">
                   <p>
