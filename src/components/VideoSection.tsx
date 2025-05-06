@@ -91,7 +91,7 @@ const VideoSection = ({margin} : Props) => {
 
               {/* Mobile Video Icon */}
               <div className="mt-4 ml-6 flex md:hidden">
-                <GoVideo
+                <GoVideo size={60}
                   className="text-white text-4xl sm:text-6xl cursor-pointer"
                   onClick={() => setIsOpen(true)}
                 />
