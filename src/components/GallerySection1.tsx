@@ -194,12 +194,15 @@ export default function GallerySection() {
               fill
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 bg-white bg-opacity-30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+            <div className="absolute inset-0 bg-[#003269]/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-white">
+              <span className="text-lg sm:text-xl font-semibold mb-2">
+                SAS Roofing
+              </span>
               <button
                 onClick={() => handleZoom(idx)}
-                className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#e63a27] transition-colors"
+                className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors"
               >
-                <Image src="/search.png" alt="Zoom" width={24} height={24} />
+                <Image src="/search.png" alt="Zoom" width={20} height={20} />
               </button>
             </div>
           </motion.div>
