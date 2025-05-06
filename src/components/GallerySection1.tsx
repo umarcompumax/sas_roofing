@@ -100,8 +100,8 @@ function Modal({
           <Image
             src={images[index]}
             alt={`Zoomed ${index}`}
-            width={600}
-            height={600}
+            width={1200}
+            height={1200}
             className="object-contain max-h-[80vh] rounded"
           />
           <button
