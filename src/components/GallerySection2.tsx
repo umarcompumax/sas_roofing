@@ -64,25 +64,46 @@ function Modal({
   onPrev: () => void;
 }) {
   if (!open) return null;
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
       <button
-        className="absolute top-4 right-4 text-white text-3xl"
+        className="absolute top-4 right-4 text-white text-3xl z-10"
         onClick={onClose}
       >
         &times;
       </button>
-      <button className="absolute left-4 text-white text-4xl" onClick={onPrev}>
+
+      {/* Arrows hidden on small screens */}
+      <button
+        className="absolute left-4 text-white text-4xl hidden md:block z-10"
+        onClick={onPrev}
+      >
         &#8592;
       </button>
-      <Image
-        src={images[index]}
-        alt={`Zoomed ${index}`}
-        width={1200}
-        height={1200}
-        className="object-contain max-h-[80vh] rounded"
-      />
-      <button className="absolute right-4 text-white text-4xl" onClick={onNext}>
+
+      <motion.div
+        className="max-w-[90%] max-h-[80vh]"
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        onDragEnd={(e, info) => {
+          if (info.offset.x < -100) onNext();
+          else if (info.offset.x > 100) onPrev();
+        }}
+      >
+        <Image
+          src={images[index]}
+          alt={`Zoomed ${index}`}
+          width={1200}
+          height={1200}
+          className="object-contain max-h-[80vh] rounded"
+        />
+      </motion.div>
+
+      <button
+        className="absolute right-4 text-white text-4xl hidden md:block z-10"
+        onClick={onNext}
+      >
         &#8594;
       </button>
     </div>
