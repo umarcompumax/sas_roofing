@@ -60,7 +60,7 @@ export default function ServiceAndFaqSection() {
               name="service"
               defaultValue=""
               required
-              className="p-3 text-[#003269] font-semibold border border-gray-300 bg-white appearance-none focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
+              className="p-3 text-[#003269] font-semibold border border-gray-300 bg-white focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
             >
               <option value="" disabled>
                 Service You Need
