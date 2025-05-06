@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState, useCallback } from "react";
 
 const images = [
   "/gallery1.jpg",
@@ -22,11 +23,17 @@ function GalleryItem({
   width,
   height,
   alt,
+  index,
+  onZoom,
+  title = "SAS Roofing",
 }: {
   src: string;
   width: number;
   height: number;
   alt: string;
+  index: number;
+  onZoom: (idx: number) => void;
+  title?: string;
 }) {
   return (
     <motion.div
@@ -43,57 +50,130 @@ function GalleryItem({
         height={height}
         className="object-cover w-full h-full"
       />
-      <div className="absolute inset-0 bg-[#003269] bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
-        <span className="font-semibold text-2xl lg:text-2xl">SAS Roofing</span>
+      <div className="absolute inset-0 bg-[#003269]/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-white">
+        <span className="text-lg sm:text-xl font-semibold mb-2">{title}</span>
+        <button
+          onClick={() => onZoom(index)}
+          className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors"
+        >
+          <Image src="/search.png" alt="Zoom" width={20} height={20} />
+        </button>
       </div>
     </motion.div>
   );
 }
 
+function Modal({
+  open,
+  index,
+  onClose,
+  onNext,
+  onPrev,
+}: {
+  open: boolean;
+  index: number;
+  onClose: () => void;
+  onNext: () => void;
+  onPrev: () => void;
+}) {
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <button
+            className="absolute top-4 right-4 text-white text-3xl"
+            onClick={onClose}
+          >
+            &times;
+          </button>
+          <button
+            className="absolute left-4 text-white text-4xl"
+            onClick={onPrev}
+          >
+            &#8592;
+          </button>
+          <Image
+            src={images[index]}
+            alt={`Zoomed ${index}`}
+            width={600}
+            height={600}
+            className="object-contain max-h-[80vh] rounded"
+          />
+          <button
+            className="absolute right-4 text-white text-4xl"
+            onClick={onNext}
+          >
+            &#8594;
+          </button>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function GallerySection() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleZoom = (idx: number) => {
+    setCurrentIndex(idx);
+    setModalOpen(true);
+  };
+
+  const handleNext = useCallback(
+    () => setCurrentIndex((prev) => (prev + 1) % images.length),
+    []
+  );
+  const handlePrev = useCallback(
+    () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length),
+    []
+  );
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!modalOpen) return;
+      if (e.key === "Escape") setModalOpen(false);
+      if (e.key === "ArrowRight") handleNext();
+      if (e.key === "ArrowLeft") handlePrev();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [modalOpen, handleNext, handlePrev]);
+
   return (
     <section className="py-10 px-4 sm:px-6 lg:px-12 w-full">
       {/* Desktop Layout */}
       <div className="hidden xl:flex flex-col items-center gap-8 w-full">
         <div className="flex justify-center gap-6 w-full">
-          <GalleryItem
-            src={images[0]}
-            width={370}
-            height={370}
-            alt="Gallery image 1"
-          />
-          <GalleryItem
-            src={images[1]}
-            width={370}
-            height={370}
-            alt="Gallery image 2"
-          />
-          <GalleryItem
-            src={images[2]}
-            width={700}
-            height={370}
-            alt="Gallery image 3"
-          />
+          {images.slice(0, 3).map((src, i) => (
+            <GalleryItem
+              key={i}
+              src={src}
+              width={i === 2 ? 700 : 370}
+              height={370}
+              alt={`Gallery image ${i + 1}`}
+              index={i}
+              onZoom={handleZoom}
+            />
+          ))}
         </div>
         <div className="flex justify-center gap-6 w-full">
-          <GalleryItem
-            src={images[3]}
-            width={700}
-            height={370}
-            alt="Gallery image 4"
-          />
-          <GalleryItem
-            src={images[4]}
-            width={370}
-            height={370}
-            alt="Gallery image 5"
-          />
-          <GalleryItem
-            src={images[5]}
-            width={370}
-            height={370}
-            alt="Gallery image 6"
-          />
+          {images.slice(3).map((src, i) => (
+            <GalleryItem
+              key={i + 3}
+              src={src}
+              width={i === 0 ? 700 : 370}
+              height={370}
+              alt={`Gallery image ${i + 4}`}
+              index={i + 3}
+              onZoom={handleZoom}
+            />
+          ))}
         </div>
       </div>
 
@@ -114,14 +194,25 @@ export default function GallerySection() {
               fill
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 bg-[#003269] bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform transition-all duration-1000 scale-0 group-hover:scale-100">
-              <span className="font-semibold text-lg sm:text-xl">
-                SAS Roofing
-              </span>
+            <div className="absolute inset-0 bg-white bg-opacity-30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+              <button
+                onClick={() => handleZoom(idx)}
+                className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#e63a27] transition-colors"
+              >
+                <Image src="/search.png" alt="Zoom" width={24} height={24} />
+              </button>
             </div>
           </motion.div>
         ))}
       </div>
+
+      <Modal
+        open={modalOpen}
+        index={currentIndex}
+        onClose={() => setModalOpen(false)}
+        onNext={handleNext}
+        onPrev={handlePrev}
+      />
     </section>
   );
 }
