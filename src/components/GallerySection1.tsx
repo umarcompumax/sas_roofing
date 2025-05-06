@@ -81,7 +81,7 @@ function Modal({
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-60"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -118,7 +118,7 @@ function Modal({
               alt={`Zoomed ${index}`}
               width={1200}
               height={1200}
-              className="object-contain max-h-[80vh] rounded"
+              className="object-contain max-h-[80vh]"
             />
           </motion.div>
 
@@ -150,7 +150,7 @@ export default function GallerySection() {
       document.body.style.overflow = "";
     };
   }, [modalOpen]);
-  
+
   const handleZoom = (idx: number) => {
     setCurrentIndex(idx);
     setModalOpen(true);

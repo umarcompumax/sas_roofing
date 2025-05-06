@@ -66,7 +66,7 @@ function Modal({
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-60">
       <button
         className="absolute top-4 right-4 text-white text-3xl z-10"
         onClick={onClose}
@@ -96,7 +96,7 @@ function Modal({
           alt={`Zoomed ${index}`}
           width={1200}
           height={1200}
-          className="object-contain max-h-[80vh] rounded"
+          className="object-contain max-h-[80vh]"
         />
       </motion.div>
 
@@ -157,7 +157,7 @@ const GalleryCard = ({
 
 export default function GallerySection2() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  
+
   useEffect(() => {
     if (selectedIndex !== null) {
       document.body.style.overflow = "hidden";
@@ -170,7 +170,6 @@ export default function GallerySection2() {
     };
   }, [selectedIndex]);
 
-  
   const closeModal = () => setSelectedIndex(null);
   const showNext = () =>
     setSelectedIndex((prev) =>
