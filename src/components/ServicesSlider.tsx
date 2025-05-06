@@ -23,6 +23,7 @@ const slides = [
       "Highest quality single-ply membrane systems keeps us at the forefront of the business...",
     image: "/services1.jpg",
     icon: "/pattern-1.png",
+    link: "/services/waterproofing",
   },
   {
     title: "MASONRY",
@@ -30,6 +31,7 @@ const slides = [
       "If you need paving, bluestone, brickwork, cement work, etc... or any other structure then give...",
     image: "/services2.jpg",
     icon: "/masonry.png",
+    link: "/services/masonry",
   },
   {
     title: "ROOFING",
@@ -37,8 +39,10 @@ const slides = [
       "We service all types of roofing big or small, from repairs to new installs, residential or...",
     image: "/services3.jpg",
     icon: "/roofing.png",
+    link: "/services/roofing",
   },
 ];
+
 
 export default function ServicesSlider({ swiperRef }: Props) {
   const swiperInstanceRef = useRef<SwiperType | null>(null);
@@ -64,7 +68,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
 
   return (
     <div className="flex flex-col items-center px-4 sm:px-6 mb-5">
-      <div className="w-11/12 overflow-hidden">
+      <div className="w-10/12 overflow-hidden">
         <Swiper
           loop
           speed={1000}
@@ -85,7 +89,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
           className="!overflow-visible"
         >
           {Array.from({ length: 12 }).map((_, i) => {
-            const { title, description, image, icon } =
+            const { title, description, image, icon, link } =
               slides[i % slides.length];
             return (
               <SwiperSlide key={i}>
@@ -103,17 +107,23 @@ export default function ServicesSlider({ swiperRef }: Props) {
                       </p>
                     </div>
                     <Link
-                      href="/services"
-                      className="w-[30%] bg-gray-100 border border-gray-300 flex items-center justify-center relative"
+                      href={link}
+                      className="w-[30%] bg-gray-100 relative group overflow-hidden border border-gray-300 flex items-center justify-center"
                       style={{ height: "50%" }}
                     >
-                      <div className="relative w-12 sm:w-14 aspect-square">
+                      {/* Icon (default state) */}
+                      <div className="relative w-12 sm:w-14 aspect-square transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-2">
                         <Image
                           src={icon}
                           alt={`${title} Icon`}
                           fill
                           className="object-center"
                         />
+                      </div>
+
+                      {/* Hover state: Red background with arrow */}
+                      <div className="absolute inset-0 bg-[#e63a27] flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                        <FiChevronRight className="w-6 h-6 text-white" />
                       </div>
                     </Link>
                   </div>
