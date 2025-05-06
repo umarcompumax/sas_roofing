@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -23,6 +23,8 @@ const navItems = [
 
 export default function StickyNavbar() {
   const [showSticky, setShowSticky] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const timeoutId = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +33,17 @@ export default function StickyNavbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleMouseEnter = () => {
+    if (timeoutId.current) clearTimeout(timeoutId.current);
+    setIsServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutId.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 300); // adjust delay as needed
+  };
 
   if (!showSticky) return null;
 
@@ -43,17 +56,32 @@ export default function StickyNavbar() {
       <nav className="flex gap-6 font-semibold text-sm text-[#003269] pr-6">
         {navItems.map(({ label, path, subItems }) =>
           subItems ? (
-            <div key={label} className="relative group">
+            <div
+              key={label}
+              className="relative"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               <Link
                 href={path}
                 className="px-2 hover:text-[#e63a27] flex items-center gap-1"
               >
                 {label}
-                <span className="text-[#e63a27] group-hover:rotate-180 transition-transform duration-200">
+                <span
+                  className={`text-[#e63a27] transition-transform duration-200 ${
+                    isServicesOpen ? "rotate-180" : ""
+                  }`}
+                >
                   ▼
                 </span>
               </Link>
-              <div className="absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm hidden group-hover:block z-50 min-w-[180px]">
+              <div
+                className={`absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm z-50 min-w-[180px] overflow-hidden transition-all duration-300 ease-in-out ${
+                  isServicesOpen
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 translate-y-2 pointer-events-none"
+                }`}
+              >
                 {subItems.map(({ label: subLabel, path: subPath }) => (
                   <Link
                     key={subLabel}
