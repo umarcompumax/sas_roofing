@@ -37,7 +37,7 @@ export default function MobileHeader() {
       ],
     },
     { name: "PROJECTS", href: "/projects" },
-    { name: "REVIEWS", href: "/reviews" },
+    { name: "TESTIMONIALS", href: "/reviews" },
     { name: "CONTACT US", href: "/contact" },
   ];
 

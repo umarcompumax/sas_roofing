@@ -11,6 +11,7 @@ import React from "react";
 
 const page = () => {
   const mvalue = [0, 0, 0];
+  const number = "2"
   return (
     <>
       <Navbar />
@@ -21,7 +22,7 @@ const page = () => {
         pageTitle={"Gallery"}
         imageSrc={"/breadcrumb-19.jpg"}
       />
-      <OurProjects />
+      <OurProjects gallery={number}/>
       <VideoSection margin={mvalue}/>
       <FooterTopCTA />
       <Footer />

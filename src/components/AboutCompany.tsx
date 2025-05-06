@@ -6,7 +6,7 @@ import { FaCertificate, FaLightbulb, FaHome } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-// Reusable Feature Item (Good practice!)
+// Reusable Feature Item
 const FeatureItem = ({
   icon: Icon,
   label,
@@ -17,10 +17,7 @@ const FeatureItem = ({
   color: string;
 }) => (
   <div className="flex items-center gap-1.5">
-    {" "}
-    {/* Slightly increased gap */}
-    <Icon className={color} aria-label={label} size="1.1em" />{" "}
-    {/* Slightly larger icon */}
+    <Icon className={color} aria-label={label} size="1.1em" />
     <span className="font-bold uppercase">{label}</span>
   </div>
 );
@@ -28,45 +25,25 @@ const FeatureItem = ({
 export default function AboutCompany() {
   return (
     <div className="m-2 mb-5 md:m-0 md:mb-10 shadow-xl">
-      <div
-        className={`
-        py-12 sm:py-16 lg:py-20 bg-[#f5f5f5] relative`}
-      >
-        {/* --- Inner container (original section structure) --- */}
-        {/* Removed original outer div with m-2, shadow, border */}
-        {/* Removed bg-[#f9f9f9] from section, inheriting from parent now */}
-        <section
-          className="flex flex-col xl:flex-row px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 // Adjusted padding
-                   gap-10 lg:gap-16                     // Increased gap between image and text
-                   max-w-7xl                          // Limit content width (adjust as needed, e.g., max-w-6xl, max-w-screen-xl)
-                   mx-auto" // Center the content area
-        >
+      <div className="py-12 sm:py-16 lg:py-20 bg-[#f5f5f5] relative">
+        <section className="flex flex-col xl:flex-row px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 gap-10 lg:gap-16 max-w-7xl mx-auto">
           {/* Image Block */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }} // Changed animation slightly
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            // Added styling for a framed look consistent with buttons
-            className="relative w-full max-w-sm mx-auto xl:mx-0 md:max-w-md lg:max-w-lg xl:max-w-xl // Responsive max-width
-                     flex-shrink-0 xl:self-start
-                     aspect-[5/5]      // Adjusted aspect ratio
-                     shadow-lg                          // Shadow for the image frame
-                     rounded-md" // Rounded corners for the frame
+            className="relative w-full max-w-sm mx-auto xl:mx-0 md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0 xl:self-start aspect-[5/5] shadow-lg rounded-md"
           >
-            {/* Inner div for the red border and image */}
             <div className="relative w-full h-full border-2 border-[#e63a27] rounded-sm overflow-hidden">
               <Image
-                src="/aboutimg.jpg" // Ensure this path is correct
+                src="/aboutimg.jpg"
                 alt="SAS Roofing & Waterproofing team working"
                 fill
-                className="object-cover" // Use object-cover for better scaling
+                className="object-cover"
               />
-              {/* Experience Badge */}
               <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
                 <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold">
-                  {" "}
-                  {/* Adjusted size */}
                   15
                 </span>
                 <div className="leading-tight text-left text-sm sm:text-base font-bold uppercase tracking-wide">
@@ -83,7 +60,7 @@ export default function AboutCompany() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true }}
-            className="w-full flex flex-col justify-center" // Center content vertically if needed, removed max-width (handled by section)
+            className="w-full flex flex-col justify-center"
           >
             <div>
               {/* Section Header */}
@@ -101,29 +78,25 @@ export default function AboutCompany() {
 
               {/* Features */}
               <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-[#003269] mb-6">
-                {" "}
-                {/* Adjusted gap */}
                 <FeatureItem
                   icon={FaCertificate}
                   label="Certified"
-                  color="text-[#e63a27]" // Use consistent color
+                  color="text-[#e63a27]"
                 />
                 <FeatureItem
                   icon={FaLightbulb}
-                  label="Innovative" // Shortened label slightly
-                  color="text-yellow-500" // Slightly darker yellow
+                  label="Innovative"
+                  color="text-yellow-500"
                 />
                 <FeatureItem
                   icon={FaHome}
                   label="Experienced"
-                  color="text-[#e63a27]" // Use consistent color
+                  color="text-[#e63a27]"
                 />
               </div>
 
               {/* Description Paragraph */}
-              <p className="text-gray-700 text-base lg:text-lg leading-relaxed mb-8">
-                {" "}
-                {/* Adjusted color/leading */}
+              <p className="text-gray-700 text-base leading-relaxed mb-8">
                 For over twelve years, SAS Roofing & Waterproofing has proudly
                 served Brooklyn, Manhattan, and Queens with top-tier roofing,
                 waterproofing, and masonry solutions. Roofing isn’t just our
@@ -131,17 +104,31 @@ export default function AboutCompany() {
                 and every brick we lay reflects our unwavering commitment to
                 quality and craftsmanship.
               </p>
+
+              {/* ✅ Certified Company Block */}
+              <div className="flex items-center gap-4 mt-0 mb-6">
+                <Image
+                  src="/certified-badge.jpg"
+                  alt="Certified Company Badge"
+                  width={50}
+                  height={50}
+                  className="flex-shrink-0"
+                />
+                <div className="text-[#003269] text-base font-medium">
+                  <h4 className="font-bold mb-1">Certified Company</h4>
+                  <p>#2050416-DCA</p>
+                </div>
+              </div>
             </div>
 
             {/* Read More Link */}
             <Link
               href="/about"
-              className="inline-block border-4 border-[#003269] p-1 self-start group mt-auto" // Use mt-auto to push to bottom if flex container height allows
+              className="inline-block border-4 border-[#003269] p-1 self-start group mt-auto"
             >
               <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide hover:bg-[#e63a27] hover:text-white transition text-sm lg:text-base hover-button">
                 Read More
               </span>
-              {/* Ensure .hover-button CSS is defined elsewhere for the hover effect */}
             </Link>
           </motion.article>
         </section>

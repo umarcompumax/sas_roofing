@@ -17,6 +17,7 @@ import AboutCompanyHome from "@/components/AboutCompanyHome";
 
 export default function Home() {
   const mvalue = [0,15,0];
+  const number = "1";
   return (
     <>
       <Navbar />
@@ -26,7 +27,7 @@ export default function Home() {
       <OurServicesPage margin={mvalue} />
       <AboutCompanyHome />
       <Features margin={mvalue} />
-      <OurProjects />
+      <OurProjects gallery={number} />
       <VideoSection margin={mvalue} />
       <OurTestimonial />
       <ServiceAndFaqSection />

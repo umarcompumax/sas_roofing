@@ -18,7 +18,7 @@ const navItems = [
     ],
   },
   { label: "PROJECTS", path: "/projects" },
-  { label: "REVIEWS", path: "/reviews" },
+  { label: "TESTIMONIALS", path: "/reviews" },
   { label: "CONTACT US", path: "/contact" },
 ];
 
@@ -48,7 +48,7 @@ export default function NavLinks({
                   ▼
                 </span>
               </Link>
-              <div className="absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm hidden group-hover:block z-20 min-w-[180px]">
+              <div className="absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-600 ease-in-out z-20 min-w-[180px]">
                 {subItems.map(({ label: subLabel, path: subPath }) => (
                   <Link
                     key={subLabel}

@@ -18,7 +18,7 @@ const page = () => {
       <ContactBar />
       <BreadCrum2
         breadcrumbItems={[]}
-        pageTitle={"Reviews"}
+        pageTitle={"TESTIMONIALS"}
         imageSrc={"/breadcrumb-19.jpg"}
       />
       <OurTestimonial />

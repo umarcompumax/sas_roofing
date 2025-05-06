@@ -166,7 +166,7 @@ export default function AboutCompany() {
               />
               <div className="text-[#003269] text-base font-medium">
                 <h4 className="font-bold mb-1">Certified Company</h4>
-                <p>HIC #2050416-DCA</p>
+                <p>#2050416-DCA</p>
               </div>
             </div>
           </div>

@@ -17,7 +17,7 @@ const navItems = [
     ],
   },
   { label: "PROJECTS", path: "/projects" },
-  { label: "REVIEWS", path: "/reviews" },
+  { label: "TESTIMONIALS", path: "/reviews" },
   { label: "CONTACT US", path: "/contact" },
 ];
 
