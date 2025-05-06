@@ -18,6 +18,7 @@ const fadeUp = {
   transition: { duration: 0.6, ease: "easeOut" },
 };
 
+
 function GalleryItem({
   src,
   width,
@@ -137,7 +138,19 @@ function Modal({
 export default function GallerySection() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
 
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [modalOpen]);
+  
   const handleZoom = (idx: number) => {
     setCurrentIndex(idx);
     setModalOpen(true);

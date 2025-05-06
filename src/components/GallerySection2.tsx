@@ -157,7 +157,20 @@ const GalleryCard = ({
 
 export default function GallerySection2() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  
+  useEffect(() => {
+    if (selectedIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
 
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedIndex]);
+
+  
   const closeModal = () => setSelectedIndex(null);
   const showNext = () =>
     setSelectedIndex((prev) =>
