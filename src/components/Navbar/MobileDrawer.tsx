@@ -1,18 +1,18 @@
 "use client";
 
-import Link from "next/link";
+import { KeyboardEvent, Dispatch, SetStateAction, useState } from "react";
 import Image from "next/image";
-import { useRef, useState, KeyboardEvent } from "react";
+import Link from "next/link";
 import { FaFacebookF, FaHome } from "react-icons/fa";
+import MobileNavItem from "./MobileNavItem";
 
-interface MobileDrawerProps {
+interface Props {
   isOpen: boolean;
-  onClose: () => void;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
+export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
   const [servicesOpen, setServicesOpen] = useState(false);
-  const drawerRef = useRef<HTMLDivElement>(null);
 
   const navItems = [
     { name: "HOME", href: "/" },
@@ -42,8 +42,8 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
     },
   ];
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === "Escape") onClose();
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === "Escape") setIsOpen(false);
   };
 
   return (
@@ -53,13 +53,11 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
       }`}
       onKeyDown={handleKeyDown}
       tabIndex={-1}
-      ref={drawerRef}
     >
       <div
         className="w-[40%] bg-black/30 backdrop-blur-sm"
-        onClick={onClose}
+        onClick={() => setIsOpen(false)}
         role="button"
-        aria-label="Close menu overlay"
         tabIndex={0}
       />
       <div
@@ -71,7 +69,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         tabIndex={-1}
       >
         <button
-          onClick={onClose}
+          onClick={() => setIsOpen(false)}
           aria-label="Close menu"
           className="absolute top-3 right-3 bg-[#e63a27] text-white w-6 h-6 rounded-full flex items-center justify-center"
         >
@@ -89,54 +87,16 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         </Link>
 
         <nav className="mt-4">
-          {navItems.map(({ name, href, subItems }) =>
-            subItems ? (
-              <div
-                key={name}
-                className="border-t border-white/20 last:border-b"
-              >
-                <button
-                  onClick={() => setServicesOpen((prev) => !prev)}
-                  className="w-full px-6 py-4 text-left flex justify-between items-center font-semibold hover:bg-white hover:text-black transition-colors"
-                  aria-expanded={servicesOpen}
-                >
-                  {name}
-                  <span
-                    className={`transform transition-transform duration-200 ${
-                      servicesOpen ? "rotate-180" : ""
-                    }`}
-                  >
-                    ▼
-                  </span>
-                </button>
-                <div
-                  className={`bg-[#00244d] text-sm overflow-hidden transition-all duration-300 ease-in-out ${
-                    servicesOpen ? "max-h-96" : "max-h-0"
-                  }`}
-                >
-                  {subItems.map(({ name: subName, href: subHref }) => (
-                    <Link
-                      key={subName}
-                      href={subHref}
-                      onClick={onClose}
-                      className="block px-8 py-3 hover:bg-white hover:text-black transition-colors"
-                    >
-                      {subName}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <Link
-                key={name}
-                href={href}
-                onClick={onClose}
-                className="block px-6 py-4 border-t border-white/20 last:border-b hover:bg-white hover:text-black transition-colors"
-              >
-                {name}
-              </Link>
-            )
-          )}
+          {navItems.map((item) => (
+            <MobileNavItem
+              key={item.name}
+              item={item}
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+              servicesOpen={servicesOpen}
+              setServicesOpen={setServicesOpen}
+            />
+          ))}
         </nav>
 
         <div className="mt-auto flex justify-center gap-4 py-6">
