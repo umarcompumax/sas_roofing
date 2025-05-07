@@ -14,31 +14,31 @@ export default function Blog() {
 
   return (
     <div className="mx-2 md:m-0 shadow-xl">
-    <section className="pb-15 pt-5 px-4 sm:px-6 bg-[#f9f9f9]">
-      <motion.div
-        className="max-w-screen-xl mx-auto text-center"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        {/* Section Header */}
-        <header className="mb-10">
-          <div className="inline-flex items-center gap-2 mb-2">
-            <div className="w-6 h-[1px] bg-[#e63a27]" />
-            <span className="text-sm md:text-base font-bold text-[#e63a27] uppercase tracking-widest">
-              News & Updates
-            </span>
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#003366]">
-            Latest From Blog Post
-          </h2>
-        </header>
+      <section className="pb-15 pt-5 px-4 sm:px-6 bg-[#f9f9f9]">
+        <motion.div
+          className="max-w-screen-xl mx-auto text-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          {/* Section Header */}
+          <header className="mb-10">
+            <div className="inline-flex items-center gap-2 mb-2">
+              <div className="w-6 h-[1px] bg-[#e63a27]" />
+              <span className="text-sm md:text-base font-bold text-[#e63a27] uppercase tracking-widest">
+                News & Updates
+              </span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#003269]">
+              Latest From Blog Post
+            </h2>
+          </header>
 
-        {/* Blog Slider */}
-        <BlogSlider swiperRef={swiperRef} />
-      </motion.div>
-    </section>
+          {/* Blog Slider */}
+          <BlogSlider swiperRef={swiperRef} />
+        </motion.div>
+      </section>
     </div>
   );
 }

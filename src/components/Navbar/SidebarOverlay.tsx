@@ -31,7 +31,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
     >
       <motion.aside
         onClick={(e) => e.stopPropagation()}
-        className="w-[280px] sm:w-[300px] md:w-[360px] lg:w-[400px] xl:w-[420px] 2xl:w-[460px] bg-[#0b2c55] text-white overflow-y-auto p-4 sm:p-6 lg:p-8 relative"
+        className="w-[280px] sm:w-[300px] md:w-[360px] lg:w-[400px] xl:w-[420px] 2xl:w-[460px] bg-[#003269] text-white overflow-y-auto p-4 sm:p-6 lg:p-8 relative"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}

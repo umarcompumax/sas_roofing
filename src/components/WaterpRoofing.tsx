@@ -102,7 +102,7 @@ export default function RoofingServices() {
                 Protect your property today by Visit{" "}
                 <Link
                   href="/"
-                  className="text-[#e63a27] underline hover:text-[#c72d1f]"
+                  className="text-[#e63a27] hover:text-[#003269]"
                 >
                   SAS Roofing & Waterproofing
                 </Link>

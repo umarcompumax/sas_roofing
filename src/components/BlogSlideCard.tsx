@@ -53,7 +53,7 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
             <FiHeart className="w-4 h-4" />
             <span>10</span>
           </button>
-          <button className="hover:text-[#ef4423] transition-colors">
+          <button className="hover:text-[#e63a27] transition-colors">
             <FiShare2 className="w-4 h-4" />
           </button>
         </div>

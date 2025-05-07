@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { FiChevronDown, FiChevronRight } from "react-icons/fi";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, KeyboardEvent } from "react";
+import { FiChevronDown } from "react-icons/fi";
+import { AnimatePresence, motion } from "framer-motion";
 
 const faqs = [
   {
@@ -28,17 +28,47 @@ const faqs = [
   {
     question: "How long does a roof installation take?",
     answer:
-      "The duration varies based on the size and type of the roof, but most residential installations take between 1-3 days. Commercial projects may take longer.",
+      "The duration varies based on the size and type of the roof, but most residential installations take between 1–3 days. Commercial projects may take longer.",
   },
 ];
 
+const accordionVariants = {
+  open: {
+    opacity: 1,
+    height: "auto",
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
+  collapsed: {
+    opacity: 0,
+    height: 0,
+    transition: { duration: 0.3, ease: "easeIn" },
+  },
+};
+
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number>(0); // Default to first open
+
+ const toggleOpen = (index: number) => {
+   // If same index is clicked, don't collapse it
+   if (openIndex !== index) {
+     setOpenIndex(index);
+   }
+ };
+
+  const handleKeyDown = (
+    e: KeyboardEvent<HTMLButtonElement>,
+    index: number
+  ) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleOpen(index);
+    }
+  };
 
   return (
-    <div className="pt-8 text-left lg:ml-15 bg-[#f9f9f9]">
+    <div className="pt-8 pb-4 text-left bg-[#f9f9f9] md:px-5 md:ml-5">
       <div className="flex items-center gap-2 mb-2">
-        <div className="w-6 h-[1px] bg-[#e63a27]" />
+        <div className="w-6 h-[2px] bg-[#e63a27]" />
         <p className="text-base uppercase text-[#e63a27] font-semibold tracking-wide">
           Common Questions & Answers
         </p>
@@ -54,37 +84,28 @@ export default function FaqSection() {
           return (
             <div
               key={index}
-              className="border border-gray-200 rounded overflow-hidden"
+              className="border border-gray-200 rounded-md overflow-hidden"
             >
               <button
-                onClick={() =>
-                  setOpenIndex((prev) => (prev === index ? null : index))
-                }
+                onClick={() => toggleOpen(index)}
+                onKeyDown={(e) => handleKeyDown(e, index)}
                 aria-expanded={isOpen}
                 aria-controls={`faq-${index}`}
-                className={`w-full flex justify-between items-center px-6 py-5 text-left focus:outline-none transition-all ${
-                  isOpen ? "bg-[#262e39]" : "bg-white"
+                className={`w-full flex justify-between items-center px-6 py-5 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27] ${
+                  isOpen ? "bg-[#003269] text-white" : "bg-white text-[#003269]"
                 }`}
               >
-                <span className="flex gap-2 text-lg font-semibold text-[#003269]">
+                <span className="flex items-start gap-3 font-semibold text-lg">
                   <span className="text-[#e63a27]">Q{index + 1}.</span>
-                  <span className={isOpen ? "text-white" : ""}>
-                    {faq.question}
-                  </span>
+                  {faq.question}
                 </span>
                 <motion.span
-                  className={`w-5 h-5 md:w-8 md:h-8 rounded-full flex items-center justify-center text-white ${
-                    isOpen ? "bg-[#e63a27]" : "bg-[#003269]"
-                  }`}
-                  initial={{ rotate: 0 }}
+                  initial={false}
                   animate={{ rotate: isOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
+                  className="ml-4"
                 >
-                  {isOpen ? (
-                    <FiChevronDown size={18} />
-                  ) : (
-                    <FiChevronRight size={18} />
-                  )}
+                  <FiChevronDown size={22} />
                 </motion.span>
               </button>
 
@@ -93,10 +114,10 @@ export default function FaqSection() {
                   <motion.div
                     id={`faq-${index}`}
                     key="content"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.5 }}
+                    variants={accordionVariants}
+                    initial="collapsed"
+                    animate="open"
+                    exit="collapsed"
                     className="px-6 pb-6 pt-4 bg-white text-gray-600 leading-relaxed"
                   >
                     {faq.answer}

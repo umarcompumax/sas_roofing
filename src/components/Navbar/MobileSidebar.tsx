@@ -83,7 +83,7 @@ export default function MobileSidebar({
         {/* Social Icons */}
         <div className="mt-auto flex justify-center gap-4 py-6">
           <Link
-            href="https://facebook.com"
+            href="https://www.facebook.com/sasroofingwaterproofing"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit Facebook"
@@ -95,7 +95,7 @@ export default function MobileSidebar({
             href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Home"
+            aria-label="houzz"
             className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
           >
             <FaHome className="text-white text-lg" />

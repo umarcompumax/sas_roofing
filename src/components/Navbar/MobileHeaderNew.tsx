@@ -70,7 +70,7 @@ export default function MobileHeader() {
         <button
           onClick={() => setIsOpen(true)}
           aria-label="Open menu"
-          className="bg-[#e5392c] w-12 h-12 flex items-center justify-center rounded-md"
+          className="bg-[#e63a27] w-12 h-12 flex items-center justify-center rounded-md"
         >
           <Image
             src="/menu4.webp"

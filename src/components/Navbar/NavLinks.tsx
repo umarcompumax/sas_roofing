@@ -45,7 +45,7 @@ export default function NavLinks({
   };
 
   return (
-    <ul className="flex gap-4 text-sm font-semibold text-[#0b2c55] items-stretch h-full w-full justify-end">
+    <ul className="flex gap-4 text-sm font-semibold text-[#003269] items-stretch h-full w-full justify-end">
       {/* Desktop Links */}
       <div className="hidden xl:flex gap-6 items-center">
         {navItems.map(({ label, path, subItems }) =>
@@ -128,7 +128,7 @@ export default function NavLinks({
       {/* Quote Button */}
       <Link
         href="/"
-        className="bg-[#e5392c] hover:bg-[#cc2e24] transition-colors text-white font-semibold px-6 flex items-center get-hover-button"
+        className="bg-[#e5392c] hover:bg-[#e63a27] transition-colors text-white font-semibold px-6 flex items-center get-hover-button"
       >
         GET A QUOTE
       </Link>

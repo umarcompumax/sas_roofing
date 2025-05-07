@@ -94,7 +94,7 @@ export default function Footer() {
 
           <Link
             href="/"
-            className="inline-block mt-6 bg-[#e53935] text-white px-6 py-3 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base More-hover-button"
+            className="inline-block mt-6 bg-[#e63a27] text-white px-6 py-3 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base More-hover-button"
           >
             MORE DETAILS
           </Link>
@@ -180,7 +180,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs sm:text-sm md:text-[15px]">
           <p className="text-center md:text-left">
             © 2025{" "}
-            <span className="text-[#e63144]">SAS Roofing & Waterproofing</span>{" "}
+            <span className="text-[#e63a27]">SAS Roofing & Waterproofing</span>{" "}
             All Rights Reserved.
           </p>
           <div className="flex gap-x-6 flex-wrap justify-center md:justify-end">

@@ -15,7 +15,7 @@ export default function DesktopHeader({
       {/* Logo Section with clip-path */}
       <Link
         href="/"
-        className="absolute left-0 top-0 h-full w-[350px] bg-[#0b2c55] z-10 flex items-center justify-center [clip-path:polygon(0_0,100%_0,90%_100%,0%_100%)]"
+        className="absolute left-0 top-0 h-full w-[350px] bg-[#003269] z-10 flex items-center justify-center [clip-path:polygon(0_0,100%_0,90%_100%,0%_100%)]"
       >
         <Image
           src="/Logo.png"

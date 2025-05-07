@@ -21,14 +21,14 @@ export default function FooterTopCTA() {
         >
           <Link href="/" className="block">
             {/* <div className=" border-2"> */}
-              <Image
-                src="/Logo.png"
-                alt="SAS Roofing Logo"
-                width={200}
-                height={200}
-                className="border-2"
-                loading="lazy"
-              />
+            <Image
+              src="/Logo.png"
+              alt="SAS Roofing Logo"
+              width={200}
+              height={200}
+              className="border-2"
+              loading="lazy"
+            />
             {/* </div> */}
           </Link>
         </motion.div>
@@ -55,17 +55,15 @@ export default function FooterTopCTA() {
           {...fadeUp(0.3)}
         >
           <Link href="/about">
-            <button className="call-hover-button">
-              KNOW MORE
-            </button>
+            <button className="call-hover-button">KNOW MORE</button>
           </Link>
-          <a
+          <Link
             href="tel:113472216549"
-            className="bg-[#e53935] text-white flex items-center gap-2 px-4 py-2 font-semibold transition hover:bg-[#e63a27] call-hover-button"
+            className="bg-[#e63a27] text-white flex items-center gap-2 px-4 py-2 font-semibold transition hover:bg-[#e63a27] call-hover-button"
           >
             <FaHeadphonesAlt />
             <span className="text-sm sm:text-base">(347) 221-6549</span>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </div>

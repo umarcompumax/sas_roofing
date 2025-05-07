@@ -1,12 +1,17 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { GoVideo } from "react-icons/go";
 import { SiTicktick } from "react-icons/si";
 import { IoClose } from "react-icons/io5";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import Image from "next/image";
+
+// Dynamically import iframe component (no SSR)
+const VideoIframe = dynamic(() => import("./VideoIframe"), { ssr: false });
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -21,19 +26,11 @@ type Props = {
   margin: number[];
 };
 
-const VideoSection = ({margin} : Props) => {
+const VideoSection = ({ margin }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true); // Ensures iframe renders only on client
-  }, []);
-
-  const videoUrl =
-    "https://www.youtube.com/embed/Z4gunD5Wbi8?autoplay=1&rel=0&modestbranding=1";
 
   return (
-    <div className={``}>
+    <div>
       <section
         className={`relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-[#f9f9f9] mb-${margin[1]} md:mb-${margin[1]} shadow-2xl`}
       >
@@ -55,7 +52,6 @@ const VideoSection = ({margin} : Props) => {
             <div className="w-full h-full bg-[url('/thm-pattern-5.png')] bg-repeat" />
           </div>
 
-          {/* Text Content */}
           <div className="flex justify-center items-center">
             <motion.div
               className="relative z-30 text-white p-10 md:p-16 lg:max-w-[80%] xl:max-w-[60%]"
@@ -64,7 +60,6 @@ const VideoSection = ({margin} : Props) => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              {/* Title with left line */}
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-6 h-px bg-white" />
                 <h5 className="text-sm uppercase font-semibold">Video Proof</h5>
@@ -73,7 +68,7 @@ const VideoSection = ({margin} : Props) => {
               <h2 className="text-4xl lg:text-5xl font-medium leading-tight mb-4">
                 Have a Look <br /> At Our Video
               </h2>
-              <p className="mb-6"></p>
+
               <ul className="space-y-2">
                 <li>
                   <SiTicktick className="inline mr-2" /> Roof of the Year
@@ -90,12 +85,14 @@ const VideoSection = ({margin} : Props) => {
               </ul>
 
               {/* Mobile Video Icon */}
-              <div className="mt-4 ml-6 flex md:hidden">
-                <GoVideo size={60}
+              <div className="mt-4 ml-6 pr-6 pl-6 flex flex-col md:hidden">
+                <GoVideo
+                  size={60}
                   className="text-white text-4xl sm:text-6xl cursor-pointer"
                   onClick={() => setIsOpen(true)}
                 />
               </div>
+              <div className="text-white md:hidden">FLAT ROOF INSTALLATION</div>
             </motion.div>
           </div>
         </div>
@@ -108,14 +105,16 @@ const VideoSection = ({margin} : Props) => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <div className="relative w-full h-full">
-            <div className="absolute inset-0 flex items-center justify-center z-30">
+          <div className="relative w-full h-full ">
+            <div className="absolute inset-0 flex flex-col items-center justify-center z-30">
               <GoVideo
                 className="text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl mr-16 md:mr-24 lg:mr-48 cursor-pointer"
                 onClick={() => setIsOpen(true)}
               />
+              <div className="hidden md:block mt-1 text-white font-semibold text-lg tracking-wide mr-16 md:mr-24 lg:mr-48">
+                FLAT ROOF INSTALLATION
+              </div>
             </div>
-
             <div className="absolute inset-0 bg-[#e63a27] red-left-shape-1 z-20 translate-y-20">
               <div className="w-full h-full bg-[url('/thm-pattern-5.webp')] bg-repeat" />
             </div>
@@ -123,19 +122,14 @@ const VideoSection = ({margin} : Props) => {
         </motion.div>
       </section>
 
-      {/* Video Modal using shadcn Dialog */}
+      {/* Video Modal with accessibility + hydration-safe iframe */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-3xl w-full p-0 rounded-lg border-none bg-transparent shadow-none">
+        <DialogContent className="w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] p-0 rounded-lg border-none bg-transparent shadow-none">
+          <VisuallyHidden>
+            <DialogTitle>Flat Roof Installation Video</DialogTitle>
+          </VisuallyHidden>
           <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-            {mounted && (
-              <iframe
-                src={videoUrl}
-                title="Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full border-none rounded-lg"
-              />
-            )}
+            <VideoIframe />
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-2 right-2 text-white text-3xl bg-black bg-opacity-60 rounded-full p-1"

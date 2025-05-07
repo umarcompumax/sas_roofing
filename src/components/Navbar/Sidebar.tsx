@@ -18,9 +18,12 @@ const navLinks = [
 const socialLinks = [
   {
     icon: <FaFacebookF className="text-white text-lg" />,
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/sasroofingwaterproofing",
   },
-  { icon: <FaHome className="text-white text-lg" />, href: "/" },
+  {
+    icon: <FaHome className="text-white text-lg" />,
+    href: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
+  },
 ];
 
 export default function Sidebar({
@@ -98,7 +101,7 @@ export default function Sidebar({
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center"
+                  className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
                 >
                   {icon}
                 </Link>

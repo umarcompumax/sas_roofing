@@ -5,7 +5,7 @@ import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaHome } from "react-icons/fa";
 
 export default function TopBar() {
   return (
-    <div className="bg-[#0b2c55] text-white px-6 text-[15px] h-[50px]">
+    <div className="bg-[#003269] text-white px-6 text-[15px] h-[50px]">
       <div className="flex justify-between items-center h-full">
         <div className="w-[373px] h-full bg-[#00254c] [clip-path:polygon(0_0,90%_0,100%_100%,0%_100%)]" />
 

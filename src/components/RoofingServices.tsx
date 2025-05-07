@@ -100,10 +100,7 @@ export default function RoofingServices() {
               <div className="text-sm md:text-lg text-gray-700">
                 For expert roofing contractors in Queens and beyond, reach out
                 to SAS Roofing & Waterproofing today. Visit{" "}
-                <Link
-                  href="/"
-                  className="text-[#e63a27] underline hover:text-[#c72d1f]"
-                >
+                <Link href="/" className="text-[#e63a27] hover:text-[#003269]">
                   SAS Roofing & Waterproofing
                 </Link>{" "}
                 to schedule a consultation!

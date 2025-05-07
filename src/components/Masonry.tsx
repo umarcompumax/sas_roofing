@@ -96,10 +96,7 @@ export default function RoofingServices() {
                 exceptional masonry solutions. Our team provides reliable,
                 long-lasting masonry construction and repair across Brooklyn,
                 Manhattan, and Queens. Visit{" "}
-                <Link
-                  href="/"
-                  className="text-[#e63a27] underline hover:text-[#c72d1f]"
-                >
+                <Link href="/" className="text-[#e63a27] hover:text-[#003269]">
                   SAS Roofing & Waterproofing
                 </Link>{" "}
                 to learn more.
