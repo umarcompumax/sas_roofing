@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
-// Dynamically import iframe component (no SSR)
 const VideoIframe = dynamic(() => import("./VideoIframe"), { ssr: false });
 
 const fadeUp = {

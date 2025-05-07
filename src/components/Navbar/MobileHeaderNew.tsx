@@ -2,14 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, KeyboardEvent } from "react";
 import { FaFacebookF, FaHome } from "react-icons/fa";
 
 export default function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-
 
   useEffect(() => {
     setHasMounted(true);
@@ -52,9 +51,14 @@ export default function MobileHeader() {
     },
   ];
 
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === "Escape") setIsOpen(false);
+  };
+
+  const toggleServicesMenu = () => setServicesOpen((prev) => !prev);
+
   return (
     <>
-      {/* Top Bar */}
       <div className="relative flex justify-between items-center h-[122px] w-full md:hidden bg-[#e63a27]">
         <Link href="/" className="flex items-center">
           <Image
@@ -69,6 +73,7 @@ export default function MobileHeader() {
 
         <button
           onClick={() => setIsOpen(true)}
+          onKeyDown={(e) => e.key === "Enter" && setIsOpen(true)}
           aria-label="Open menu"
           className="bg-[#e63a27] w-12 h-12 flex items-center justify-center rounded-md"
         >
@@ -83,25 +88,29 @@ export default function MobileHeader() {
         </button>
       </div>
 
-      {/* Sidebar Overlay & Drawer */}
       <div
         className={`fixed inset-0 z-60 flex justify-end transition-opacity duration-300 ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
+        onKeyDown={handleKeyDown}
+        tabIndex={-1}
       >
-        {/* Overlay */}
         <div
           className="w-[40%] bg-black/30 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
+          role="button"
+          aria-label="Close menu overlay"
+          tabIndex={0}
         />
 
-        {/* Drawer */}
         <div
           className={`relative w-[60%] h-full bg-[#003269] text-white flex flex-col overflow-y-auto transform transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
+          role="dialog"
+          aria-labelledby="mobile-menu-header"
+          tabIndex={-1}
         >
-          {/* Close */}
           <button
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"
@@ -110,7 +119,6 @@ export default function MobileHeader() {
             ✕
           </button>
 
-          {/* Logo */}
           <Link href="/" className="flex justify-center p-4">
             <Image
               src="/Logo.png"
@@ -121,60 +129,60 @@ export default function MobileHeader() {
             />
           </Link>
 
-          {/* Navigation */}
           <nav className="mt-4">
-            <nav className="mt-4">
-              {navItems.map(({ name, href, subItems }) =>
-                subItems ? (
-                  <div
-                    key={name}
-                    className="border-t border-white/20 last:border-b"
-                  >
-                    <button
-                      onClick={() => setServicesOpen((prev) => !prev)}
-                      className="w-full px-6 py-4 text-left flex justify-between items-center font-semibold hover:bg-white hover:text-black transition-colors"
-                    >
-                      {name}
-                      <span
-                        className={`transform transition-transform duration-200 ${
-                          servicesOpen ? "rotate-180" : ""
-                        }`}
-                      >
-                        ▼
-                      </span>
-                    </button>
-                    <div
-                      className={`bg-[#00244d] text-sm overflow-hidden transition-all duration-300 ease-in-out ${
-                        servicesOpen ? "max-h-96" : "max-h-0"
-                      }`}
-                    >
-                      {subItems.map(({ name: subName, href: subHref }) => (
-                        <Link
-                          key={subName}
-                          href={subHref}
-                          onClick={() => setIsOpen(false)}
-                          className="block px-8 py-3 hover:bg-white hover:text-black transition-colors"
-                        >
-                          {subName}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <Link
-                    key={name}
-                    href={href}
-                    onClick={() => setIsOpen(false)}
-                    className="block px-6 py-4 border-t border-white/20 last:border-b hover:bg-white hover:text-black transition-colors"
+            {navItems.map(({ name, href, subItems }) =>
+              subItems ? (
+                <div
+                  key={name}
+                  className="border-t border-white/20 last:border-b"
+                >
+                  <button
+                    onClick={toggleServicesMenu}
+                    className="w-full px-6 py-4 text-left flex justify-between items-center font-semibold hover:bg-white hover:text-black transition-colors"
+                    aria-expanded={servicesOpen}
+                    aria-controls={`services-menu-${name}`}
                   >
                     {name}
-                  </Link>
-                )
-              )}
-            </nav>
+                    <span
+                      className={`transform transition-transform duration-200 ${
+                        servicesOpen ? "rotate-180" : ""
+                      }`}
+                    >
+                      ▼
+                    </span>
+                  </button>
+                  <div
+                    id={`services-menu-${name}`}
+                    className={`bg-[#00244d] text-sm overflow-hidden transition-all duration-300 ease-in-out ${
+                      servicesOpen ? "max-h-96" : "max-h-0"
+                    }`}
+                    role="region"
+                  >
+                    {subItems.map(({ name: subName, href: subHref }) => (
+                      <Link
+                        key={subName}
+                        href={subHref}
+                        onClick={() => setIsOpen(false)}
+                        className="block px-8 py-3 hover:bg-white hover:text-black transition-colors"
+                      >
+                        {subName}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={name}
+                  href={href}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-6 py-4 border-t border-white/20 last:border-b hover:bg-white hover:text-black transition-colors"
+                >
+                  {name}
+                </Link>
+              )
+            )}
           </nav>
 
-          {/* Social Icons */}
           <div className="mt-auto flex justify-center gap-4 py-6">
             {socialLinks.map(({ href, icon }, i) => (
               <Link
@@ -183,6 +191,7 @@ export default function MobileHeader() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
+                aria-label={`Go to ${href}`}
               >
                 {icon}
               </Link>

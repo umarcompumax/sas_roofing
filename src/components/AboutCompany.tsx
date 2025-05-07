@@ -6,7 +6,6 @@ import { FaCertificate, FaLightbulb, FaHome } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-// Reusable Feature Item
 const FeatureItem = ({
   icon: Icon,
   label,

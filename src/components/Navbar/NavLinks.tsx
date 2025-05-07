@@ -10,7 +10,7 @@ const navItems = [
   { label: "ABOUT US", path: "/about" },
   {
     label: "SERVICES",
-    path: "/services", // fallback or main
+    path: "/services",
     subItems: [
       { label: "Roofing", path: "/services/roofing" },
       { label: "Waterproofing", path: "/services/waterproofing" },

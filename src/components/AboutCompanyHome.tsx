@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { FaCertificate, FaLightbulb, FaHome } from "react-icons/fa";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { FaCertificate, FaLightbulb, FaHome } from "react-icons/fa";
 
 export default function AboutCompany() {
   const [showMore, setShowMore] = useState(false);
@@ -19,25 +19,15 @@ export default function AboutCompany() {
   ];
 
   return (
-    <div
-      className={`
-        mb-5 md:mb-10 shadow-xl
-        py-10 sm:py-16 lg:py-20 bg-[#f9f9f9]                                                                                                  
-      `}
-    >
-      <section
-        className="flex flex-col xl:flex-row px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20
-                   gap-10 lg:gap-16                             
-                   max-w-7xl
-                   mx-auto"
-      >
+    <div className="mb-5 md:mb-10 shadow-xl py-10 sm:py-16 lg:py-20 bg-[#f9f9f9]">
+      <section className="flex flex-col xl:flex-row gap-10 lg:gap-16 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
         {/* Image Block */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative w-full max-w-sm mx-auto xl:mx-0 md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0 xl:self-start aspect-[5/5] shadow-lg rounded-md"
+          className="relative w-full max-w-sm mx-auto xl:mx-0 md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0 aspect-[5/5] shadow-lg rounded-md"
         >
           <div className="relative w-full h-full border-2 border-[#e63a27] rounded-sm overflow-hidden">
             <Image
@@ -58,7 +48,7 @@ export default function AboutCompany() {
           </div>
         </motion.div>
 
-        {/* Text Content Block */}
+        {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +88,6 @@ export default function AboutCompany() {
                   href="https://www.wikidata.org/wiki/Q11299"
                   target="_blank"
                   rel="noopener noreferrer"
-                  
                 >
                   Brooklyn
                 </Link>
@@ -107,7 +96,6 @@ export default function AboutCompany() {
                   href="https://www.wikidata.org/wiki/Q60"
                   target="_blank"
                   rel="noopener noreferrer"
-                  
                 >
                   Manhattan
                 </Link>
@@ -116,14 +104,10 @@ export default function AboutCompany() {
                   href="https://www.wikidata.org/wiki/Q18419"
                   target="_blank"
                   rel="noopener noreferrer"
-                  
                 >
                   Queens
                 </Link>{" "}
                 with top-tier roofing, waterproofing, and masonry solutions.
-                Every roof we install, every leak we seal, and every brick we
-                lay reflects our unwavering commitment to quality and
-                craftsmanship.
               </p>
 
               {showMore && (
@@ -131,9 +115,7 @@ export default function AboutCompany() {
                   <p>
                     As a trusted roofing contractor in Brooklyn, we specialize
                     in everything from residential roof repairs to complete
-                    commercial roof installations. Our expert team also delivers
-                    professional waterproofing services to protect buildings and
-                    extend structural integrity.
+                    commercial roof installations.
                   </p>
                   <p>
                     Our skilled masonry team handles everything from brick
@@ -155,8 +137,7 @@ export default function AboutCompany() {
               {showMore ? "Read Less" : "Read More"}
             </button>
 
-            {/* ✅ Certified Company Block */}
-            <div className="flex items-center gap-4 mt-0 mb-2">
+            <div className="flex items-center gap-4 mb-2">
               <Image
                 src="/certified-badge.jpg"
                 alt="Certified Company Badge"
@@ -171,7 +152,6 @@ export default function AboutCompany() {
             </div>
           </div>
 
-          {/* Read More Link */}
           <Link
             href="/about"
             className="inline-block border-4 border-[#003269] p-2 self-start group mt-4"

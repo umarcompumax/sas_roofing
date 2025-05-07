@@ -30,7 +30,6 @@ export default function OurServicesPage({ margin }: Props) {
       className={`
         mb-${margin[1]} md:mb-${margin[1]} shadow-2xl
         px-4 sm:px-6 lg:px-12 pt-10 pb-12 sm:pb-16 lg:pb-20 bg-[#f9f9f9] relative`}
-      // Apply background image using inline style for dynamic URL handling
       style={{ backgroundImage: `url(${bgPatternPath})` }}
     >
       <div className="mx-auto space-y-12">
@@ -39,7 +38,7 @@ export default function OurServicesPage({ margin }: Props) {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
-          className="flex flex-col md:flex-row justify-around items-center text-center md:text-left gap-8 md:gap-4" // Increased gap for spacing
+          className="flex flex-col md:flex-row justify-around items-center text-center md:text-left gap-8 md:gap-4"
         >
           <div>
             <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
@@ -57,7 +56,7 @@ export default function OurServicesPage({ margin }: Props) {
 
           <Link
             href="/services"
-            className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0" // Added flex-shrink-0
+            className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0" 
           >
             <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button">
               All Services
@@ -70,7 +69,6 @@ export default function OurServicesPage({ margin }: Props) {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
-          className="" // No specific class needed here usually
         >
           <ServicesSlider swiperRef={swiperRef} />
         </motion.div>

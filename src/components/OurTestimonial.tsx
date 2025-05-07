@@ -3,7 +3,6 @@
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 
-// Dynamically import slider to avoid SSR
 const TestimonialSlider = dynamic(() => import("./TestimonialSlider"), {
   ssr: false,
 });

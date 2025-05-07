@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-// Define the type for the dynamically imported GallerySection component
+
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -15,7 +15,7 @@ const fadeUp = {
 };
 
 interface OurProjectsProps {
-  gallery: string; // Assuming 'gallery' is a string, update this as needed
+  gallery: string; 
 }
 
 const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
@@ -24,9 +24,9 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
 
   useEffect(() => {
     const loadGallery = async () => {
-      // Dynamically import the GallerySection component based on the gallery prop
+      
       const GalleryModule = await import(`./GallerySection${gallery}`);
-      setGallerySection(() => GalleryModule.default); // Set it to the component
+      setGallerySection(() => GalleryModule.default); 
     };
 
     loadGallery();

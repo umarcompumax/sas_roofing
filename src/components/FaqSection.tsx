@@ -46,10 +46,10 @@ const accordionVariants = {
 };
 
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number>(0); // Default to first open
+  const [openIndex, setOpenIndex] = useState<number>(0);
 
  const toggleOpen = (index: number) => {
-   // If same index is clicked, don't collapse it
+   
    if (openIndex !== index) {
      setOpenIndex(index);
    }

@@ -42,7 +42,7 @@ export default function StickyNavbar() {
   const handleMouseLeave = () => {
     timeoutId.current = setTimeout(() => {
       setIsServicesOpen(false);
-    }, 300); // adjust delay as needed
+    }, 300);
   };
 
   if (!showSticky) return null;
