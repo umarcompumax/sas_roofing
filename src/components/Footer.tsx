@@ -85,7 +85,7 @@ export default function Footer() {
         <motion.div {...fadeUp(0.1)}>
           <h4 className="text-xl font-bold mb-2">About Service</h4>
           <div className="w-12 h-[2px] bg-[#e63a27] mb-3" />
-          <p className="text-white/90 leading-relaxed">
+          <p className="text-white/90 leading-relaxed md:mt-10">
             “SAS Roofing & Waterproofing is a family-owned and operated business
             serving the greater Brooklyn, New York area since 2000.“
           </p>
@@ -94,12 +94,12 @@ export default function Footer() {
 
           <Link
             href="/"
-            className="inline-block mt-6 bg-[#e63a27] text-white px-6 py-3 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base More-hover-button"
+            className="inline-block mt-6 bg-[#e53935] text-white px-6 py-3 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base More-hover-button"
           >
             MORE DETAILS
           </Link>
 
-          <div className="flex gap-3 flex-wrap mt-4 items-center">
+          <div className="flex gap-2 flex-wrap mt-4 items-center">
             {paymentIcons.map((icon) => (
               <Image
                 key={icon}
@@ -107,7 +107,7 @@ export default function Footer() {
                 alt={`${icon} accepted`}
                 width={50}
                 height={32}
-                className="object-contain h-[32px] w-auto"
+                className="object-contain h-[35px] w-auto"
                 loading="lazy"
               />
             ))}
@@ -118,10 +118,13 @@ export default function Footer() {
         <motion.div {...fadeUp(0.2)}>
           <h4 className="text-xl font-bold mb-2">Useful Links</h4>
           <div className="w-12 h-[2px] bg-[#e63a27] mb-3" />
-          <ul className="space-y-3 mt-4">
+          <ul className="space-y-3 mt-4 md:mt-10">
             {navLinks.map(({ label, path }) => (
               <li key={label}>
-                <Link href={path} className="hover:underline">
+                <Link
+                  href={path}
+                  className="hover:text-[#e63a27] text-sm"
+                >
                   {label}
                 </Link>
               </li>
@@ -134,7 +137,7 @@ export default function Footer() {
           <h4 className="text-xl font-bold mb-2">Make Contact</h4>
           <div className="w-12 h-[2px] bg-[#e63a27] mb-3" />
 
-          <div className="space-y-2">
+          <div className="space-y-2 text-sm md:mt-5">
             <p className="font-bold">GENERAL INQUIRIES</p>
             <p>Office: (347) 221–6549</p>
             <p>Cell: (347) 394–9384</p>
@@ -142,8 +145,7 @@ export default function Footer() {
             <p>Email: amzadh78@gmail.com</p>
           </div>
 
-          {/* Add spacing between sections */}
-          <div className="space-y-2 mt-6">
+          <div className="space-y-2 mt-6 text-sm">
             <p className="font-bold">OFFICE LOCATION</p>
             <p>
               552 Rugby Rd, Brooklyn
@@ -152,7 +154,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex gap-3 flex-wrap mt-6 items-center">
+          <div className="flex gap-2 flex-wrap mt-6 items-center">
             {socialIcons.map(({ src, path, label }) => (
               <a
                 key={src}
@@ -166,7 +168,7 @@ export default function Footer() {
                   alt={label}
                   width={35}
                   height={35}
-                  className="object-contain h-[32px] w-auto"
+                  className="object-contain h-[28px] w-auto"
                   loading="lazy"
                 />
               </a>
@@ -180,7 +182,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs sm:text-sm md:text-[15px]">
           <p className="text-center md:text-left">
             © 2025{" "}
-            <span className="text-[#e63a27]">SAS Roofing & Waterproofing</span>{" "}
+            <span className="text-[#e63144]">SAS Roofing & Waterproofing</span>{" "}
             All Rights Reserved.
           </p>
           <div className="flex gap-x-6 flex-wrap justify-center md:justify-end">

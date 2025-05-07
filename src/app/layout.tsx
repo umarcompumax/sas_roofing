@@ -13,7 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Expert Roofing, Waterproofing & Masonry in Brooklyn & NYC",
+  title:
+    "Trusted Roofing, Waterproofing & Masonry Services in Brooklyn,New York",
   description:
     "SAS Roofing Waterproofing provides expert roofing, waterproofing, and masonry services in Brooklyn, Manhattan, and Queens. We specialize in roof repair, installation, replacement, basement waterproofing, and masonry services for residential and commercial projects.",
 };

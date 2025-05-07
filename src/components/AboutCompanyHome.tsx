@@ -36,11 +36,11 @@ export default function AboutCompany() {
               fill
               className="object-cover"
             />
-            <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
-              <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#003269]">
-                15
+            <div className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
+              <span className="text-3xl sm:text-4xl md:text-7xl font-extrabold text-[#003269]">
+                20+
               </span>
-              <div className="leading-tight text-left text-sm sm:text-base font-bold uppercase tracking-wide">
+              <div className="leading-tight text-left text-base sm:text-xl font-extrabold uppercase">
                 <div>Years</div>
                 <div>of Experience</div>
               </div>
@@ -56,7 +56,7 @@ export default function AboutCompany() {
           viewport={{ once: true }}
           className="w-full flex flex-col justify-between"
         >
-          <div>
+          <div className="">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-6 h-[1px] bg-[#e63a27]" />
               <h4 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider">
@@ -64,7 +64,7 @@ export default function AboutCompany() {
               </h4>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003269] leading-tight mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-sans">
               Roofing Is Our Heritage & Quality Is Our Tradition
             </h1>
 
@@ -147,7 +147,7 @@ export default function AboutCompany() {
               />
               <div className="text-[#003269] text-base font-medium">
                 <h4 className="font-bold mb-1">Certified Company</h4>
-                <p>#2050416-DCA</p>
+                <p className="text-[#e63a27]">#2050416-DCA</p>
               </div>
             </div>
           </div>

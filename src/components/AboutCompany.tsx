@@ -41,11 +41,11 @@ export default function AboutCompany() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
+              <div className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
                 <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold">
-                  15
+                  20+
                 </span>
-                <div className="leading-tight text-left text-sm sm:text-base font-bold uppercase tracking-wide">
+                <div className="leading-tight text-left text-base sm:text-xl font-extrabold uppercase">
                   <div>Years</div>
                   <div>of Experience</div>
                 </div>
@@ -71,7 +71,7 @@ export default function AboutCompany() {
               </div>
 
               {/* Main Heading */}
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003269] leading-tight mb-4">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-sans">
                 Roofing Is Our Heritage & Quality Is Our Tradition
               </h1>
 
