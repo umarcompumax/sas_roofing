@@ -59,7 +59,7 @@ export default function RoofingServices() {
         </div>
 
         <Link
-          href="/services"
+          href="/roofing-contractors-brooklyn"
           className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0"
         >
           <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">

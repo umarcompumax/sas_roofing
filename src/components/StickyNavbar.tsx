@@ -11,12 +11,12 @@ const navItems = [
     label: "SERVICES",
     path: "/services",
     subItems: [
-      { label: "Roofing", path: "/services/roofing-contractors-brooklyn" },
+      { label: "Roofing", path: "/roofing-contractors-brooklyn" },
       {
         label: "Waterproofing",
-        path: "/services/waterproofing-contractors-NY",
+        path: "/waterproofing-contractors-NY",
       },
-      { label: "Masonry", path: "/services/masonry-services-brooklyn-ny" },
+      { label: "Masonry", path: "/masonry-services-brooklyn-ny" },
     ],
   },
   { label: "PROJECTS", path: "/projects" },

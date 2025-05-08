@@ -21,12 +21,12 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
       name: "SERVICES",
       href: "/services",
       subItems: [
-        { name: "Roofing", href: "/services/roofing-contractors-brooklyn" },
+        { name: "Roofing", href: "/roofing-contractors-brooklyn" },
         {
           name: "Waterproofing",
-          href: "/services/waterproofing-contractors-NY",
+          href: "/waterproofing-contractors-NY",
         },
-        { name: "Masonry", href: "/services/masonry-services-brooklyn-ny" },
+        { name: "Masonry", href: "/masonry-services-brooklyn-ny" },
       ],
     },
     { name: "PROJECTS", href: "/projects" },
