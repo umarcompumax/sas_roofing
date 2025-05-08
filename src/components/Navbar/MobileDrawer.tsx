@@ -16,19 +16,22 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
 
   const navItems = [
     { name: "HOME", href: "/" },
-    { name: "ABOUT US", href: "/about" },
+    { name: "ABOUT US", href: "/aboutus" },
     {
       name: "SERVICES",
       href: "/services",
       subItems: [
-        { name: "Roofing", href: "/services/roofing" },
-        { name: "Waterproofing", href: "/services/waterproofing" },
-        { name: "Masonry", href: "/services/masonry" },
+        { name: "Roofing", href: "/services/roofing-contractors-brooklyn" },
+        {
+          name: "Waterproofing",
+          href: "/services/waterproofing-contractors-NY",
+        },
+        { name: "Masonry", href: "/services/masonry-services-brooklyn-ny" },
       ],
     },
     { name: "PROJECTS", href: "/projects" },
     { name: "TESTIMONIALS", href: "/reviews" },
-    { name: "CONTACT US", href: "/contact" },
+    { name: "CONTACT US", href: "/contact-us" },
   ];
 
   const socialLinks = [

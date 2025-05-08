@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FiExternalLink, FiHeart, FiFolder, FiShare2 } from "react-icons/fi";
 
 interface Slide {
@@ -40,14 +41,14 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
 
       {/* Footer Actions */}
       <div className="bg-white px-4 py-3 flex justify-between items-center border-t border-gray-200 text-sm">
-        <a
-          href="#"
+        <Link
+          href="/"
           rel="noopener noreferrer"
           className="flex items-center gap-1 font-bold text-[#003269] text-sm"
         >
           <FiExternalLink className="w-4 h-4" />
           MORE DETAILS
-        </a>
+        </Link>
         <div className="flex items-center gap-4 text-gray-500">
           <button className="flex items-center gap-1 hover:text-[#e63a27] transition-colors">
             <FiHeart className="w-4 h-4" />

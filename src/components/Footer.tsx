@@ -191,7 +191,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-x-6 flex-wrap justify-center md:justify-end font-bevietnam">
             {["Terms of Service", "Privacy Policy"].map((text) => (
-              <Link key={text} href="#" className="hover:underline">
+              <Link key={text} href="/" className="hover:underline">
                 {text}
               </Link>
             ))}

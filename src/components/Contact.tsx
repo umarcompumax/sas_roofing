@@ -6,7 +6,7 @@ const ContactCard = dynamic(() => import("./ContactCard"), { ssr: false });
 
 const Contact = () => {
   const baseClass = `
-    group bg-white p-6 pt-10 text-sm w-full md:w-1/4
+    group bg-white p-6 pt-10 text-sm w-full lg:w-1/4
     flex flex-col gap-2 relative border border-gray-100
     hover:bg-black transition-colors duration-1000 ease-in-out
   `;
@@ -48,7 +48,7 @@ const Contact = () => {
   ];
 
   return (
-    <section className="flex flex-col sm:flex-row justify-center items-start gap-8 px-4 py-10 my-16 bg-white">
+    <section className="flex flex-col lg:flex-row justify-center items-start gap-8 px-4 py-10 my-16 bg-white">
       {contactItems.map((item, index) => (
         <ContactCard
           key={index}

@@ -9,22 +9,22 @@ import { motion, AnimatePresence, PanInfo } from "framer-motion";
 
 const slides = [
   {
-    title: "Protect Your Home With SAS Roofing.",
+    title: "Protect Your Home With SAS Roofing",
     description:
-      "SAS Roofing is your source for high-quality roofing of any type.",
+      "SAS Roofing is your source for high-quality roofing of any type",
     buttonText: "Read More",
     image: "/slider1.jpg",
   },
   {
-    title: "Quality Roofing Solutions for Every Home.",
+    title: "Quality Roofing Solutions for Every Home",
     description:
-      "We provide expert roofing installations, repairs, and inspections.",
+      "We provide expert roofing installations, repairs, and inspections",
     buttonText: "Read More",
     image: "/slider-2.jpg",
   },
   {
-    title: "Your Roofing Needs For A Great Repair Job.",
-    description: "Reliable, professional, and affordable roofing services.",
+    title: "Your Roofing Needs For A Great Repair Job",
+    description: "Reliable, professional, and affordable roofing services",
     buttonText: "Read More",
     image: "/slider-3.jpg",
   },
@@ -146,7 +146,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -40 }}
             transition={textTransition}
-            className="max-w-3xl space-y-6 pt-10 md:ml-14 xl:ml-46"
+            className="max-w-3xl space-y-6 pt-6 md:ml-14 xl:ml-46"
           >
             <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight pointer-events-none font-inter">
               {slide.title}
@@ -154,7 +154,7 @@ export default function HeroSection() {
             <p className="text-lg font-light tracking-wide pointer-events-none font-bevietnam">
               {slide.description}
             </p>
-            <Link href="/about">
+            <Link href="/aboutus">
               <div className="inline-block border-4 border-[#003269] p-1">
                 <Button className="Hero_hover-button text-sm sm:text-base lg:text-lg font-inter">
                   {slide.buttonText.toUpperCase()}

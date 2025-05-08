@@ -13,11 +13,11 @@ export default function MobileSidebar({
 }) {
   const navItems = [
     { name: "HOME", href: "/" },
-    { name: "ABOUT US", href: "/about" },
+    { name: "ABOUT US", href: "/aboutus" },
     { name: "SERVICES", href: "/services" },
     { name: "PROJECTS", href: "/projects" },
     { name: "TESTIMONIALS", href: "/reviews" },
-    { name: "CONTACT US", href: "/contact" },
+    { name: "CONTACT US", href: "/contact-us" },
   ];
 
   return (

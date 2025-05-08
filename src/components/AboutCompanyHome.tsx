@@ -153,7 +153,7 @@ export default function AboutCompany() {
           </div>
 
           <Link
-            href="/about"
+            href="/aboutus"
             className="inline-block border-4 border-[#003269] p-2 self-start group mt-4"
           >
             <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide text-sm lg:text-base hover-button font-inter">

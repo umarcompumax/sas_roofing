@@ -23,7 +23,7 @@ const slides = [
       "Highest quality single-ply membrane systems keeps us at the forefront of the business...",
     image: "/services1.jpg",
     icon: "/pattern-1.png",
-    link: "/services/waterproofing",
+    link: "/services/waterproofing-contractors-NY",
   },
   {
     title: "MASONRY",
@@ -31,7 +31,7 @@ const slides = [
       "If you need paving, bluestone, brickwork, cement work, etc... or any other structure then give...",
     image: "/services2.jpg",
     icon: "/masonry.png",
-    link: "/services/masonry",
+    link: "/services/masonry-services-brooklyn-ny",
   },
   {
     title: "ROOFING",
@@ -39,7 +39,7 @@ const slides = [
       "We service all types of roofing big or small, from repairs to new installs, residential or...",
     image: "/services3.jpg",
     icon: "/roofing.png",
-    link: "/services/roofing",
+    link: "/services/roofing-contractors-brooklyn",
   },
 ];
 

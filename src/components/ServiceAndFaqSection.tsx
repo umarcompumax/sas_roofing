@@ -44,17 +44,23 @@ export default function ServiceAndFaqSection() {
           <input
             id="name"
             type="text"
+            name="name"
             placeholder="Name"
             required
+            autoComplete="name"
             className="p-3 border border-gray-300 bg-white rounded-md focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
           />
+
           <input
             id="email"
             type="email"
+            name="email"
             placeholder="Email Address"
             required
+            autoComplete="email"
             className="p-3 border border-gray-300 bg-white rounded-md focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
           />
+
           <select
             id="service"
             name="service"

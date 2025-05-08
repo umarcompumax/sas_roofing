@@ -1,6 +1,7 @@
 "use client";
 
 import { Phone, MapPin, Mail } from "lucide-react";
+import Link from "next/link";
 
 const contactItems = [
   {
@@ -31,7 +32,7 @@ const ContactBar: React.FC = () => (
     className="fixed bottom-0 left-0 right-0 z-50 md:hidden grid grid-cols-3 divide-x divide-white bg-[#e63a27] text-white text-center shadow-[0_-2px_10px_rgba(0,0,0,0.2)]"
   >
     {contactItems.map(({ href, label, icon, text, external }, index) => (
-      <a
+      <Link
         key={index}
         href={href}
         aria-label={label}
@@ -40,7 +41,7 @@ const ContactBar: React.FC = () => (
       >
         {icon}
         <span className="text-xs font-semibold mt-1">{text}</span>
-      </a>
+      </Link>
     ))}
   </nav>
 );

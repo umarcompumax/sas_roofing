@@ -141,7 +141,7 @@ const GalleryCard = ({
         />
       </div>
       <div className="absolute inset-0 bg-[#003269]/50 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition duration-700">
-        <span className="text-lg sm:text-xl font-semibold mb-4">
+        <span className="text-lg sm:text-xl font-semibold mb-4 font-inter">
           SAS Roofing
         </span>
         <button

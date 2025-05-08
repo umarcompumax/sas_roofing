@@ -37,16 +37,16 @@ export default function RoofingServices() {
   ];
 
   return (
-    <section className="px-6 py-12 md:px-16 bg-white text-[#003269] md:mx-30">
+    <section className="px-6 py-12 md:px-16 bg-white text-[#003269] lg:mx-30">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={fadeUp}
-        className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8 mb-12"
+        className="flex flex-col lg:flex-row justify-between items-center text-center lg:text-left gap-8 mb-12"
       >
         <div>
-          <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
+          <div className="flex items-center justify-center lg:justify-start gap-2 mb-1">
             <div className="w-6 h-px bg-[#e63a27]" />
             <span className="text-sm font-bold text-[#e63a27] uppercase font-inter">
               Waterproofing Services

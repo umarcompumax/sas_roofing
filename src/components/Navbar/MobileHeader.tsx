@@ -78,11 +78,11 @@ export default function MobileHeader({
           <ul className="flex flex-col mt-4 font-inter">
             {[
               { name: "HOME", href: "/" },
-              { name: "ABOUT US", href: "/about" },
+              { name: "ABOUT US", href: "/aboutus" },
               { name: "SERVICES", href: "/services" },
               { name: "PROJECTS", href: "/projects" },
               { name: "REVIEWS", href: "/reviews" },
-              { name: "CONTACT US", href: "/contact" },
+              { name: "CONTACT US", href: "/contact-us" },
             ].map((item) => (
               <li
                 key={item.name}

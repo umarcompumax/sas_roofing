@@ -54,7 +54,7 @@ export default function FooterTopCTA() {
           className="flex gap-3 flex-wrap justify-center items-center"
           {...fadeUp(0.3)}
         >
-          <Link href="/about">
+          <Link href="/aboutus">
             <button className="call-hover-button font-inter">KNOW MORE</button>
           </Link>
           <Link

@@ -122,7 +122,7 @@ export default function AboutCompany() {
 
             {/* Read More Link */}
             <Link
-              href="/about"
+              href="/aboutus"
               className="inline-block border-4 border-[#003269] p-1 self-start group mt-auto"
             >
               <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide hover:bg-[#e63a27] hover:text-white transition text-sm lg:text-base hover-button font-inter">

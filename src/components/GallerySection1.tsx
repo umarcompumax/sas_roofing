@@ -226,7 +226,7 @@ export default function GallerySection() {
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-[#003269]/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-white">
-              <span className="text-lg sm:text-xl font-semibold mb-2">
+              <span className="text-lg sm:text-xl font-semibold mb-2 font-inter">
                 SAS Roofing
               </span>
               <button

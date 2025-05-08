@@ -6,19 +6,22 @@ import Image from "next/image";
 
 const navItems = [
   { label: "HOME", path: "/" },
-  { label: "ABOUT US", path: "/about" },
+  { label: "ABOUT US", path: "/aboutus" },
   {
     label: "SERVICES",
     path: "/services",
     subItems: [
-      { label: "Roofing", path: "/services/roofing" },
-      { label: "Waterproofing", path: "/services/waterproofing" },
-      { label: "Masonry", path: "/services/masonry" },
+      { label: "Roofing", path: "/services/roofing-contractors-brooklyn" },
+      {
+        label: "Waterproofing",
+        path: "/services/waterproofing-contractors-NY",
+      },
+      { label: "Masonry", path: "/services/masonry-services-brooklyn-ny" },
     ],
   },
   { label: "PROJECTS", path: "/projects" },
   { label: "TESTIMONIALS", path: "/reviews" },
-  { label: "CONTACT US", path: "/contact" },
+  { label: "CONTACT US", path: "/contact-us" },
 ];
 
 export default function StickyNavbar() {
@@ -86,7 +89,7 @@ export default function StickyNavbar() {
                   <Link
                     key={subLabel}
                     href={subPath}
-                    className="block px-5 py-3 text-[#003269] hover:bg-[#e63a27] hover:text-white text-sm"
+                    className="block px-5 py-4 text-[#003269] hover:bg-[#e63a27] hover:text-white text-sm font-inter"
                   >
                     {subLabel}
                   </Link>

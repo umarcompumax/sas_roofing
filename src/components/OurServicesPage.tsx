@@ -23,14 +23,11 @@ export default function OurServicesPage({ margin }: Props) {
     },
   };
 
-  const bgPatternPath = "";
-
   return (
     <main
       className={`
         mb-${margin[1]} md:mb-${margin[1]} shadow-2xl
         px-4 sm:px-6 lg:px-12 pt-10 pb-12 sm:pb-16 lg:pb-20 bg-[#f9f9f9] relative`}
-      style={{ backgroundImage: `url(${bgPatternPath})` }}
     >
       <div className="mx-auto space-y-12">
         <motion.section
