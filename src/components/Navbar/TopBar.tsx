@@ -13,21 +13,21 @@ export default function TopBar() {
           <div className="hidden xl:flex items-center pr-4 divide-x divide-white/30">
             <Link
               href="tel:+13472216549"
-              className="flex items-center gap-2 pr-4 hover:text-[#e63a27] transition-colors"
+              className="flex items-center text-xl gap-2 pr-4 hover:text-[#e63a27] transition-colors"
             >
               <FaPhoneAlt className="text-[#e63a27]" />
               (347) 221-6549
             </Link>
             <Link
               href="mailto:sascon09@yahoo.com"
-              className="flex items-center gap-2 px-4 hover:text-[#e63a27] transition-colors"
+              className="flex items-center text-xl gap-2 px-4 hover:text-[#e63a27] transition-colors"
             >
               <FaEnvelope className="text-[#e63a27]" />
               sascon09@yahoo.com
             </Link>
             <Link
               href="mailto:amzadh78@gmail.com"
-              className="flex items-center gap-2 pl-4 hover:text-[#e63a27] transition-colors"
+              className="flex items-center text-xl gap-2 pl-4 hover:text-[#e63a27] transition-colors"
             >
               <FaEnvelope className="text-[#e63a27]" />
               amzadh78@gmail.com

@@ -64,9 +64,8 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
           <h2 className="text-base md:text-lg font-bold mb-1">ABOUT US</h2>
           <div className="w-8 h-[2px] bg-[#e63a27] mb-3" />
           <p className="text-sm md:text-base leading-relaxed tracking-wide">
-            With over four decades of proven success in quality roofing
-            services, Shelder Roofing and Retro-Fit Group is a family-owned and
-            operated business.
+            With over three decades of proven success in quality Roofing
+            services, Waterproofing and General contractors.
           </p>
         </section>
 
