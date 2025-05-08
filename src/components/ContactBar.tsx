@@ -36,7 +36,7 @@ const ContactBar: React.FC = () => (
         href={href}
         aria-label={label}
         {...(external && { target: "_blank", rel: "noopener noreferrer" })}
-        className="flex flex-col items-center justify-center py-3 hover:bg-[#e63a27] transition-colors"
+        className="flex flex-col items-center justify-center py-3 hover:bg-[#e63a27] transition-colors font-inter"
       >
         {icon}
         <span className="text-xs font-semibold mt-1">{text}</span>

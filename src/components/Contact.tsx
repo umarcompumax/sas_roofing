@@ -16,7 +16,7 @@ const Contact = () => {
     before:content-[''] before:absolute before:top-0 before:right-0
     before:w-0 before:h-0 before:border-t-[16px] before:border-t-transparent
     before:border-l-[16px] before:border-l-red-900
-    before:translate-x-[16px] before:-translate-y-[1px]
+    before:translate-x-[16px] before:-translate-y-[1px] font-inter
   `;
 
   const shadowStyle = {

@@ -30,10 +30,10 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
         priority={false}
       />
 
-      <div className="absolute inset-0 flex flex-col justify-center items-center">
+      <div className="absolute inset-0 flex flex-col justify-center items-center font-inter">
         <nav
           aria-label="breadcrumb"
-          className="mb-2 flex flex-wrap justify-center text-sm gap-2"
+          className="mb-2 flex flex-wrap justify-center text-sm gap-2 font-inter"
         >
           {breadcrumbItems.map((item, index) => (
             <React.Fragment key={item.href}>

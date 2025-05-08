@@ -74,7 +74,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#003269] text-white text-sm sm:text-[15px]">
       <motion.h2
-        className="px-4 sm:px-6 md:px-12 pt-12 text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-100 mb-12 max-w-4xl mx-auto"
+        className="px-4 sm:px-6 md:px-12 pt-12 text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-100 mb-12 max-w-4xl mx-auto font-inter"
         {...fadeUp(0)}
       >
         QUALITY ROOFING IN BROOKLYN, NEW YORK & QUEENS
@@ -83,18 +83,20 @@ export default function Footer() {
       <div className="px-4 sm:px-6 md:px-12 pb-12 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
         {/* About Section */}
         <motion.div {...fadeUp(0.1)}>
-          <h4 className="text-xl font-bold mb-2">About Service</h4>
+          <h4 className="text-xl font-bold mb-2 font-inter">About Service</h4>
           <div className="w-12 h-[2px] bg-[#e63a27] mb-3" />
-          <p className="text-white/90 leading-relaxed md:mt-10">
+          <p className="text-white/90 leading-relaxed md:mt-10 text-sm font-bevietnam">
             “SAS Roofing & Waterproofing is a family-owned and operated business
             serving the greater Brooklyn, New York area since 2000.“
           </p>
-          <p className="font-bold mt-4">WE ARE AVAILABLE</p>
-          <p className="text-white/80">Mon–Sat: 09.00 am to 6.30 pm</p>
+          <p className="font-bold mt-4 font-inter">WE ARE AVAILABLE</p>
+          <p className="text-white/80 font-bevietnam text-sm">
+            Mon–Sat: 09.00 am to 6.30 pm
+          </p>
 
           <Link
             href="/"
-            className="inline-block mt-6 bg-[#e53935] text-white px-6 py-3 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base More-hover-button"
+            className="inline-block mt-6 bg-[#e53935] text-white px-6 py-3 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base More-hover-button font-inter"
           >
             MORE DETAILS
           </Link>
@@ -116,14 +118,14 @@ export default function Footer() {
 
         {/* Useful Links */}
         <motion.div {...fadeUp(0.2)}>
-          <h4 className="text-xl font-bold mb-2">Useful Links</h4>
+          <h4 className="text-xl font-bold mb-2 font-inter">Useful Links</h4>
           <div className="w-12 h-[2px] bg-[#e63a27] mb-3" />
           <ul className="space-y-3 mt-4 md:mt-10">
             {navLinks.map(({ label, path }) => (
               <li key={label}>
                 <Link
                   href={path}
-                  className="hover:text-[#e63a27] text-sm"
+                  className="hover:text-[#e63a27] text-sm font-bevietnam"
                 >
                   {label}
                 </Link>
@@ -134,23 +136,23 @@ export default function Footer() {
 
         {/* Make Contact */}
         <motion.div {...fadeUp(0.3)}>
-          <h4 className="text-xl font-bold mb-2">Make Contact</h4>
+          <h4 className="text-xl font-bold mb-2 font-inter">Make Contact</h4>
           <div className="w-12 h-[2px] bg-[#e63a27] mb-3" />
 
           <div className="space-y-2 text-sm md:mt-5">
-            <p className="font-bold">GENERAL INQUIRIES</p>
-            <p>Office: (347) 221–6549</p>
-            <p>Cell: (347) 394–9384</p>
-            <p>Email: sascon09@yahoo.com</p>
-            <p>Email: amzadh78@gmail.com</p>
+            <p className="font-bold font-inter">GENERAL INQUIRIES</p>
+            <p className="font-bevietnam">Office: (347) 221–6549</p>
+            <p className="font-bevietnam">Cell: (347) 394–9384</p>
+            <p className="font-bevietnam">Email: sascon09@yahoo.com</p>
+            <p className="font-bevietnam">Email: amzadh78@gmail.com</p>
           </div>
 
           <div className="space-y-2 mt-6 text-sm">
-            <p className="font-bold">OFFICE LOCATION</p>
-            <p>
+            <p className="font-bold font-inter">OFFICE LOCATION</p>
+            <p className="font-bevietnam">
               552 Rugby Rd, Brooklyn
               <br />
-              New York 11230.
+              New York 11230
             </p>
           </div>
 
@@ -180,12 +182,14 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="bg-[#00254c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs sm:text-sm md:text-[15px]">
-          <p className="text-center md:text-left">
+          <p className="text-center md:text-left fontfont-bevietnam">
             © 2025{" "}
-            <span className="text-[#e63144]">SAS Roofing & Waterproofing</span>{" "}
+            <span className="text-[#e63144] font-bevietnam">
+              SAS Roofing & Waterproofing
+            </span>{" "}
             All Rights Reserved.
           </p>
-          <div className="flex gap-x-6 flex-wrap justify-center md:justify-end">
+          <div className="flex gap-x-6 flex-wrap justify-center md:justify-end font-bevietnam">
             {["Terms of Service", "Privacy Policy"].map((text) => (
               <Link key={text} href="#" className="hover:underline">
                 {text}

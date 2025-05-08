@@ -41,10 +41,10 @@ export default function FooterTopCTA() {
 
         {/* Text Content */}
         <motion.div className="max-w-md px-2" {...fadeUp(0.2)}>
-          <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1">
+          <h3 className="text-lg md:text-xl font-bold mb-1 font-inter">
             Roof Problems can’t wait?
           </h3>
-          <p className="text-sm sm:text-base text-white/80 leading-snug">
+          <p className="text-sm  text-white/80 leading-snug font-inter">
             Protect your home from leaks and roof repairs — contact us today.
           </p>
         </motion.div>
@@ -55,14 +55,16 @@ export default function FooterTopCTA() {
           {...fadeUp(0.3)}
         >
           <Link href="/about">
-            <button className="call-hover-button">KNOW MORE</button>
+            <button className="call-hover-button font-inter">KNOW MORE</button>
           </Link>
           <Link
             href="tel:113472216549"
             className="bg-[#e63a27] text-white flex items-center gap-2 px-4 py-2 font-semibold transition hover:bg-[#e63a27] call-hover-button"
           >
             <FaHeadphonesAlt />
-            <span className="text-sm sm:text-base">(347) 221-6549</span>
+            <span className="text-sm sm:text-base font-inter">
+              (347) 221-6549
+            </span>
           </Link>
         </motion.div>
       </div>

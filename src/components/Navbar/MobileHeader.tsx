@@ -18,7 +18,7 @@ export default function MobileHeader({
           <button
             onClick={() => setIsOpen(true)}
             aria-label="Open menu"
-            className="md:hidden w-12 h-12 flex items-center justify-center"
+            className="md:hidden w-12 h-12 flex items-center justify-center font-inter"
           >
             <div className="border-2 border-white p-2 w-10 h-10 flex items-center justify-center">
               <Image
@@ -44,7 +44,7 @@ export default function MobileHeader({
         </Link>
       </div>
       {/* Mobile Slide-In Sidebar */}
-      <div className="fixed inset-0 z-50 flex justify-end pointer-events-none">
+      <div className="fixed inset-0 z-50 flex justify-end pointer-events-none font-inter">
         <div
           className={`w-[60%] bg-black/30 backdrop-blur-sm transition-opacity duration-300 ease-in-out ${
             isOpen ? "opacity-100 pointer-events-auto" : "opacity-0"
@@ -75,7 +75,7 @@ export default function MobileHeader({
               />
             </Link>
           </div>
-          <ul className="flex flex-col mt-4">
+          <ul className="flex flex-col mt-4 font-inter">
             {[
               { name: "HOME", href: "/" },
               { name: "ABOUT US", href: "/about" },
@@ -99,7 +99,7 @@ export default function MobileHeader({
             ))}
           </ul>
 
-          <div className="mt-auto flex justify-center gap-4 py-6">
+          <div className="mt-auto flex justify-center gap-4 py-6 font-inter">
             <a
               href="https://www.facebook.com/sasroofingwaterproofing"
               target="_blank"

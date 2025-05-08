@@ -86,7 +86,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
           />
         </Link>
 
-        <nav className="mt-4">
+        <nav className="mt-4 font-inter">
           {navItems.map((item) => (
             <MobileNavItem
               key={item.name}

@@ -71,7 +71,7 @@ export default function MobileSidebar({
               key={name}
               href={href}
               onClick={() => setIsOpen(false)}
-              className={`block px-6 py-4 border-t border-white/20 hover:bg-white hover:text-black transition-colors ${
+              className={`block px-6 py-4 border-t border-white/20 hover:bg-white hover:text-black transition-colors font-inter ${
                 idx === navItems.length - 1 ? "border-b" : ""
               }`}
             >
@@ -81,7 +81,7 @@ export default function MobileSidebar({
         </nav>
 
         {/* Social Icons */}
-        <div className="mt-auto flex justify-center gap-4 py-6">
+        <div className="mt-auto flex justify-center gap-4 py-6 font-inter">
           <Link
             href="https://www.facebook.com/sasroofingwaterproofing"
             target="_blank"

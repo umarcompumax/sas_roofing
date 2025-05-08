@@ -69,11 +69,11 @@ export default function FaqSection() {
     <div className="pt-8 pb-4 text-left bg-[#f9f9f9] md:px-5 md:ml-5">
       <div className="flex items-center gap-2 mb-2">
         <div className="w-6 h-[2px] bg-[#e63a27]" />
-        <p className="text-base uppercase text-[#e63a27] font-semibold tracking-wide">
+        <p className="text-base uppercase text-[#e63a27] font-semibold tracking-wide font-inter">
           Common Questions & Answers
         </p>
       </div>
-      <h2 className="text-4xl lg:text-5xl font-bold text-[#003269] mb-8">
+      <h2 className="text-4xl lg:text-5xl font-bold text-[#003269] mb-8 font-inter">
         Get Detailed Answers
       </h2>
 
@@ -95,7 +95,7 @@ export default function FaqSection() {
                   isOpen ? "bg-[#003269] text-white" : "bg-white text-[#003269]"
                 }`}
               >
-                <span className="flex items-start gap-3 font-semibold text-lg">
+                <span className="flex items-start gap-3 font-semibold text-base font-inter">
                   <span className="text-[#e63a27]">Q{index + 1}.</span>
                   {faq.question}
                 </span>
@@ -118,7 +118,7 @@ export default function FaqSection() {
                     initial="collapsed"
                     animate="open"
                     exit="collapsed"
-                    className="px-6 pb-6 pt-4 bg-white text-gray-600 leading-relaxed"
+                    className="px-6 pb-6 pt-4 bg-white text-gray-600 leading-relaxed font-bevietnam text-sm"
                   >
                     {faq.answer}
                   </motion.div>

@@ -24,7 +24,7 @@ export default function MobileHeaderNew() {
 
   return (
     <>
-      <div className="relative flex justify-between items-center h-[122px] w-full md:hidden bg-[#e63a27]">
+      <div className="relative flex justify-between items-center h-[122px] w-full md:hidden bg-[#e63a27] font-inter">
         <Link href="/" className="flex items-center">
           <Image
             src="/MobileLogo.webp"

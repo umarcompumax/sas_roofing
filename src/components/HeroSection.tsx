@@ -109,7 +109,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative w-full min-h-[530px] lg:min-h-[700px] overflow-hidden bg-neutral-800">
+    <section className="relative w-full min-h-[530px] lg:min-h-[670px] overflow-hidden bg-neutral-800">
       <AnimatePresence initial={false} custom={direction} mode="sync">
         <motion.div
           key={current}
@@ -123,7 +123,7 @@ export default function HeroSection() {
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.15}
           onDragEnd={handleDragEnd}
-          className="absolute inset-0 z-0 cursor-grab active:cursor-grabbing"
+          className="absolute inset-0 z-0 cursor-grab active:cursor-grabbing font-inter"
         >
           <Image
             src={slide.image}
@@ -146,17 +146,17 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -40 }}
             transition={textTransition}
-            className="max-w-3xl space-y-6 pt-10"
+            className="max-w-3xl space-y-6 pt-10 md:ml-14 xl:ml-46"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-[80px] xl:text-[90px] 2xl:text-[100px] font-bold leading-tight pointer-events-none">
+            <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight pointer-events-none font-inter">
               {slide.title}
             </h1>
-            <p className="text-lg md:text-xl font-light tracking-wide pointer-events-none">
+            <p className="text-lg font-light tracking-wide pointer-events-none font-bevietnam">
               {slide.description}
             </p>
             <Link href="/about">
               <div className="inline-block border-4 border-[#003269] p-1">
-                <Button className="Hero_hover-button text-sm sm:text-base lg:text-lg">
+                <Button className="Hero_hover-button text-sm sm:text-base lg:text-lg font-inter">
                   {slide.buttonText.toUpperCase()}
                 </Button>
               </div>

@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/be-vietnam-pro": "^5.2.5",
+    "@fontsource/inter": "^5.2.5",
     "@headlessui/react": "^2.2.2",
     "@radix-ui/react-accordion": "^1.2.7",
     "@radix-ui/react-dialog": "^1.1.7",

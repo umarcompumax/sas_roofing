@@ -64,22 +64,26 @@ const VideoSection = ({ margin }: Props) => {
                 <h5 className="text-sm uppercase font-semibold">Video Proof</h5>
               </div>
 
-              <h2 className="text-4xl lg:text-5xl font-medium leading-tight mb-4">
+              <h2 className="text-3xl lg:text-5xl font-medium leading-tight mb-4 font-inter">
                 Have a Look <br /> At Our Video
               </h2>
 
               <ul className="space-y-2">
                 <li>
-                  <SiTicktick className="inline mr-2" /> Roof of the Year
+                  <SiTicktick className="inline mr-2 font-bevietnam" /> Roof of
+                  the Year
                 </li>
                 <li>
-                  <SiTicktick className="inline mr-2" /> Fully supported metal
+                  <SiTicktick className="inline mr-2 font-bevietnam" /> Fully
+                  supported metal
                 </li>
                 <li>
-                  <SiTicktick className="inline mr-2" /> Reliable & Trustworthy
+                  <SiTicktick className="inline mr-2 font-bevietnam" /> Reliable
+                  & Trustworthy
                 </li>
                 <li>
-                  <SiTicktick className="inline mr-2" /> Dependable
+                  <SiTicktick className="inline mr-2 font-bevietnam" />{" "}
+                  Dependable
                 </li>
               </ul>
 
@@ -91,7 +95,9 @@ const VideoSection = ({ margin }: Props) => {
                   onClick={() => setIsOpen(true)}
                 />
               </div>
-              <div className="text-white md:hidden">FLAT ROOF INSTALLATION</div>
+              <div className="text-white md:hidden font-inter text-sm">
+                FLAT ROOF INSTALLATION
+              </div>
             </motion.div>
           </div>
         </div>
@@ -110,7 +116,7 @@ const VideoSection = ({ margin }: Props) => {
                 className="text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl mr-16 md:mr-24 lg:mr-48 cursor-pointer"
                 onClick={() => setIsOpen(true)}
               />
-              <div className="hidden md:block mt-1 text-white font-semibold text-lg tracking-wide mr-16 md:mr-24 lg:mr-48">
+              <div className="hidden md:block mt-1 text-white font-semibold text-lg tracking-wide mr-16 md:mr-24 lg:mr-48 font-inter">
                 FLAT ROOF INSTALLATION
               </div>
             </div>
@@ -123,7 +129,7 @@ const VideoSection = ({ margin }: Props) => {
 
       {/* Video Modal with accessibility + hydration-safe iframe */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] p-0 rounded-lg border-none bg-transparent shadow-none">
+        <DialogContent className="w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] p-0 rounded-lg border-none bg-transparent shadow-none font-bevietnam">
           <VisuallyHidden>
             <DialogTitle>Flat Roof Installation Video</DialogTitle>
           </VisuallyHidden>

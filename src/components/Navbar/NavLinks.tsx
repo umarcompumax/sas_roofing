@@ -4,6 +4,8 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaFacebookF, FaHome } from "react-icons/fa";
+import { Inter } from "next/font/google";
+
 
 const navItems = [
   { label: "HOME", path: "/" },
@@ -21,6 +23,11 @@ const navItems = [
   { label: "TESTIMONIALS", path: "/reviews" },
   { label: "CONTACT US", path: "/contact" },
 ];
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export default function NavLinks({
   setSidebarOpen,
@@ -45,7 +52,9 @@ export default function NavLinks({
   };
 
   return (
-    <ul className="flex gap-4 text-sm font-semibold text-[#003269] items-stretch h-full w-full justify-end">
+    <ul
+      className={`flex gap-4 text-sm font-semibold text-[#003269] items-stretch h-full w-full justify-end ${inter.className}`}
+    >
       {/* Desktop Links */}
       <div className="hidden xl:flex gap-6 items-center">
         {navItems.map(({ label, path, subItems }) =>
@@ -80,7 +89,7 @@ export default function NavLinks({
                   <Link
                     key={subLabel}
                     href={subPath}
-                    className="block px-5 py-3 text-[#003269] hover:bg-[#e63a27] hover:text-white text-sm"
+                    className="block px-5 py-4 text-[#003269] hover:bg-[#e63a27] hover:text-white text-sm"
                   >
                     {subLabel}
                   </Link>

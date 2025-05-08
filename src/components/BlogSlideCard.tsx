@@ -11,7 +11,7 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
   // const [day, month] = slide.date.split(" ");
 
   return (
-    <div className="relative w-full h-[400px] rounded-sm shadow-md overflow-hidden flex flex-col">
+    <div className="relative w-full h-[400px] rounded-sm shadow-md overflow-hidden flex flex-col font-inter">
       {/* Background image with overlay */}
       <div className="relative flex-1 overflow-hidden">
         <div

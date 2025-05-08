@@ -99,10 +99,10 @@ export default function ServicesSlider({ swiperRef }: Props) {
                 >
                   <div className="flex w-full items-end">
                     <div className="w-[70%] bg-[#f5f5f5] shadow-md p-4 min-h-[120px] sm:min-h-[140px] md:min-h-[150px] flex flex-col">
-                      <h3 className="text-[#003269] text-sm md:text-base lg:text-lg font-bold tracking-wide">
+                      <h3 className="text-[#003269] text-sm md:text-base lg:text-lg font-bold tracking-wide font-inter">
                         {title}
                       </h3>
-                      <p className="text-sm text-gray-600 mt-1 leading-snug line-clamp-3">
+                      <p className="text-sm text-gray-600 mt-1 leading-snug line-clamp-3 font-bevietnam">
                         {description}
                       </p>
                     </div>

@@ -27,7 +27,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-[999] bg-black/70 flex justify-start cursor-[url('/white_cursor.png')_0_0,auto]"
+      className="fixed inset-0 z-[999] bg-black/70 flex justify-start cursor-[url('/white_cursor.png')_0_0,auto] font-inter"
     >
       <motion.aside
         onClick={(e) => e.stopPropagation()}
@@ -61,9 +61,11 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
 
         {/* About Section */}
         <section className="mb-6">
-          <h2 className="text-base md:text-lg font-bold mb-1">ABOUT US</h2>
+          <h2 className="text-base md:text-lg font-bold mb-1 font-inter">
+            ABOUT US
+          </h2>
           <div className="w-8 h-[2px] bg-[#e63a27] mb-3" />
-          <p className="text-sm md:text-base leading-relaxed tracking-wide">
+          <p className="text-sm md:text-sm leading-relaxed tracking-wide font-bevietnam">
             With over three decades of proven success in quality Roofing
             services, Waterproofing and General contractors.
           </p>
@@ -71,7 +73,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
 
         {/* Free Quote Form */}
         <section className="mb-6">
-          <h2 className="text-base md:text-lg font-bold mb-1">
+          <h2 className="text-base md:text-lg font-bold mb-1 font-inter">
             GET A FREE QUOTE
           </h2>
           <div className="w-8 h-[2px] bg-[#e63a27] mb-4" />
@@ -97,7 +99,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
             />
             <button
               type="submit"
-              className="border border-[#e63a27] text-[#e63a27] font-semibold text-sm md:text-base py-3 hover:bg-[#e63a27] hover:text-white transition form-hover-button"
+              className="border border-[#e63a27] text-[#e63a27] font-semibold text-sm md:text-base py-3 hover:bg-[#e63a27] hover:text-white transition form-hover-button font-bevietnam"
             >
               SUBMIT NOW
             </button>
@@ -106,22 +108,24 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
 
         {/* Contact Info & Social */}
         <section>
-          <h2 className="text-base md:text-lg font-bold mb-1">CONTACT INFO</h2>
+          <h2 className="text-base md:text-lg font-bold mb-1 font-inter">
+            CONTACT INFO
+          </h2>
           <div className="w-8 h-[2px] bg-[#e63a27] mb-4" />
-          <ul className="text-sm md:text-base space-y-3">
-            <li className="flex gap-3 items-start">
+          <ul className="text-sm space-y-3">
+            <li className="flex gap-3 items-start font-bevietnam">
               <FaMapMarkerAlt className="text-[#e63a27] mt-1 shrink-0" />
               <span>552 Rugby Rd, Brooklyn, NY 11230</span>
             </li>
-            <li className="flex gap-3 items-center">
+            <li className="flex gap-3 items-center font-bevietnam">
               <FaPhoneAlt className="text-[#e63a27]" />
               <span>Office: (347) 221-6549</span>
             </li>
-            <li className="flex gap-3 items-center">
+            <li className="flex gap-3 items-center font-bevietnam">
               <FaMobileAlt className="text-[#e63a27]" />
               <span>Cell: (347) 394-9384</span>
             </li>
-            <li className="flex gap-3 items-center">
+            <li className="flex gap-3 items-center font-bevietnam">
               <FaEnvelope className="text-[#e63a27]" />
               <span>amzadh78@gmail.com</span>
             </li>

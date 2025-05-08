@@ -44,12 +44,12 @@ export default function RoofingServices() {
         <div>
           <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
             <div className="w-6 h-px bg-[#e63a27]" />
-            <span className="text-sm font-bold text-[#e63a27] uppercase">
+            <span className="text-sm font-bold text-[#e63a27] uppercase font-inter">
               Top Masonry Contractors NYC
             </span>
           </div>
-          <h2 className="text-3xl font-bold text-[#003269] leading-snug">
-            Expert Masonry Services in Brooklyn, Manhattan, and Queens
+          <h2 className="text-3xl font-bold text-[#003269] leading-snug font-inter">
+            Expert Masonry Services in Brooklyn, Manhattan and Queens
           </h2>
         </div>
 
@@ -57,7 +57,7 @@ export default function RoofingServices() {
           href="/services"
           className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0"
         >
-          <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button">
+          <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
             All Services
           </div>
         </Link>
@@ -69,7 +69,7 @@ export default function RoofingServices() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
         variants={fadeUp}
-        className="text-sm md:text-lg text-gray-700 mb-6"
+        className="text-sm md:text-base text-gray-700 mb-6 font-bevietnam"
       >
         SAS Roofing & Waterproofing provides top-tier masonry services across
         Brooklyn, Manhattan, and Queens. Whether you need brickwork contractors
@@ -87,11 +87,11 @@ export default function RoofingServices() {
             variants={fadeUp}
             className="space-y-2"
           >
-            <h3 className="text-xl md:text-3xl font-bold text-[#003269]">
+            <h3 className="text-xl md:text-2xl font-bold text-[#003269]">
               {title}
             </h3>
             {isLink ? (
-              <div className="text-sm md:text-lg text-gray-700">
+              <div className="text-sm md:text-base text-gray-700 font-bevietnam">
                 At SAS Roofing & Waterproofing, we are committed to delivering
                 exceptional masonry solutions. Our team provides reliable,
                 long-lasting masonry construction and repair across Brooklyn,
@@ -102,7 +102,9 @@ export default function RoofingServices() {
                 to learn more.
               </div>
             ) : (
-              <p className="text-sm md:text-lg text-gray-700">{desc}</p>
+              <p className="text-sm md:text-base text-gray-700 font-bevietnam">
+                {desc}
+              </p>
             )}
           </motion.div>
         ))}

@@ -50,15 +50,15 @@ const ContactCard: React.FC<ContactCardProps> = ({
       <div className={iconTab}>{item.icon}</div>
 
       <div className="mt-2 space-y-1">
-        <h3 className="text-[#003269] font-semibold text-xl group-hover:text-white">
+        <h3 className="text-[#003269] font-semibold text-xl group-hover:text-white font-inter">
           {item.title}
         </h3>
 
-        <p className="italic text-gray-600 group-hover:text-gray-300">
+        <p className="italic text-gray-600 group-hover:text-gray-300 font-bevietnam">
           {item.desc}
         </p>
 
-        <p className="text-gray-500 font-medium whitespace-pre-line group-hover:text-gray-300">
+        <p className="text-gray-500 font-medium whitespace-pre-line group-hover:text-gray-300 font-bevietnam">
           {item.content}
         </p>
       </div>

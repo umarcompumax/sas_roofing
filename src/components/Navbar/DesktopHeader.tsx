@@ -18,10 +18,10 @@ export default function DesktopHeader({
         className="absolute left-0 top-0 h-full w-[350px] bg-[#003269] z-10 flex items-center justify-center [clip-path:polygon(0_0,100%_0,90%_100%,0%_100%)]"
       >
         <Image
-          src="/Logo.png"
+          src="/Logo-SAS.png"
           alt="Company Logo"
-          width={290}
-          height={290}
+          width={295}
+          height={295}
           className="object-contain cursor-pointer"
           priority
         />

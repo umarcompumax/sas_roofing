@@ -28,10 +28,10 @@ const toggleSubmenu = () => setServicesOpen((prev) => !prev);
 
   if (item.subItems) {
     return (
-      <div className="border-t border-white/20 last:border-b">
+      <div className="border-t border-white/20 last:border-b font-inter">
         <button
           onClick={toggleSubmenu}
-          className="w-full px-6 py-4 text-left flex justify-between items-center font-semibold hover:bg-white hover:text-black transition-colors"
+          className="w-full px-6 py-4 text-left flex justify-between items-center font-semibold hover:bg-white hover:text-black transition-colors font-inter"
           aria-expanded={servicesOpen}
           aria-controls={`services-menu-${item.name}`}
         >
@@ -46,7 +46,7 @@ const toggleSubmenu = () => setServicesOpen((prev) => !prev);
         </button>
         <div
           id={`services-menu-${item.name}`}
-          className={`bg-[#00244d] text-sm overflow-hidden transition-all duration-300 ease-in-out ${
+          className={`bg-[#00244d] text-sm overflow-hidden transition-all duration-300 ease-in-out font-inter ${
             servicesOpen ? "max-h-96" : "max-h-0"
           }`}
         >
@@ -55,7 +55,7 @@ const toggleSubmenu = () => setServicesOpen((prev) => !prev);
               key={name}
               href={href}
               onClick={() => setIsOpen(false)}
-              className="block px-8 py-3 hover:bg-white hover:text-black transition-colors"
+              className="block px-8 py-3 hover:bg-white hover:text-black transition-colors font-inter"
             >
               {name}
             </Link>

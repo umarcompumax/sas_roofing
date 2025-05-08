@@ -1,16 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// import { Geist, Geist_Mono } from "next/font/google";
+// src/app/layout.tsx
+import { Inter, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Add specific weights here:
+const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-inter",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bevietnam = Be_Vietnam_Pro({
   subsets: ["latin"],
+  weight: ["400", "500", "700"], // ✅ Specify weights you use
+  variable: "--font-bevietnam",
 });
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title:
@@ -25,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${bevietnam.variable}`}>
       <head>
         <meta name="color-scheme" content="light only" />
 
@@ -119,9 +133,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${bevietnam.variable}`}>
         {children}
       </body>
     </html>

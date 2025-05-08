@@ -49,8 +49,8 @@ export default function StickyNavbar() {
 
   return (
     <div className="hidden xl:flex fixed top-0 left-0 right-0 items-center justify-between bg-white z-50 shadow-md transition-all">
-      <Link href="/" className="bg-[#003269]">
-        <Image src="/Logo.png" alt="Logo" width={210} height={140} />
+      <Link href="/" className="bg-[#003269] px-8">
+        <Image src="/Logo.png" alt="Logo" width={210} height={160} />
       </Link>
 
       <nav className="flex gap-6 font-semibold text-sm text-[#003269] pr-6">

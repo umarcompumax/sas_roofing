@@ -45,20 +45,20 @@ export default function OurServicesPage({ margin }: Props) {
               {" "}
               {/* Center on small screens */}
               <div className="w-6 h-px bg-[#e63a27]" />
-              <span className="text-xs sm:text-sm lg:text-lg font-bold text-[#e63a27] uppercase">
+              <span className="text-xs sm:text-sm md:text-base font-bold text-[#e63a27] uppercase font-inter">
                 Our Services
               </span>
             </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-[#003269] leading-snug">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-[#003269] leading-snug font-inter">
               SAS Roofing & Waterproofing
             </h1>
           </div>
 
           <Link
             href="/services"
-            className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0" 
+            className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0"
           >
-            <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button">
+            <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
               All Services
             </div>
           </Link>

@@ -86,7 +86,7 @@ export default function Sidebar({
                   key={name}
                   href={href}
                   onClick={() => setIsOpen(false)}
-                  className="px-6 py-4 border-t border-white/20 last:border-b hover:bg-white hover:text-black transition-colors"
+                  className="px-6 py-4 border-t border-white/20 last:border-b hover:bg-white hover:text-black transition-colors font-inter"
                 >
                   {name}
                 </Link>
@@ -94,7 +94,7 @@ export default function Sidebar({
             </nav>
 
             {/* Social Icons */}
-            <div className="mt-auto flex justify-center gap-4 py-6">
+            <div className="mt-auto flex justify-center gap-4 py-6 font-inter">
               {socialLinks.map(({ href, icon }, i) => (
                 <Link
                   key={i}

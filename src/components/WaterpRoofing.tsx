@@ -48,12 +48,12 @@ export default function RoofingServices() {
         <div>
           <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
             <div className="w-6 h-px bg-[#e63a27]" />
-            <span className="text-sm font-bold text-[#e63a27] uppercase">
+            <span className="text-sm font-bold text-[#e63a27] uppercase font-inter">
               Waterproofing Services
             </span>
           </div>
-          <h2 className="text-3xl font-bold text-[#003269] leading-snug">
-            Professional Waterproofing Services in Brooklyn, Manhattan, and
+          <h2 className="text-3xl font-bold text-[#003269] leading-snug font-inter">
+            Professional Waterproofing Services in Brooklyn, Manhattan and
             Queens
           </h2>
         </div>
@@ -62,7 +62,7 @@ export default function RoofingServices() {
           href="/services"
           className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0"
         >
-          <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button">
+          <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
             All Services
           </div>
         </Link>
@@ -74,7 +74,7 @@ export default function RoofingServices() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
         variants={fadeUp}
-        className="text-sm md:text-lg text-gray-700 mb-6"
+        className="text-sm md:text-base text-gray-700 mb-6 font-bevietnam"
       >
         SAS Roofing & Waterproofing offers expert waterproofing services across
         Brooklyn, Manhattan, and Queens. From basement waterproofing in Brooklyn
@@ -96,19 +96,18 @@ export default function RoofingServices() {
               {title}
             </h3>
             {isLink ? (
-              <div className="text-sm md:text-lg text-gray-700">
+              <div className="text-sm md:text-base text-gray-700 font-bevietnam">
                 At SAS Roofing & Waterproofing, we provide top-quality, durable
                 waterproofing services in Brooklyn, Manhattan, and Queens.
                 Protect your property today by Visit{" "}
-                <Link
-                  href="/"
-                  className="text-[#e63a27] hover:text-[#003269]"
-                >
+                <Link href="/" className="text-[#e63a27] hover:text-[#003269]">
                   SAS Roofing & Waterproofing
                 </Link>
               </div>
             ) : (
-              <p className="text-sm md:text-lg text-gray-700">{desc}</p>
+              <p className="text-sm md:text-base text-gray-700 font-bevietnam">
+                {desc}
+              </p>
             )}
           </motion.div>
         ))}

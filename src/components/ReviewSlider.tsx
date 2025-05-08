@@ -99,22 +99,22 @@ const ReviewSlider = () => {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="text-4xl font-bold text-gray-900 flex items-center justify-center">
+        <div className="text-4xl font-bold text-gray-900 flex items-center justify-center font-inter">
           4.7
           <span className="ml-2 text-[#e63a27]">★★★★★</span>
         </div>
-        <p className="text-gray-600 text-sm">(134 Google Reviews)</p>
+        <p className="text-gray-600 text-sm font-inter">(134 Google Reviews)</p>
         <Link
           href="https://www.google.com/search?sca_esv=44785faec4b38403&hl=en-IN&gl=in&sxsrf=AHTn8zqibJ4bTPvhVHIjXbIiCuri3N9dNg:1746640776320&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzRXdA7aRSP0fPCbY4r-w7Xlc_H5K-rMs-6p7czYZpZV5g8XT02WLATrugqbv9Pt2j-UXbKSxafnerU2YrHvGVWSwXaAj2lXaOtGbFRPxdNviohP_bg%3D%3D&q=SAS+Roofing+%26+Waterproofing+Reviews&sa=X&ved=2ahUKEwjZjZf495GNAxUbrVYBHaK-BfUQ0bkNegQIMxAE&biw=1600&bih=773&dpr=1#lrd=0x89c25b2dd928663d:0x5527086c2d45f8d8,3,,,,"
           target="_blank"
         >
-          <button className="mt-2 bg-[#003269] text-white px-4 py-2 rounded-full text-sm hover:bg-[#e63a27]">
+          <button className="mt-2 bg-[#003269] text-white px-4 py-2 rounded-full text-sm hover:bg-[#e63a27] font-inter">
             Review us on Google
           </button>
         </Link>
       </motion.div>
 
-      <div className="ml-18 md:px-4 max-w-6xl md:mx-auto">
+      <div className="px-4 max-w-6xl md:mx-auto">
         <Swiper
           className="review-swiper"
           slidesPerView={1}
@@ -136,7 +136,7 @@ const ReviewSlider = () => {
           {reviews.map((review, idx) => (
             <SwiperSlide key={idx} className="h-full">
               <motion.div
-                className="bg-[#002147] text-white rounded-xl p-4 w-[250px] h-[300px] flex flex-col gap-2 items-start"
+                className="bg-[#002147] text-white rounded-xl p-4 w-[250px] h-[300px] flex flex-col gap-2 items-start mx-auto"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -151,18 +151,22 @@ const ReviewSlider = () => {
                     className="w-10 h-10 rounded-full"
                   />
                   <div>
-                    <p className="font-semibold text-base">{review.name}</p>
-                    <p className="text-xs text-gray-300">{review.date}</p>
+                    <p className="font-semibold text-base font-inter">
+                      {review.name}
+                    </p>
+                    <p className="text-xs text-gray-300 font-inter">
+                      {review.date}
+                    </p>
                   </div>
                 </div>
                 <div className="text-[#e63a27] text-3xl mt-2">
                   {"★".repeat(review.rating)}
                 </div>
-                <p className="text-sm text-left mt-2 leading-snug">
+                <p className="text-sm text-left mt-2 leading-snug font-bevietnam">
                   {review.text}
                 </p>
                 <p
-                  className="text-sm text-white hover:text-[#e63a27] mt-2 cursor-pointer"
+                  className="text-sm text-white hover:text-[#e63a27] mt-2 cursor-pointer font-bevietnam"
                   onClick={() => setSelectedReview(review)}
                 >
                   Read more
@@ -175,8 +179,10 @@ const ReviewSlider = () => {
                     height={16}
                     className="w-4 h-4"
                   />
-                  <span>Posted on</span>
-                  <span className="font-semibold text-white">Google</span>
+                  <span className="font-bevietnam">Posted on</span>
+                  <span className="font-semibold text-white font-bevietnam">
+                    Google
+                  </span>
                 </div>
               </motion.div>
             </SwiperSlide>
